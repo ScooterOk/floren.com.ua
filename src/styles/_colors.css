@@ -1,0 +1,28 @@
+:root {
+  /* Core */
+  --color-black: #1a1a1a;
+  --color-white: #ffffff;
+
+  /* Brand / accents */
+  --color-green-100: #4abc08;
+  --color-green-50: #67c409;
+  --color-violet: #9f2178;
+  --color-yellow: #f6bb05;
+  --color-red: #ff0000;
+
+  /* Gray scale */
+  --color-gray-100: #757575;
+  --color-gray-80: #999999;
+  --color-gray-60: #b2b2b2;
+  --color-gray-50: #b6bdc8;
+  --color-gray-40: #cad0d9;
+  --color-gray-30: #eaeaea;
+  --color-gray-20: #f3f5f6;
+  --color-gray-10: #f7f8f9;
+
+  /* Green gray / neutrals */
+  --color-green-gray-30: #edf2ee;
+  --color-green-gray-20: #f1f4ea;
+}
+
+/* Використання: color: var(--color-green-100); background: var(--color-gray-10); */
