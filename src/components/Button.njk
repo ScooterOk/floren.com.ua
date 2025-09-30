@@ -1,0 +1,8 @@
+<h1>Hello Button</h1>
+
+{# components/Button.njk #}
+{% macro Button(label, type="button", modifier="")%}
+<button type="{{ type }}" class="btn {{ modifier }}">
+  {{ label }}
+</button>
+{% endmacro %}

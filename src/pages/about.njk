@@ -1,0 +1,11 @@
+{% extends "layouts/base.njk" %} {% set title = "Vituum + Nunjucks" %}
+{% from "components/Button.njk" import Button %}
+
+{% block content %}
+<h1>Hello about</h1>
+{{ Button("Додати в кошик", "button", "btn-secondary") }}
+<div class="card">
+  <button id="counter" type="button"></button>
+</div>
+<p class="read-the-docs">Click on the Vite and Vituum logos to learn more</p>
+{% endblock %}
