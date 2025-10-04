@@ -1,13 +1,27 @@
-<header>
+<header class="header">
   <div class="container">
-    <nav class="header__top-nav">
-      <div>
-        <svg>
-          <use xlink:href="{{ spritemap }}#icon-location"></use>
+    <nav class="header__nav" aria-label="Головне меню сайту">
+      <div class="header__nav-location">
+        <svg class="icon">
+          <use xlink:href="{{ spritemap }}#icon-location1"></use>
         </svg>
         Магазини у Києві
       </div>
-      <div></div>
+      <ul class="header__nav-list">
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Про компанію</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Оплата та Доставка</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Корисні матеріали</a>
+        </li>
+        <li class="header__nav-item">
+          <a href="#" class="header__nav-link">Контакти</a>
+        </li>
+      </ul>
+      <div class="header__nav-lang"></div>
     </nav>
   </div>
 </header>

@@ -1,7 +1,7 @@
-@import './_reset';
-@import './_typography';
-@import './_colors';
-@import './_layout';
+@use './_reset';
+@use './_functions';
+@use './_typography';
+@use './_colors';
 
 :root {
   font-synthesis: none;
@@ -9,3 +9,5 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@import './_layout';

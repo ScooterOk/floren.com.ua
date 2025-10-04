@@ -15,7 +15,7 @@ export default defineConfig(({ command, mode }) => {
     plugins: [
       VitePluginSvgSpritemap('./src/assets/icons/*.svg', {
         prefix: 'icon-',
-        injectSVGOnDev: false, // Залишаємо цю опцію
+        injectSVGOnDev: true, // Залишаємо цю опцію
         output: {
           filename: 'spritemap.svg',
         },

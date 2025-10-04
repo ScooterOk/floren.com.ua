@@ -1,13 +1,14 @@
 /* Font faces, typography rules, etc. */
-@import url("https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;600;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Geologica:wght@300;400;600;900&display=swap');
 
 html,
 body {
-  font-family: "Geologica", sans-serif;
+  font-family: 'Geologica', sans-serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
-  font-variation-settings: "slnt" 0, "CRSV" 0, "SHRP" 0;
+  color: var(--color-black);
+  font-variation-settings: 'slnt' 0, 'CRSV' 0, 'SHRP' 0;
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
