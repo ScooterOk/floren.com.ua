@@ -1,0 +1,128 @@
+@use './functions' as *;
+@use './mixins' as *;
+
+.paper {
+  background-color: var(--color-white);
+  padding: getRem(24);
+  box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.1);
+  border-radius: getRem(8);
+}
+
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  mask-size: cover;
+  mask-repeat: no-repeat;
+  mask-position: center;
+  background-color: currentColor;
+  &-location {
+    mask-image: url('/img/icons/icon-location.svg');
+  }
+  &-close {
+    mask-image: url('/img/icons/icon-close.svg');
+  }
+  &-down {
+    mask-image: url('/img/icons/icon-down.svg');
+  }
+}
+
+.tooltip,
+.dropdown {
+  // --sl-tooltip-background-color: var(--color-white);
+  &::part(body) {
+    color: var(--color-black);
+    background-color: var(--color-white);
+    border-radius: getRem(8);
+    padding: getRem(24);
+    box-shadow: 0px 8px 20px rgba(#002603, 0.16);
+    pointer-events: all;
+  }
+  &::part(arrow) {
+    color: var(--color-white);
+  }
+  & > sl-button {
+    @include flex-center;
+    transition: background-color 0.2s ease;
+    border-radius: 4px;
+    padding: 2px 8px;
+    .icon {
+      margin-left: getRem(8);
+    }
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--color-gray-40),
+        transparent 75%
+      );
+    }
+  }
+  &[open] sl-button {
+    background-color: color-mix(in srgb, var(--color-gray-40), transparent 75%);
+  }
+  &.dropdown {
+    & > sl-button {
+      cursor: pointer;
+      font-size: getRem(14);
+      .icon {
+        transition: transform 0.2s ease;
+      }
+    }
+    &[open] > sl-button {
+      .icon {
+        transform: scale(-1);
+      }
+    }
+    & > sl-menu {
+      color: var(--color-black);
+      background-color: var(--color-white);
+      border-radius: getRem(8);
+      padding: 0;
+      box-shadow: 0px 8px 20px rgba(#002603, 0.16);
+      border: none;
+      min-width: 180px;
+      & > sl-menu-item {
+        &[data-checked] {
+          &::part(base) {
+            background: url('/img/icons/icon-check.svg') no-repeat right 14px
+              center / 16px 16px;
+          }
+        }
+        &:focus-visible {
+          &::part(base) {
+            background-color: transparent;
+            color: inherit;
+          }
+        }
+        &::part(base) {
+          padding: getRem(8) getRem(12);
+        }
+        &::part(label) {
+          font-size: getRem(14);
+          font-weight: 300;
+          line-height: 1.5;
+        }
+        &::part(checked-icon) {
+          display: none;
+        }
+        &:hover {
+          background-color: color-mix(
+            in srgb,
+            var(--color-gray-40),
+            transparent 75%
+          );
+        }
+      }
+    }
+  }
+}
+
+.icon-button {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  &:hover {
+    background-color: color-mix(in srgb, var(--color-gray-40), transparent 75%);
+  }
+}

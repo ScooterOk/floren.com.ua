@@ -1,12 +1,42 @@
 <header class="header">
   <div class="container">
     <nav class="header__nav" aria-label="Головне меню сайту">
-      <div class="header__nav-location">
-        <svg class="icon">
-          <use xlink:href="{{ spritemap }}#icon-location1"></use>
-        </svg>
-        Магазини у Києві
-      </div>
+      <!-- Location dropdown element start -->
+      <sl-tooltip
+        class="tooltip header__nav-location"
+        trigger="click"
+        placement="bottom-start"
+        style="--sl-tooltip-arrow-size: 0"
+        distance="0"
+      >
+        <div slot="content" class="header__nav-location--content">
+          <img src="/img/icon-shop.svg" alt="icon-shop" />
+          <div class="description">
+            <button
+              class="icon-button header__nav-location--close"
+              aria-label="Закрити вікно"
+            >
+              <svg class="icon icon-close" />
+            </button>
+            <a
+              href="https://goo.gl/maps/UPpaCBkrMd2TWfXq7"
+              target="_blank"
+              rel="noopener noreferrer"
+              >м. Київ, пр. Берестейський, 70</a
+            >
+            <p>Графік роботи магазинів:</p>
+            <p>пн-сб: 09:00 - 19:30</p>
+            <p>нд: 10:00 - 18:00</p>
+          </div>
+        </div>
+        <sl-button class="header__nav-location--button">
+          <svg class="icon icon-location" />
+          Магазини у Києві
+        </sl-button>
+      </sl-tooltip>
+      <!-- Location dropdown element end -->
+
+      <!-- Navigation menu start -->
       <ul class="header__nav-list">
         <li class="header__nav-item">
           <a href="#" class="header__nav-link">Про компанію</a>
@@ -21,7 +51,21 @@
           <a href="#" class="header__nav-link">Контакти</a>
         </li>
       </ul>
-      <div class="header__nav-lang"></div>
+      <!-- Navigation menu end -->
+
+      <div class="header__nav-lang">
+        <sl-dropdown class="dropdown">
+          <sl-button class="header__nav-lang--button" slot="trigger" caret
+            >Українською
+            <svg class="icon icon-down" />
+          </sl-button>
+          <sl-menu>
+            <sl-menu-item data-checked value="ua">Українською</sl-menu-item>
+            <sl-divider></sl-divider>
+            <sl-menu-item value="ru">Російською</sl-menu-item>
+          </sl-menu>
+        </sl-dropdown>
+      </div>
     </nav>
   </div>
 </header>

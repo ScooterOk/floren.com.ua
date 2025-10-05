@@ -1,7 +1,9 @@
 @use './_reset';
-@use './_functions';
 @use './_typography';
 @use './_colors';
+@use './_ui';
+
+@import '@shoelace-style/shoelace/dist/themes/light.css'; // or dark.css
 
 :root {
   font-synthesis: none;
