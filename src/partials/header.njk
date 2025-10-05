@@ -133,6 +133,7 @@
         </sl-tooltip>
       </div>
       <div class="header__main--right">
+        <!-- Search form start -->
         <form action="" class="header__main--search">
           <div class="search-wrapper">
             <img
@@ -144,7 +145,24 @@
             <button class="search-button">Пошук</button>
           </div>
         </form>
+        <!-- Search form end -->
+
+        <div class="header__main--profile">
+          <a href="#" class="icon-button" aria-label="Особистий кабінет">
+            <svg class="icon icon-user" />
+          </a>
+          <a href="#" class="icon-button" aria-label="Обране">
+            <span class="badge warning">10</span>
+            <svg class="icon icon-heart" />
+          </a>
+          <a href="#" class="icon-button" aria-label="Кошик">
+            <span class="badge success">2</span>
+            <svg class="icon icon-basket" />
+          </a>
+        </div>
       </div>
     </div>
+
+    {% include "partials/catalog.njk" %}
   </div>
 </header>

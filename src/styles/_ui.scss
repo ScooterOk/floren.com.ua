@@ -1,6 +1,10 @@
 @use './functions' as *;
 @use './mixins' as *;
 
+button {
+  transition: background-color 0.2s ease;
+}
+
 .paper {
   background-color: var(--color-white);
   padding: getRem(24);
@@ -33,6 +37,30 @@
   }
   &-telegram {
     mask-image: url('/img/icons/icon-telegram.svg');
+  }
+  &-user {
+    mask-image: url('/img/icons/icon-user.svg');
+  }
+  &-heart {
+    mask-image: url('/img/icons/icon-heart.svg');
+  }
+  &-basket {
+    mask-image: url('/img/icons/icon-shopping-bag.svg');
+  }
+  &-menu {
+    mask-image: url('/img/icons/icon-menu.svg');
+  }
+  &-fitodesign {
+    mask-image: url('/img/icons/icon-fitodesign.svg');
+  }
+  &-vartical {
+    mask-image: url('/img/icons/icon-vartical.svg');
+  }
+  &-care {
+    mask-image: url('/img/icons/icon-care.svg');
+  }
+  &-photogallery {
+    mask-image: url('/img/icons/icon-photogallery.svg');
   }
 }
 
@@ -127,11 +155,37 @@
 }
 
 .icon-button {
+  @include flex-center;
   width: 32px;
   height: 32px;
   border-radius: 4px;
   transition: background-color 0.2s ease;
+  position: relative;
   &:hover {
     background-color: color-mix(in srgb, var(--color-gray-40), transparent 75%);
+  }
+}
+
+.badge {
+  height: getRem(18);
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: 75%;
+  border-radius: getRem(9);
+  background-color: blueviolet;
+  color: var(--color-white);
+  text-align: center;
+  font-size: getRem(10);
+  line-height: getRem(18);
+  font-weight: 600;
+  min-width: getRem(18);
+  padding: 0 getRem(1) 0 getRem(2);
+  z-index: 1;
+  &.warning {
+    background-color: var(--color-yellow);
+  }
+  &.success {
+    background-color: var(--color-green-50);
   }
 }
