@@ -4,7 +4,7 @@
   --color-white: #ffffff;
 
   /* Brand / accents */
-  --color-green-100: #4abc08;
+  --color-green-100: #4a8c08;
   --color-green-50: #67c409;
   --color-violet: #9f2178;
   --color-yellow: #f6bb05;
@@ -23,6 +23,12 @@
   /* Green gray / neutrals */
   --color-green-gray-30: #edf2ee;
   --color-green-gray-20: #f1f4ea;
+
+  --color-button-hover: color-mix(
+    in srgb,
+    var(--color-gray-40),
+    transparent 75%
+  );
 }
 
 /* Використання: color: var(--color-green-100); background: var(--color-gray-10); */

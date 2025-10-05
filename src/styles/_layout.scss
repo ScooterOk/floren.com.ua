@@ -1,4 +1,5 @@
 @use './functions' as *;
+@use './mixins' as *;
 
 body {
   margin: 0;
@@ -32,7 +33,7 @@ a {
     border-radius: 0 0 getRem(8) getRem(8);
     &-location {
       &::part(body) {
-        max-width: 3280px;
+        max-width: 380px;
         padding-right: getRem(48);
       }
       &--button {
@@ -109,6 +110,151 @@ a {
         color: var(--color-green-100);
         .icon {
           margin-top: getRem(2);
+        }
+      }
+    }
+  }
+  &__main {
+    display: flex;
+    gap: getRem(32);
+    width: 100%;
+    min-height: getRem(96);
+    &--logo {
+      width: 200px;
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+    &--left {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      gap: getRem(40);
+    }
+    &--phones {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-radius: getRem(8);
+      padding: getRem(8);
+      transition: background-color 0.2s ease;
+      & > img {
+        width: getRem(32);
+        height: getRem(32);
+      }
+      &.active {
+        background-color: color-mix(
+          in srgb,
+          var(--color-gray-40),
+          transparent 75%
+        );
+        .header__main--phones-hidden {
+          display: none;
+        }
+        .header__main--phones-showed {
+          display: block;
+        }
+      }
+      &-wrapper {
+        font-weight: 600;
+      }
+      &-hidden {
+        & > button {
+          font-size: getRem(14);
+          font-weight: 400;
+          color: var(--color-green-100);
+        }
+      }
+      &-showed {
+        display: none;
+      }
+      &-hours {
+        font-size: getRem(12);
+        font-weight: 300;
+        color: var(--color-gray-100);
+        line-height: 1.5;
+        margin-top: 0.25rem;
+      }
+      &-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        button:has(.icon-close) {
+          position: absolute;
+          top: 8px;
+          right: 8px;
+          z-index: 1;
+        }
+        .phones-tooltip--item {
+          display: flex;
+          gap: getRem(20);
+          & > img {
+            width: 32px;
+            height: 32px;
+          }
+          &-wrapper {
+            .item-phone {
+              font-size: getRem(18);
+              font-weight: 600;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.5;
+              letter-spacing: normal;
+              margin-bottom: 0.5rem;
+            }
+            .item-hours {
+              font-weight: 300;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.5;
+              letter-spacing: normal;
+              color: var(--color-gray-100);
+              margin-bottom: 1rem;
+            }
+            .item-messengers {
+              display: flex;
+              align-items: center;
+              gap: getRem(8);
+              & > a {
+                @include flex-center;
+                width: 40px;
+                height: 40px;
+                border: 1px solid var(--color-gray-40);
+                border-radius: 0.5rem;
+                color: #000;
+                transition: background-color 0.2s ease;
+                .icon {
+                  width: 24px;
+                  height: 24px;
+                  transition: background-color 0.2s ease;
+                }
+                &:hover {
+                  background-color: var(--color-button-hover);
+                  .icon {
+                    background-color: var(--color-green-100);
+                  }
+                }
+              }
+            }
+            .item-feedback {
+              font-size: getRem(18);
+              font-weight: 600;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: 1.5;
+              letter-spacing: normal;
+              margin-bottom: 0.5rem;
+              color: var(--color-green-100);
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+      &-tooltip {
+        &::part(body) {
+          padding-right: getRem(48);
+          max-width: 520px;
         }
       }
     }

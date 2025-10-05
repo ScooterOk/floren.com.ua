@@ -53,6 +53,7 @@
       </ul>
       <!-- Navigation menu end -->
 
+      <!-- Language dropdown element start -->
       <div class="header__nav-lang">
         <sl-dropdown class="dropdown">
           <sl-button class="header__nav-lang--button" slot="trigger" caret
@@ -66,6 +67,72 @@
           </sl-menu>
         </sl-dropdown>
       </div>
+      <!-- Language dropdown element end -->
     </nav>
+    <div class="header__main">
+      <div class="header__main--left">
+        <a href="/" class="header__main--logo">
+          <img src="/img/main-logo.svg" alt="Logo" />
+        </a>
+        <sl-tooltip
+          id="phones-tooltip"
+          class="tooltip header__main--phones-tooltip"
+          trigger="manual"
+          placement="bottom-start"
+          style="--sl-tooltip-arrow-size: 0"
+          distance="0"
+        >
+          <div slot="content" class="header__main--phones-content">
+            <button
+              class="icon-button"
+              aria-label="Закрити вікно"
+              data-event="click"
+              data-callback="togglePhones"
+            >
+              <svg class="icon icon-close" />
+            </button>
+            <div class="phones-tooltip--item">
+              <img src="/img/icons/icon-phone.svg" alt="Phone" />
+              <div class="phones-tooltip--item-wrapper">
+                <p class="item-phone">(044) 344-28-95, (050) 660-52-75</p>
+                <p class="item-hours">По буднях 09:00 - 19:30</p>
+                <p class="item-messengers">
+                  <a href="">
+                    <svg class="icon icon-whatsapp" />
+                  </a>
+                  <a href="">
+                    <svg class="icon icon-telegram" />
+                  </a>
+                </p>
+              </div>
+            </div>
+            <div class="phones-tooltip--item">
+              <img src="/img/icons/icon-feedback.svg" alt="Feedback" />
+              <div class="phones-tooltip--item-wrapper">
+                <a class="item-feedback" href="">Форма зворотнього звʼязку</a>
+              </div>
+            </div>
+          </div>
+          <div class="header__main--phones">
+            <img src="/img/icons/icon-phone.svg" alt="Phone" />
+            <div class="header__main--phones-wrapper">
+              <div class="header__main--phones-hidden">
+                (044) 344..
+                <button data-event="click" data-callback="togglePhones">
+                  показати
+                </button>
+              </div>
+              <div class="header__main--phones-showed">
+                (044) 344-28-95, (050) 660-52-75
+              </div>
+              <div class="header__main--phones-hours">
+                По буднях 9:00 - 19:30
+              </div>
+            </div>
+          </div>
+        </sl-tooltip>
+      </div>
+      <div class="header__main--right"></div>
+    </div>
   </div>
 </header>
