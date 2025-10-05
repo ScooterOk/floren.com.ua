@@ -3,13 +3,6 @@
 @use './_colors';
 @use './_ui';
 
-@import '@shoelace-style/shoelace/dist/themes/light.css'; // or dark.css
+@use '@shoelace-style/shoelace/dist/themes/light.css'; // or dark.css
 
-:root {
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-@import './_layout';
+@use './_layout';
