@@ -16,10 +16,10 @@ body {
 }
 
 a {
-  font-weight: 500;
   color: currentColor;
   text-decoration: inherit;
   transition: color 0.2s ease;
+  font-weight: 400; // Set a base font-weight for all links
 }
 
 .container {
@@ -388,7 +388,7 @@ a {
           &-text {
             b {
               display: block;
-              font-weight: 700;
+              font-weight: 600;
             }
             span {
               font-size: getRem(14);
@@ -399,6 +399,262 @@ a {
           &:hover {
             background-color: var(--color-green-100-hover);
           }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  &__catalog {
+    padding-top: getRem(80);
+    padding-bottom: getRem(80);
+    &-top {
+      display: flex;
+      gap: getRem(32);
+      font-size: getRem(20);
+      font-weight: 600;
+      margin-bottom: getRem(48);
+      a {
+        color: var(--color-violet);
+        transition: color 0.2s ease, text-decoration-color 0.2s ease;
+        text-decoration: underline;
+        text-decoration-thickness: 1px;
+        text-decoration-color: var(--color-green-100);
+        text-underline-offset: 0.25rem;
+        &:hover {
+          color: var(--color-green-100);
+          text-decoration-color: transparent;
+        }
+      }
+    }
+    &-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: getRem(24);
+      font-size: getRem(14);
+      font-weight: 300;
+      & > li {
+        display: flex;
+        flex-direction: column;
+        gap: getRem(8);
+        a {
+          transition: color 0.2s ease, text-decoration-color 0.2s ease;
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+          text-decoration-color: var(--color-gray-40);
+          text-underline-offset: 0.25rem;
+          &:hover {
+            text-decoration-color: transparent;
+          }
+        }
+      }
+    }
+  }
+
+  &__body {
+    padding-top: getRem(64);
+    padding-bottom: getRem(24);
+    background: var(--color-gray-20);
+    overflow: hidden;
+    .container {
+      position: relative;
+    }
+    &-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      &-1 {
+        width: 555px;
+        top: -435px;
+        left: -22%;
+        rotate: 14deg;
+      }
+      &-2 {
+        width: 34%;
+        top: 50%;
+        left: 50%;
+        rotate: 0;
+        translate: -50% -50%;
+      }
+      &-3 {
+        width: 43%;
+        top: 122%;
+        left: 90%;
+        rotate: -39deg;
+        translate: -50% -50%;
+      }
+      &-4 {
+        width: 9%;
+        top: -15%;
+        left: calc(100% + 80px);
+        translate: -50% -50%;
+      }
+      &-5 {
+        width: 9%;
+        top: 107%;
+        right: 100%;
+        left: auto;
+        translate: 0% -50%;
+        rotate: -110deg;
+      }
+      &-6 {
+        width: 22%;
+        top: 129%;
+        left: 25%;
+        translate: -50% -50%;
+        rotate: 0deg;
+      }
+    }
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: getRem(24);
+      position: relative;
+      z-index: 1;
+      & > section {
+        & > h3 {
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+      }
+    }
+    &-logo {
+      img {
+        width: 55%;
+      }
+    }
+    &-list {
+      font-size: getRem(14);
+      font-weight: 300;
+      display: flex;
+      flex-direction: column;
+      gap: getRem(6);
+      & > li {
+        a {
+          transition: color 0.2s ease, text-decoration-color 0.2s ease;
+          font-weight: inherit;
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+          text-decoration-color: var(--color-gray-40);
+          text-underline-offset: 0.25rem;
+          &:hover {
+            text-decoration-color: transparent;
+          }
+        }
+      }
+    }
+    &-contacts {
+      display: flex;
+      flex-direction: column;
+      gap: getRem(12);
+      font-size: getRem(14);
+      font-weight: 300;
+      .contacts-street {
+        color: var(--color-green-100);
+        display: inline-flex;
+        align-items: center;
+        gap: getRem(8);
+        .icon {
+          width: 20px;
+          height: 20px;
+        }
+        a {
+          text-decoration: underline;
+          text-decoration-thickness: 1px;
+          text-underline-offset: 0.25rem;
+          text-decoration-color: transparent;
+          transition: text-decoration-color 0.2s ease;
+          &:hover {
+            text-decoration-color: var(--color-green-100);
+          }
+        }
+      }
+      .contacts-phone {
+        &--hidden {
+          p {
+            button {
+              font-size: 0.875rem;
+              font-weight: 400;
+              color: var(--color-green-100);
+            }
+          }
+        }
+        &--shown {
+          display: none;
+        }
+        &.active {
+          .contacts-phone--hidden {
+            display: none;
+          }
+          .contacts-phone--shown {
+            display: block;
+          }
+        }
+      }
+      .contacts-socials {
+        display: flex;
+        gap: getRem(8);
+        & > a {
+          @include flex-center;
+          width: 40px;
+          height: 40px;
+          border-radius: 0.5rem;
+          border: 1px solid var(--color-gray-40);
+          transition: background-color 0.2s ease;
+          &:hover {
+            background-color: var(--color-button-hover);
+            .icon {
+              background-color: var(--color-green-100);
+            }
+          }
+        }
+        .icon {
+          width: 24px;
+          height: 24px;
+          transition: background-color 0.2s ease;
+        }
+      }
+    }
+    &-divider {
+      --color: var(--color-gray-40);
+      margin-top: 48px;
+      margin-bottom: 24px;
+    }
+    &-bottom {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      &--copyright {
+        font-size: getRem(12);
+        font-weight: 300;
+        display: inline-flex;
+        gap: getRem(40);
+        align-items: center;
+        span {
+          color: var(--color-gray-100);
+          position: relative;
+          &::after {
+            content: '';
+            position: absolute;
+            top: calc(50% - 0.15625rem);
+            left: calc(100% + 1rem);
+            width: 0.3125rem;
+            height: 0.3125rem;
+            background-color: var(--color-gray-40);
+            border-radius: 50%;
+          }
+        }
+      }
+      &--cards {
+        display: flex;
+        gap: getRem(16);
+        img {
+          width: auto;
+          height: 40px;
         }
       }
     }

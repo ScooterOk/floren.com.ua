@@ -7,6 +7,9 @@ const clickHandlers = {
     tooltip.open = !tooltip.open;
     wrapper.classList.toggle('active');
   },
+  toggleFooterPhones: (event) => {
+    event.currentTarget.closest('.contacts-phone').classList.toggle('active');
+  },
 };
 
 export const initEvents = () => {

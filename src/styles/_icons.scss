@@ -1,0 +1,60 @@
+.icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  -webkit-mask-size: cover;
+  mask-size: cover;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+  background-color: currentColor;
+  &-location {
+    mask-image: url('/img/icons/icon-location.svg');
+  }
+  &-close {
+    mask-image: url('/img/icons/icon-close.svg');
+  }
+  &-down {
+    mask-image: url('/img/icons/icon-down.svg');
+  }
+  &-whatsapp {
+    mask-image: url('/img/icons/icon-whatsapp.svg');
+  }
+  &-telegram {
+    mask-image: url('/img/icons/icon-telegram.svg');
+  }
+  &-user {
+    mask-image: url('/img/icons/icon-user.svg');
+  }
+  &-heart {
+    mask-image: url('/img/icons/icon-heart.svg');
+  }
+  &-basket {
+    mask-image: url('/img/icons/icon-shopping-bag.svg');
+  }
+  &-menu {
+    mask-image: url('/img/icons/icon-menu.svg');
+  }
+  &-fitodesign {
+    mask-image: url('/img/icons/icon-fitodesign.svg');
+  }
+  &-vertical {
+    mask-image: url('/img/icons/icon-vertical.svg');
+  }
+  &-care {
+    mask-image: url('/img/icons/icon-care.svg');
+  }
+  &-photogallery {
+    mask-image: url('/img/icons/icon-photogallery.svg');
+  }
+  &-facebook {
+    mask-image: url('/img/icons/icon-facebook.svg');
+  }
+  &-youtube {
+    mask-image: url('/img/icons/icon-youtube.svg');
+  }
+  &-instagram {
+    mask-image: url('/img/icons/icon-instagram.svg');
+  }
+}
