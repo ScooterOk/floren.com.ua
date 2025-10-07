@@ -1,0 +1,102 @@
+<!-- prettier-ignore -->
+{% set categories = [
+  {
+    "title": "Аксесуари для рослин",
+    "category": "accessories"
+  },
+  {
+    "title": "Екстер'єрні роботи",
+    "category": "exterior-works"
+  },
+  {
+    "title": "Створення газону і автополив",
+    "category": "lawn-autowater"
+  },
+  {
+    "title": "Послуги з догляду за ділянкою",
+    "category": "care-services"
+  },
+  {
+    "title": "Ландшафтний дизайн",
+    "category": "landscape-design"
+  }
+] %}
+
+<div class="header__catalog_list">
+  <div class="header__catalog_list-wrapper">
+    <ul class="category-list">
+      <li class="active" data-category="room-plants">
+        <a href="">
+          <img src="/img/icons/icon-plants-home.svg" alt="Кімнатні рослини" />
+          <span>Кімнатні рослини</span>
+        </a>
+      </li>
+      <li data-category="plant-pots">
+        <a href="">
+          <img src="/img/icons/icon-pot.svg" alt="Горщики для рослин" />
+          <span>Горщики для рослин</span>
+        </a>
+      </li>
+      <li data-category="accessories">
+        <a href="">
+          <img
+            src="/img/icons/icon-accessories.svg"
+            alt="Аксесуари для рослин"
+          />
+          <span>Аксесуари для рослин</span>
+        </a>
+      </li>
+      <li data-category="exterior-works">
+        <a href="">
+          <img
+            src="/img/icons/icon-exteriror-works.svg"
+            alt="Екстер'єрні роботи"
+          />
+          <span>Екстер'єрні роботи</span>
+        </a>
+      </li>
+      <li data-category="lawn-autowater">
+        <a href="">
+          <img
+            src="/img/icons/icon-lawn-autowater.svg"
+            alt="Створення газону і автополив"
+          />
+          <span>
+            Створення газону<br />
+            і автополив</span
+          >
+        </a>
+      </li>
+      <li data-category="care-services">
+        <a href="">
+          <img
+            src="/img/icons/icon-care-services.svg"
+            alt="Послуги з догляду за ділянкою"
+          />
+          <span>
+            Послуги з догляду<br />
+            за ділянкою</span
+          >
+        </a>
+      </li>
+      <li data-category="landscape-design">
+        <a href="">
+          <img
+            src="/img/icons/icon-landschaft-design.svg"
+            alt="Ландшафтний дизайн"
+          />
+          <span>Ландшафтний дизайн</span>
+        </a>
+      </li>
+    </ul>
+    <div class="category-content">
+      <!-- prettier-ignore -->
+      {% include 'partials/categories/room-plants.njk' %}
+      {% include 'partials/categories/plant-pots.njk' %}
+      {% for data in categories %}
+        {% set category = data %}
+        {% include 'partials/categories/lorem-ipsum.njk' %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

@@ -1,9 +1,14 @@
 <div class="header__catalog">
   <div class="header__catalog--main">
-    <button class="catalog-button" aria-label="Каталог товарів">
+    <button
+      id="catalog-button"
+      class="catalog-button"
+      aria-label="Каталог товарів"
+    >
       <svg class="icon icon-menu" />
       Каталог товарів
     </button>
+    {% include "partials/catalog-list.njk" %}
   </div>
   <ul class="header__catalog--secondary">
     <li class="secondary-item">

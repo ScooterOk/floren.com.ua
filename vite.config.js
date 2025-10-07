@@ -24,7 +24,6 @@ export default defineConfig(({ command, mode }) => {
       vituum(),
       nunjucks({
         root: './src',
-        // Передаємо глобальні дані в усі шаблони
         globals: {
           spritemap: spritemapPath,
         },

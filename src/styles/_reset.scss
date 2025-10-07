@@ -10,13 +10,17 @@
 }
 
 /* Remove default body margin, set font smoothing */
+
 html,
 body {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: clip;
 }
+
+/* Scroll lock utility */
+/* Removed duplicate scroll-lock implementation. Use 'scroll-blocked' from _scroll.scss instead. */
 
 /* Make images, videos, svg responsive by default */
 img,

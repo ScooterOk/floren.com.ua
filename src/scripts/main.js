@@ -6,8 +6,12 @@ import '@shoelace-style/shoelace/dist/components/menu-item/menu-item.js';
 import '@shoelace-style/shoelace/dist/components/divider/divider.js';
 
 import { initEvents } from './_events';
+import { initScroll } from './_scroll';
+import { initCatalog } from './_catalog';
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('DOM fully loaded and parsed');
   initEvents();
+  initScroll();
+  initCatalog();
 });
