@@ -1,5 +1,8 @@
 export const initCatalog = () => {
   const catalogButton = document.getElementById('catalog-button');
+  const catalogSecondary = document.querySelectorAll(
+    '.header__catalog--secondary .secondary-item'
+  );
   const catalogOverlay = document.getElementById('catalog-overlay');
   const mainCategoryNavItems = document.querySelectorAll(
     '.header__catalog_list .category-list > li'
@@ -35,6 +38,18 @@ export const initCatalog = () => {
     );
     onHoverCategory(firstCategoryItem);
     document.body.classList.toggle('catalog-opened');
+  });
+
+  catalogSecondary.forEach((item) => {
+    item.addEventListener('mouseenter', () => {
+      document.body.classList.remove('catalog-opened');
+      item.classList.add('active');
+      document.body.classList.add('secondary-hovered');
+    });
+    item.addEventListener('mouseleave', () => {
+      item.classList.remove('active');
+      document.body.classList.remove('secondary-hovered');
+    });
   });
 
   catalogOverlay.addEventListener('click', () => {
