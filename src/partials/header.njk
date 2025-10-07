@@ -4,8 +4,9 @@
     <nav class="header__nav" aria-label="Головне меню сайту">
       <!-- Location dropdown element start -->
       <sl-tooltip
+        id="location-tooltip"
         class="tooltip header__nav-location"
-        trigger="click"
+        trigger="manual"
         placement="bottom-start"
         style="--sl-tooltip-arrow-size: 0"
         distance="0"
@@ -16,6 +17,8 @@
             <button
               class="icon-button header__nav-location--close"
               aria-label="Закрити вікно"
+              data-event="click"
+              data-callback="toggleLocation"
             >
               <svg class="icon icon-close" />
             </button>
@@ -30,7 +33,11 @@
             <p>нд: 10:00 - 18:00</p>
           </div>
         </div>
-        <sl-button class="header__nav-location--button">
+        <sl-button
+          class="header__nav-location--button"
+          data-event="click"
+          data-callback="toggleLocation"
+        >
           <svg class="icon icon-location" />
           Магазини у Києві
         </sl-button>

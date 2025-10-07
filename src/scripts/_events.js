@@ -1,4 +1,12 @@
 const clickHandlers = {
+  toggleLocation: (event) => {
+    const element = event.currentTarget;
+    const tooltip = element.closest('#location-tooltip');
+    const wrapper = tooltip.querySelector('.header__main--location');
+
+    tooltip.open = !tooltip.open;
+    wrapper.classList.toggle('active');
+  },
   togglePhones: (event) => {
     const element = event.currentTarget;
     const tooltip = element.closest('#phones-tooltip');

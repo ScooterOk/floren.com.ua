@@ -8,10 +8,12 @@ import '@shoelace-style/shoelace/dist/components/divider/divider.js';
 import { initEvents } from './_events';
 import { initScroll } from './_scroll';
 import { initCatalog } from './_catalog';
+import { initClickOutsideHandlers } from './_clickOutside';
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('DOM fully loaded and parsed');
   initEvents();
   initScroll();
   initCatalog();
+  initClickOutsideHandlers();
 });
