@@ -1,1 +1,0 @@
-const n=()=>{const l=document.querySelector(".header");if(!l)return;let t=0,r=!1;const o=()=>{r||(r=!0,requestAnimationFrame(()=>{const e=window.pageYOffset||document.documentElement.scrollTop;e>t&&e>100?l.classList.add("header--hidden"):e<t&&l.classList.remove("header--hidden"),t=e<=0?0:e,r=!1}))};window.addEventListener("scroll",o,{passive:!0})};function s(){n()}export{s as i};
