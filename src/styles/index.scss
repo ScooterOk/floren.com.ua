@@ -8,3 +8,6 @@
 @use '@shoelace-style/shoelace/dist/themes/light.css'; // or dark.css
 
 @use './_layout';
+@use './swiper.scss';
+
+@use './pages/_homepage';
