@@ -13,6 +13,11 @@
   --color-green-20: #f1f4ea;
   --color-green-30: #edf2ee;
   --color-green-50: #67c409;
+  --color-green-hover: color-mix(
+    in srgb,
+    var(--color-green-50),
+    transparent 25%
+  );
   --color-violet: #9f2178;
   --color-violet-hover: color-mix(
     in srgb,

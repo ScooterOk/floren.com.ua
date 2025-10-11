@@ -29,6 +29,16 @@ const config = {
       prevEl: '.swiper-button--prev',
     },
   },
+  'works-swiper': {
+    modules: [Navigation],
+    spaceBetween: 24,
+    slidesPerView: 5,
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button--next',
+      prevEl: '.swiper-button--prev',
+    },
+  },
 };
 
 export const initSwipers = () => {

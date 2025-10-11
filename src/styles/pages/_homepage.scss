@@ -165,4 +165,30 @@
       margin-top: 48px;
     }
   }
+
+  &__last-works {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    &-leaf-1 {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 320px;
+      height: auto;
+      translate: 50% 0%;
+    }
+    &-leaf-2 {
+      position: absolute;
+      top: 0;
+      left: 300px;
+      translate: 0% -31%;
+      width: 160px;
+      height: auto;
+    }
+    &_more {
+      margin-top: 40px;
+      text-align: center;
+    }
+  }
 }

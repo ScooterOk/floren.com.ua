@@ -6,6 +6,22 @@ a.button {
   transition: background-color 0.2s ease;
   -webkit-mask-size: cover;
   mask-size: cover;
+  &--primary {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 48px;
+    font-size: getRem(18);
+    line-height: 1;
+    font-weight: 600;
+    background-color: var(--color-green-50);
+    color: var(--color-white);
+    padding-left: getRem(40);
+    padding-right: getRem(40);
+    height: 48px;
+    &:hover {
+      background-color: var(--color-green-hover);
+    }
+  }
   &--secondary {
     display: inline-flex;
     align-items: center;
@@ -17,13 +33,14 @@ a.button {
     background-color: var(--color-violet);
     color: var(--color-white);
     padding-left: getRem(40);
-    padding-right: getRem(72);
+    padding-right: getRem(40);
     height: 48px;
     &:hover {
       background-color: var(--color-violet-hover);
     }
   }
   &--arrow {
+    padding-right: getRem(72);
     background: var(--color-violet) url('/img/icons/icon-arrow-right.svg')
       no-repeat right 36px center / 20px 20px;
   }
