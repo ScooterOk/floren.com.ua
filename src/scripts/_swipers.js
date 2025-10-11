@@ -15,8 +15,8 @@ const config = {
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button--next',
-      prevEl: '.swiper-button--prev',
+      nextEl: '[data-swiper="hero-swiper"] .swiper-button--next',
+      prevEl: '[data-swiper="hero-swiper"] .swiper-button--prev',
     },
   },
   'services-swiper': {
@@ -25,8 +25,8 @@ const config = {
     slidesPerView: 3,
     loop: true,
     navigation: {
-      nextEl: '.swiper-button--next',
-      prevEl: '.swiper-button--prev',
+      nextEl: '.services-swiper .swiper-button--next',
+      prevEl: '.services-swiper .swiper-button--prev',
     },
   },
   'works-swiper': {
@@ -35,8 +35,8 @@ const config = {
     slidesPerView: 5,
     loop: true,
     navigation: {
-      nextEl: '.swiper-button--next',
-      prevEl: '.swiper-button--prev',
+      nextEl: '.works-swiper .swiper-button--next',
+      prevEl: '.works-swiper .swiper-button--prev',
     },
   },
 };

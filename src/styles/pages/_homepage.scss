@@ -191,4 +191,74 @@
       text-align: center;
     }
   }
+
+  &__numbers {
+    padding: 80px 0;
+    background: var(--color-gray-20) url('/img/bg-leaves-back.svg') no-repeat
+      center / cover;
+    .container {
+      h2 {
+        margin-bottom: getRem(24);
+      }
+    }
+    &_list {
+      background-color: var(--color-white);
+      border-radius: 1rem;
+      padding: getRem(16) getRem(48);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      .numbers__item {
+        padding: getRem(24);
+        min-height: 280px;
+        border-right: 1px solid var(--color-gray-30);
+        &:nth-child(1),
+        &:nth-child(2),
+        &:nth-child(3),
+        &:nth-child(4) {
+          border-bottom: 1px solid var(--color-gray-30);
+        }
+        &:nth-child(4n + 1) {
+          padding-left: 0;
+        }
+        &:nth-child(4n) {
+          border-right: none;
+          padding-right: 0;
+        }
+        &_icon {
+          width: 78px;
+          height: 78px;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: var(--color-green-20);
+          margin-bottom: 1rem;
+          img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+          }
+        }
+        &_text {
+          h3 {
+            margin-bottom: getRem(12);
+            font-size: getRem(20);
+            font-weight: 600;
+            a {
+              color: var(--color-green-100);
+            }
+          }
+          p {
+            font-weight: 300;
+            color: var(--color-gray-100);
+            line-height: 1.33;
+            b {
+              font-weight: 600;
+              color: var(--color-black);
+            }
+          }
+        }
+      }
+    }
+  }
 }
