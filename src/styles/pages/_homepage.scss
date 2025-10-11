@@ -207,6 +207,7 @@
       padding: getRem(16) getRem(48);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+      box-shadow: 0 8px 40px 0 rgba(0, 38, 3, 0.08);
       .numbers__item {
         padding: getRem(24);
         min-height: 280px;
@@ -260,5 +261,9 @@
         }
       }
     }
+  }
+
+  &__clients {
+    margin-top: 80px;
   }
 }
