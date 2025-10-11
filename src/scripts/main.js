@@ -15,7 +15,7 @@ import { initEvents } from './_events';
 import { initScroll } from './_scroll';
 import { initCatalog } from './_catalog';
 import { initClickOutsideHandlers } from './_clickOutside';
-import { Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('DOM fully loaded and parsed');
@@ -25,15 +25,20 @@ document.addEventListener('DOMContentLoaded', () => {
   initClickOutsideHandlers();
 
   const swiper = new Swiper('.swiper', {
-    modules: [Pagination, Navigation],
+    modules: [Pagination, Navigation, Autoplay],
     spaceBetween: 24,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      pauseOnMouseEnter: true,
+    },
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.swiper-button--next',
+      prevEl: '.swiper-button--prev',
     },
   });
 });
