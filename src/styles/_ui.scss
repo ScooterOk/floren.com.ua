@@ -41,8 +41,10 @@ a.button {
   }
   &--arrow {
     padding-right: getRem(72);
-    background: var(--color-violet) url('/img/icons/icon-arrow-right.svg')
-      no-repeat right 36px center / 20px 20px;
+    background-image: url('/img/icons/icon-arrow-right.svg');
+    background-repeat: no-repeat;
+    background-position: right 36px center;
+    background-size: 20px 20px;
   }
 }
 

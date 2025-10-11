@@ -49,6 +49,16 @@ const config = {
       prevEl: '.clients-swiper .swiper-button--prev',
     },
   },
+  'popular-swiper': {
+    modules: [Navigation],
+    spaceBetween: 0,
+    slidesPerView: 5,
+    loop: true,
+    navigation: {
+      nextEl: '.popular-swiper .swiper-button--next',
+      prevEl: '.popular-swiper .swiper-button--prev',
+    },
+  },
 };
 
 export const initSwipers = () => {
