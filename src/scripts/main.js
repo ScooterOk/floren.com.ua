@@ -14,6 +14,7 @@ import 'swiper/css/navigation';
 import { initEvents } from './_events';
 import { initScroll } from './_scroll';
 import { initCatalog } from './_catalog';
+import { initSwipers } from './_swipers';
 import { initClickOutsideHandlers } from './_clickOutside';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
@@ -23,22 +24,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initScroll();
   initCatalog();
   initClickOutsideHandlers();
-
-  const swiper = new Swiper('.swiper', {
-    modules: [Pagination, Navigation, Autoplay],
-    spaceBetween: 24,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      pauseOnMouseEnter: true,
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-    navigation: {
-      nextEl: '.swiper-button--next',
-      prevEl: '.swiper-button--prev',
-    },
-  });
+  initSwipers();
 });

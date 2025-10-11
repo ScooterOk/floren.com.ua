@@ -1,6 +1,7 @@
 @use '../functions' as *;
 
 .homepage {
+  // Hero Swiper
   &__hero {
     &-swiper.swiper {
       padding-bottom: getRem(36);
@@ -121,6 +122,47 @@
         url('/img/homepage/hero-swiper-slide-3-2.png') no-repeat right
           bottom/auto 100%,
         #f7f7e7;
+    }
+  }
+
+  // Interior Landscaping
+  &__landscaping {
+    margin-top: 60px;
+    position: relative;
+    &__leaf {
+      position: absolute;
+      top: -44px;
+      left: 92%;
+      width: 13%;
+      height: auto;
+      object-fit: contain;
+      z-index: -1;
+    }
+    &__content {
+      display: flex;
+      gap: getRem(80);
+      background: url('/img/leaf.png') no-repeat left 3.75rem bottom/ 172px auto;
+      & > h2 {
+        font-size: getRem(40);
+        font-weight: 600;
+        line-height: 1.2;
+        width: 260px;
+        flex-shrink: 0;
+      }
+      &-text {
+        font-size: getRem(18);
+        line-height: 1.5;
+        font-weight: 300;
+        p {
+          margin-bottom: 1rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+    }
+    .services-swiper {
+      margin-top: 48px;
     }
   }
 }
