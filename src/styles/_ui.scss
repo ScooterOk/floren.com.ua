@@ -202,3 +202,7 @@ a.not-underline {
     background-color: var(--color-green-50);
   }
 }
+
+sl-rating {
+  --symbol-color-active: var(--color-yellow);
+}

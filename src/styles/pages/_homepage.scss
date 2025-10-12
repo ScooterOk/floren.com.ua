@@ -319,4 +319,69 @@
       }
     }
   }
+
+  &__rating {
+    margin-top: 40px;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: var(--color-gray-20) url('/img/bg-leaves-back.svg') no-repeat
+      center / cover;
+    &_grid {
+      background-color: var(--color-white);
+      box-shadow: 0 8px 40px 0 rgba(0, 38, 3, 0.08);
+      border-radius: 1rem;
+      padding: getRem(16) getRem(48);
+      display: flex;
+      gap: getRem(24);
+      h2 {
+        width: 180px;
+        margin-top: getRem(20);
+      }
+    }
+    &_title {
+      width: 280px;
+      flex-shrink: 0;
+      .google-logo {
+        margin-top: 32px;
+        width: 170px;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    &_list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      .rating__item {
+        padding: getRem(24);
+        border-right: 1px solid var(--color-gray-30);
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          border-right: none;
+          padding-right: 0;
+        }
+        &_text {
+          font-size: getRem(14);
+          font-weight: 300;
+          margin-bottom: 1rem;
+          p {
+            margin-bottom: 1rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+        &_name {
+          font-size: getRem(16);
+          font-weight: 500;
+          margin-bottom: getRem(4);
+        }
+        sl-rating {
+          --symbol-size: 0.9rem;
+        }
+      }
+    }
+  }
 }
