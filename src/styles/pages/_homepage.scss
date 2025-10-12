@@ -270,4 +270,53 @@
   &__popular {
     margin-top: 80px;
   }
+
+  &__advices {
+    margin-top: 80px;
+    padding: 80px 0;
+    background: var(--color-gray-20) url('/img/bg-leaves-back.svg') no-repeat
+      center / cover;
+  }
+
+  &__information {
+    padding: 40px 0;
+    &_list {
+      .information__item {
+        display: flex;
+        gap: getRem(24);
+        padding: 40px 0;
+        border-bottom: 1px solid var(--color-gray-30);
+        h3 {
+          width: 26.5%;
+          flex-shrink: 0;
+          font-size: getRem(24);
+          font-weight: 600;
+          line-height: 1.33;
+        }
+        section {
+          font-size: getRem(14);
+          .btn {
+            color: var(--color-green-100);
+          }
+          p {
+            margin-bottom: 2rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+          ul {
+            list-style: disc;
+            padding-left: getRem(20);
+            margin-bottom: 2rem;
+            li {
+              margin-bottom: 0.1rem;
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

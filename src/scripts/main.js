@@ -17,6 +17,7 @@ import { initScroll } from './_scroll';
 import { initCatalog } from './_catalog';
 import { initSwipers } from './_swipers';
 import { initClickOutsideHandlers } from './_clickOutside';
+import { initExpandableText } from './_expandableText';
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -26,4 +27,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initCatalog();
   initClickOutsideHandlers();
   initSwipers();
+  initExpandableText();
 });
