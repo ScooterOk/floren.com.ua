@@ -326,3 +326,66 @@
     }
   }
 }
+
+.projects-swiper {
+  position: relative;
+  h2 {
+    margin-bottom: 24px;
+  }
+  .swiper {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    .projects-slide {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      padding: getRem(48);
+      &__info {
+        &_title {
+          font-size: getRem(40);
+          font-weight: 600;
+          line-height: 1.2;
+          margin-bottom: 32px;
+        }
+        &_text {
+          line-height: 1.5;
+          font-weight: 300;
+          margin-bottom: 32px;
+          p {
+            margin-bottom: 1rem;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .swiper-button {
+    width: 40px;
+    height: 40px;
+    // background-color: var(--color-white);
+    border: 1px solid var(--color-gray-40);
+    border-radius: 0.5rem;
+    position: absolute;
+    top: -4px;
+    transition: background-color 0.3s ease;
+    z-index: 1;
+    &--prev {
+      right: 52px;
+      margin: auto 0;
+    }
+    &--next {
+      right: 0;
+      margin: auto 0;
+    }
+    &:hover {
+      background-color: var(--color-button-hover);
+    }
+    &.swiper-button-lock {
+      display: inline-flex;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+  }
+}

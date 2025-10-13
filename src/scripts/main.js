@@ -15,10 +15,10 @@ import 'swiper/css/navigation';
 import { initEvents } from './_events';
 import { initScroll } from './_scroll';
 import { initCatalog } from './_catalog';
-import { initSwipers } from './_swipers';
+import { initHoverPhotoViewers, initSwipers } from './_swipers';
 import { initClickOutsideHandlers } from './_clickOutside';
 import { initExpandableText } from './_expandableText';
-import { Autoplay, Navigation, Pagination } from 'swiper/modules';
+import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
   // console.log('DOM fully loaded and parsed');
@@ -28,4 +28,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initClickOutsideHandlers();
   initSwipers();
   initExpandableText();
+  initHoverPhotoViewers();
 });

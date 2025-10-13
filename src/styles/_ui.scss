@@ -206,3 +206,185 @@ a.not-underline {
 sl-rating {
   --symbol-color-active: var(--color-yellow);
 }
+
+// Photo Viewer Modal
+.photo-viewer {
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, visibility 0.2s ease, z-index 0.2s ease;
+  &.active {
+    visibility: visible;
+    z-index: 1000;
+    opacity: 1;
+    pointer-events: all;
+  }
+  &__overlay {
+    background-color: var(--color-black);
+    opacity: 0.75;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  &__wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: getRem(56);
+    overflow: hidden;
+    padding-top: 160px;
+    padding-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+  &__main-swiper {
+    flex-grow: 1;
+    width: 100%;
+    .swiper-slide {
+      display: flex;
+      justify-content: center;
+      & > {
+        img {
+          max-width: 70%;
+          height: 100%;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+  &__thumbs-swiper {
+    &.swiper {
+      flex-shrink: 0;
+      max-width: 100%;
+      padding: 16px;
+      .swiper-slide {
+        width: 64px;
+        height: 64px;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        cursor: pointer;
+        transition: box-shadow 0.25s ease;
+
+        border: 2px solid transparent;
+        &.swiper-slide-thumb-active {
+          box-shadow: 0 0 0 2px var(--color-green-50);
+        }
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+  &__pagination {
+    &.swiper-pagination-fraction,
+    &.swiper-pagination-custom,
+    &.swiper-horizontal > .swiper-pagination-bullets,
+    &.swiper-pagination-bullets.swiper-pagination-horizontal {
+      position: absolute;
+      color: var(--color-white);
+      left: 24px;
+      top: 24px;
+      bottom: auto;
+    }
+  }
+  &__close-button {
+    width: 44px;
+    height: 44px;
+    @include flex-center;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    color: var(--color-white);
+    transition: background-color 0.2s ease;
+    .icon {
+      width: 24px;
+      height: 24px;
+    }
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--color-gray-40),
+        transparent 75%
+      );
+    }
+  }
+  &__button-next,
+  &__button-prev {
+    @include flex-center;
+    width: 40px;
+    height: 40px;
+    border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.3s ease;
+    z-index: 10;
+    cursor: pointer;
+    .icon {
+      width: 36px;
+      height: 36px;
+      color: var(--color-white);
+    }
+    &:hover {
+      background-color: color-mix(
+        in srgb,
+        var(--color-gray-40),
+        transparent 75%
+      );
+    }
+  }
+  &__button-next {
+    right: 16px;
+  }
+  &__button-prev {
+    left: 16px;
+  }
+}
+
+// Hover Photo Viewer
+.hover-photo-viewer {
+  &__main {
+    width: 100%;
+    aspect-ratio: 1.32;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    cursor: pointer;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__thumbs {
+    display: flex;
+    gap: 1rem;
+    height: 64px;
+    padding: 0.5rem;
+    margin: -0.5rem;
+    margin-top: 20px;
+    max-width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    & > li {
+      aspect-ratio: 1;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      border: 2px solid transparent;
+      transition: box-shadow 0.2s ease;
+      &.active {
+        box-shadow: 0 0 2px 2px var(--color-green-50);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

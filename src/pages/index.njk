@@ -7,11 +7,9 @@
 
 <main class="homepage">
   <div class="container">{% include "partials/homepage/hero-swiper.njk" %}</div>
-  {% include "partials/homepage/interior-landscaping.njk" %}
-  <h1 style="text-align: center; color: orange; margin: 50px 0">
-    TODO: Приклади проектів по озелененню
-  </h1>
   <!-- prettier-ignore -->
+  {% include "partials/homepage/interior-landscaping.njk" %}
+  {% include "partials/homepage/landscaping-projects.njk" %}  
   {% include "partials/homepage/last-works.njk" %}
   {% include "partials/homepage/in-numbers.njk" %}
   {% include "partials/homepage/clients-swiper.njk" %}
@@ -21,4 +19,6 @@
   {% include "partials/homepage/rating.njk" %}
 </main>
 
+<!-- prettier-ignore -->
+{% include "components/photo-viewer-modal.njk" %}
 {% endblock %}
