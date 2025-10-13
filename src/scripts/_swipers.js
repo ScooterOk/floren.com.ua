@@ -1,3 +1,9 @@
+/**
+ * @file This file initializes all Swiper instances on the site.
+ * It includes a generic initializer for swipers found in the DOM via `data-swiper` attributes,
+ * and specific logic for a photo viewer modal with main and thumbnail sliders.
+ */
+
 import Swiper from 'swiper';
 import {
   Autoplay,
@@ -7,6 +13,11 @@ import {
   Thumbs,
 } from 'swiper/modules';
 
+/**
+ * Configuration object for different Swiper instances.
+ * The key corresponds to the value of the `data-swiper` attribute in the HTML.
+ * @type {Object.<string, SwiperOptions>}
+ */
 const config = {
   'hero-swiper': {
     modules: [Pagination, Navigation, Autoplay],
@@ -77,6 +88,10 @@ const config = {
   },
 };
 
+/**
+ * Initializes all Swiper instances based on the `data-swiper` attribute.
+ * Also initializes the photo viewer modal swipers if the element exists.
+ */
 export const initSwipers = () => {
   const targets = document.querySelectorAll('[data-swiper]');
   window.swipers = {};
@@ -93,7 +108,7 @@ export const initSwipers = () => {
 
   // Photo viewer initialization
   if (document.getElementById('main-photo-viewer')) {
-    // Initialize photo viewer swipers
+    // Initialize thumbs swiper for the photo viewer
     window.swipers.thumbsSwiper = new Swiper(
       '.swiper.photo-viewer__thumbs-swiper',
       {
@@ -105,7 +120,7 @@ export const initSwipers = () => {
         watchSlidesProgress: true,
       }
     );
-    // Initialize main swiper and link with thumbs
+    // Initialize main swiper for the photo viewer and link it with the thumbs swiper
     window.swipers.mainSwiper = new Swiper(
       '.swiper.photo-viewer__main-swiper',
       {
@@ -130,6 +145,7 @@ export const initSwipers = () => {
       }
     );
 
+    // Add event listeners to close the photo viewer modal
     document
       .querySelectorAll('.photo-viewer__overlay, .photo-viewer__close-button')
       ?.forEach((el) => {
@@ -140,12 +156,18 @@ export const initSwipers = () => {
   }
 };
 
+/**
+ * Initializes hover-based photo viewers.
+ * These components show a main image that changes on thumbnail hover
+ * and open the main photo viewer modal on click.
+ */
 export const initHoverPhotoViewers = () => {
   document.querySelectorAll('[data-photo-viewer]').forEach((viewer) => {
     const main = viewer.querySelector('.hover-photo-viewer__main');
     const mainimage = viewer.querySelector('.hover-photo-viewer__main > img');
     const thumbs = viewer.querySelectorAll('.hover-photo-viewer__thumbs li');
 
+    // Handle thumbnail hover to change the main image
     thumbs.forEach((thumb) => {
       thumb.addEventListener('mouseenter', (e) => {
         e.target
@@ -160,6 +182,7 @@ export const initHoverPhotoViewers = () => {
       });
     });
 
+    // Handle click on the main image to open the full-screen photo viewer
     main.addEventListener('click', (e) => {
       const images = Array.from(thumbs).map(
         (thumb) => thumb.querySelector('img').src
@@ -172,6 +195,11 @@ export const initHoverPhotoViewers = () => {
   });
 };
 
+/**
+ * Activates and populates the main photo viewer modal.
+ * @param {string[]} images - An array of image source URLs to display in the viewer.
+ * @param {number} [index=0] - The initial slide index to show.
+ */
 function activatePhotoViewer(images, index = 0) {
   const photoViewer = document.getElementById('main-photo-viewer');
 
@@ -181,16 +209,20 @@ function activatePhotoViewer(images, index = 0) {
 
   if (!mainSwiper || !thumbsSwiper) return;
 
+  // Clear previous slides
   mainSwiper.removeAllSlides();
   thumbsSwiper.removeAllSlides();
 
+  // Create new slides from the image array
   const slides = images.map(
     (src) => `<div class="swiper-slide"><img src="${src}" /></div>`
   );
 
+  // Add new slides to both swipers
   mainSwiper.appendSlide(slides);
   thumbsSwiper.appendSlide(slides);
 
+  // Go to the specified slide and show the viewer
   mainSwiper.slideToLoop(index);
 
   photoViewer.classList.add('active');
