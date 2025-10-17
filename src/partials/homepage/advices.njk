@@ -1,5 +1,74 @@
 <div class="homepage__advices">
-  <h1 style="text-align: center; color: orange; margin: 200px 0">
-    TODO: Консультація щодо озеленення приміщення
-  </h1>
+  <div class="container">
+    <div class="homepage__advices_wrapper">
+      <div class="homepage__advices_content">
+        <h2>Консультація щодо озеленення приміщення</h2>
+        <div class="homepage__advices_content--description">
+          Озеленення інтер'єру у Києві довірте професіоналам. Залишіть заявку на
+          безкоштовний виїзд фітодизайнера або консультацію щодо підбору рослин.
+        </div>
+        <form>
+          <div class="homepage__advices_content--form">
+            <sl-input placeholder="Ваше імʼя"></sl-input>
+            <sl-input placeholder="Ваш телефон"></sl-input>
+            <button class="button button--primary">Надіслати</button>
+          </div>
+        </form>
+        <div class="homepage__advices_content--call">
+          Також звертайтесь за телефонами:
+        </div>
+        <div class="homepage__advices_content--phones">
+          <div class="phones--hidden">
+            (044) 344..<button
+              data-event="click"
+              data-callback="toggleAdvicesPhones"
+            >
+              показати номери
+            </button>
+          </div>
+          <div class="phones--visible">
+            <p>(044) 344-28-95</p>
+            <p>(050) 660-52-75</p>
+          </div>
+          <div class="phones--hours">По буднях з 9:00 до 19:30</div>
+        </div>
+      </div>
+      <div class="homepage__advices_photos">
+        <div class="homepage__advices_photos--top">
+          <div class="image">
+            <img
+              src="public/img/homepage/consultation-1.png"
+              alt="Консультація 1"
+            />
+          </div>
+          <div class="image">
+            <img
+              src="public/img/homepage/consultation-2.png"
+              alt="Консультація 2"
+            />
+          </div>
+        </div>
+        <div class="homepage__advices_photos--bottom">
+          <div class="image">
+            <img
+              src="public/img/homepage/consultation-3.png"
+              alt="Консультація 3"
+            />
+          </div>
+          <div class="image">
+            <img
+              src="public/img/homepage/consultation-4.png"
+              alt="Консультація 4"
+            />
+          </div>
+          <div class="image">
+            <img
+              src="public/img/homepage/consultation-5.png"
+              alt="Консультація 5"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

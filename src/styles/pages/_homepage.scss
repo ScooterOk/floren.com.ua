@@ -86,8 +86,9 @@
 
     &-slide-2,
     &-slide-3 {
-      background: url('/img/homepage/hero-swiper-slide-2-1.png') no-repeat left
-          top/23% auto,
+      background:
+        url('/img/homepage/hero-swiper-slide-2-1.png') no-repeat left top/23%
+          auto,
         url('/img/homepage/hero-swiper-slide-2-2.png') no-repeat right
           bottom/25% auto,
         #eee5df;
@@ -117,8 +118,9 @@
     }
     &-slide-3 {
       padding: 48px 20% 48px 26%;
-      background: url('/img/homepage/hero-swiper-slide-3-1.png') no-repeat left
-          top/auto 100%,
+      background:
+        url('/img/homepage/hero-swiper-slide-3-1.png') no-repeat left top/auto
+          100%,
         url('/img/homepage/hero-swiper-slide-3-2.png') no-repeat right
           bottom/auto 100%,
         #f7f7e7;
@@ -276,6 +278,126 @@
     padding: 80px 0;
     background: var(--color-gray-20) url('/img/bg-leaves-back.svg') no-repeat
       center / cover;
+    &_wrapper {
+      background-color: var(--color-white);
+      border-radius: 1rem;
+      padding: getRem(48);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: getRem(48);
+    }
+    &_content {
+      h2 {
+        font-size: getRem(40);
+        font-weight: 600;
+        line-height: 1.2;
+        margin-bottom: getRem(32);
+      }
+      &--description {
+        font-size: getRem(18);
+        line-height: 1.5;
+        font-weight: 300;
+        margin-bottom: getRem(32);
+        p {
+          margin-bottom: 1rem;
+          &:last-child {
+            margin-bottom: 0;
+          }
+        }
+      }
+      &--form {
+        display: flex;
+        flex-direction: column;
+        gap: getRem(16);
+        width: 50%;
+        align-items: flex-start;
+        margin-bottom: getRem(32);
+        sl-input {
+          width: 100%;
+          display: block;
+        }
+      }
+      &--call {
+        font-weight: 300;
+        margin-bottom: getRem(32);
+      }
+      &--phones {
+        padding-left: getRem(48);
+        background: url('/img/icons/icon-phone.svg') no-repeat left top 6px /
+          32px 32px;
+        &.active {
+          .phones--hidden {
+            display: none;
+          }
+          .phones--visible {
+            display: block;
+          }
+        }
+        .phones--hidden {
+          font-weight: 500;
+          button {
+            font-weight: 400;
+            color: var(--color-green-100);
+          }
+        }
+        .phones--visible {
+          display: none;
+        }
+        .phones--hours {
+          font-size: getRem(12);
+          font-weight: 300;
+          color: var(--color-gray-100);
+          margin-top: 2px;
+        }
+      }
+    }
+    &_photos {
+      max-height: 100%;
+      display: grid;
+      grid-template-rows: 37% auto;
+      gap: getRem(16);
+      img {
+        border-radius: 8px;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+      &--top {
+        display: grid;
+        grid-template-columns: 1fr 0.7fr;
+        gap: getRem(16);
+        .image {
+          position: relative;
+        }
+      }
+      &--bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(2, auto);
+        gap: getRem(16);
+        .image {
+          position: relative;
+          &:nth-child(1) {
+            grid-column: 1 / 2;
+            grid-row: 1 / 2;
+          }
+          &:nth-child(2) {
+            grid-column: 1 / 2;
+            grid-row: 2 / 3;
+          }
+          &:nth-child(3) {
+            grid-column: 2 / 3;
+            grid-row: 1 / 3;
+          }
+        }
+      }
+      img {
+        border-radius: 8px;
+      }
+    }
   }
 
   &__information {

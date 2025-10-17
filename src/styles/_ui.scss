@@ -53,7 +53,9 @@ a.underline {
   text-decoration-color: var(--color-gray-40);
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25rem;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
   &:hover {
     text-decoration-color: transparent;
   }
@@ -64,7 +66,9 @@ a.not-underline {
   text-decoration-color: transparent;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.25rem;
-  transition: color 0.2s ease, text-decoration-color 0.2s ease;
+  transition:
+    color 0.2s ease,
+    text-decoration-color 0.2s ease;
   &:hover {
     text-decoration-color: var(--color-gray-40);
   }
@@ -215,7 +219,10 @@ sl-rating {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.2s ease, visibility 0.2s ease, z-index 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    visibility 0.2s ease,
+    z-index 0.2s ease;
   &.active {
     visibility: visible;
     z-index: 1000;
@@ -385,6 +392,25 @@ sl-rating {
         height: 100%;
         object-fit: cover;
       }
+    }
+  }
+}
+
+sl-input {
+  --sl-input-border-radius-medium: 0.5rem;
+  --sl-input-border-color: var(--color-gray-40);
+  --sl-input-border-color-hover: var(--color-green-50);
+  --sl-input-border-color-focus: var(--color-green-50);
+  --sl-focus-ring-width: 0px;
+
+  // Стилізація для focused стану
+  &::part(base) {
+    // border-color: var(--sl-color-danger-600);
+  }
+  &::part(input) {
+    font-family: 'Geologica', sans-serif;
+    &::placeholder {
+      font-size: getRem(14);
     }
   }
 }

@@ -18,6 +18,11 @@ const clickHandlers = {
   toggleFooterPhones: (event) => {
     event.currentTarget.closest('.contacts-phone').classList.toggle('active');
   },
+  toggleAdvicesPhones: (event) => {
+    event.currentTarget
+      .closest('.homepage__advices_content--phones')
+      .classList.toggle('active');
+  },
 };
 
 export const initEvents = () => {
