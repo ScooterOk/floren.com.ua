@@ -11,3 +11,14 @@
 @use './swiper.scss';
 
 @use './pages/_homepage';
+@use './pages/_catalog';
+
+.last-works {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  &_more {
+    margin-top: 40px;
+    text-align: center;
+  }
+}

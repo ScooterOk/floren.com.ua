@@ -86,6 +86,16 @@ const config = {
       prevEl: '.projects-swiper .swiper-button--prev',
     },
   },
+  'delivery-swiper': {
+    modules: [Navigation],
+    spaceBetween: 24,
+    slidesPerView: 1,
+    loop: true,
+    navigation: {
+      nextEl: '[data-swiper="delivery-swiper"] .swiper-button--next',
+      prevEl: '[data-swiper="delivery-swiper"] .swiper-button--prev',
+    },
+  },
 };
 
 /**

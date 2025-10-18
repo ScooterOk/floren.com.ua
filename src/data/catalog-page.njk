@@ -1,0 +1,213 @@
+{% set catalog = [
+  {
+    title: "Кімнатні рослини",
+    categories: [
+      { id: 'orchids', name: 'Орхідеї' },
+      { id: 'decorative-leafy', name: 'Декоративно листяні рослини' },
+      { id: 'palms', name: 'Пальми' },
+      { id: 'ficus', name: 'Фікус' },
+      { id: 'dracaena', name: 'Драцена' },
+      { id: 'cacti', name: 'Кактуси' },
+      { id: 'succulents', name: 'Сукуленти' },
+      { id: 'philodendron', name: 'Філодендрон' },
+      { id: 'epipremnum', name: 'Епіпремнум' },
+      { id: 'croton', name: 'Кротон' },
+      { id: 'sansevieria', name: 'Сансевієрія' },
+      { id: 'alocasia', name: 'Алоказія' },
+      { id: 'aglaonema', name: 'Аглаонема' },
+      { id: 'yucca', name: 'Юкка' },
+      { id: 'citrus', name: 'Цитрусові рослини' },
+      { id: 'seasonal', name: 'Сезонні рослини' },
+      { id: 'flowering', name: 'Квіткові рослини' },
+      { id: 'fern', name: 'Папороть' },
+      { id: 'calathea', name: 'Калатея' },
+      { id: 'dieffenbachia', name: 'Дифенбахія' },
+      { id: 'coniferous', name: 'Хвойні' }
+    ]
+  },
+  {
+    title: "Горщики та кашпо",
+    categories: [
+      { id: 'lechuza', name: 'Горщики Lechuza (Лечуза)' },
+      { id: 'ceramic', name: 'Горщики керамічні' },
+      { id: 'lamela', name: 'Горщики Lamela' },
+      { id: 'wooden', name: 'Горщики з дерева' },
+      { id: 'metal', name: 'Металеві кашпо' },
+      { id: 'concrete', name: 'Горщики з бетону' }
+    ]
+  },
+  {
+    title: "Готові рішення",
+    categories: [
+      { id: 'click-and-grow', name: 'Розумний сад Click & Grow' }
+    ]
+  },
+  {
+    title: "Штучні квіти",
+    categories: [      
+      { id: 'art-palms', name: 'Штучні пальми' },
+      { id: 'art-trees', name: 'Штучні дерева' }
+    ]
+  },
+  {
+    title: "Аксесуари для рослин",
+    categories: [            
+      { id: 'fertilizers', name: 'Добрива для рослин' },
+      { id: 'soils-substrates', name: 'Ґрунти та субстрати' },
+      { id: 'plant-care-tools', name: 'Інвентар для догляду за рослинами' }
+    ]
+  }
+] %}
+
+{% set productsList = [
+  {
+    id: 'orchids',
+    name: 'Орхідея Фаленопсис Муса Пінк',
+    image: '/img/homepage/product-1.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'decorative-leafy',
+    name: 'Монстера Делісіоза',
+    image: '/img/homepage/product-2.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'palms',
+    name: 'Пальма Хамеропс',
+    image: '/img/homepage/product-3.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'ficus',
+    name: 'Фікус Бенджаміна',
+    image: '/img/homepage/product-4.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'dracaena',
+    name: 'Драцена Маргіната',
+    image: '/img/homepage/product-5.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'orchids',
+    name: 'Орхідея Каттлея Ауреа',
+    image: '/img/homepage/product-1.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'decorative-leafy',
+    name: 'Калатея Орнатіфолія',
+    image: '/img/homepage/product-2.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'palms',
+    name: 'Рафія Вікторія',
+    image: '/img/homepage/product-3.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'ficus',
+    name: 'Фікус Лірата (Фікове дерево)',
+    image: '/img/homepage/product-4.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'dracaena',
+    name: 'Драцена Компакта',
+    image: '/img/homepage/product-5.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'orchids',
+    name: 'Орхідея Ванда Блю',
+    image: '/img/homepage/product-1.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'decorative-leafy',
+    name: 'Сансевієрія Тріхома',
+    image: '/img/homepage/product-2.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'palms',
+    name: 'Ховея Форстеріана',
+    image: '/img/homepage/product-3.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'ficus',
+    name: 'Фікус Еластика (Робуста)',
+    image: '/img/homepage/product-4.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'dracaena',
+    name: 'Драцена Фрагранс (Massangeana)',
+    image: '/img/homepage/product-5.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'orchids',
+    name: 'Орхідея Онцидіум Золотий',
+    image: '/img/homepage/product-1.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'decorative-leafy',
+    name: 'Філодендрон Сканденс',
+    image: '/img/homepage/product-2.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'palms',
+    name: 'Арека (Dypsis lutescens)',
+    image: '/img/homepage/product-3.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'ficus',
+    name: 'Фікус Мікрокарпа',
+    image: '/img/homepage/product-4.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'dracaena',
+    name: 'Драцена Сандера (Song of India)',
+    image: '/img/homepage/product-5.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'orchids',
+    name: 'Орхідея Зигопеталум Рожевий',
+    image: '/img/homepage/product-1.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'decorative-leafy',
+    name: 'Аглаонема Сільвер Квін',
+    image: '/img/homepage/product-2.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'palms',
+    name: 'Пальма Кентія',
+    image: '/img/homepage/product-3.png'
+    ,price: '104,99 ₴ – 114,99 ₴'
+  },
+  {
+    id: 'ficus',
+    name: 'Фікус Бенджаміна Ретуса',
+    image: '/img/homepage/product-4.png'
+    ,price: 'Під замовлення'
+  },
+  {
+    id: 'dracaena',
+    name: 'Драцена Маргіната Тортоза',
+    image: '/img/homepage/product-5.png',
+    price: '104,99 ₴ – 114,99 ₴'
+  }
+] %}
