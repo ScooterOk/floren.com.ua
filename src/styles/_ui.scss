@@ -422,6 +422,7 @@ sl-input {
   }
 }
 
+// Breadcrumb
 sl-breadcrumb {
   margin-bottom: getRem(24);
   display: block;
@@ -465,6 +466,59 @@ sl-breadcrumb {
     }
     &:hover {
       background-color: var(--color-button-hover);
+    }
+  }
+}
+
+sl-select {
+  --sl-input-height-medium: 2.25rem;
+  --sl-input-font-size-medium: 0.875rem;
+  --sl-input-border-radius-medium: 0.375rem;
+  --sl-input-spacing-medium: 0.75rem 0.5rem;
+  --sl-input-color: var(--color-black);
+  --sl-input-border-color: var(--color-gray-40);
+  &::part(display-input) {
+    font-family: 'Geologica', sans-serif;
+    &::placeholder {
+      color: var(--color-black);
+    }
+  }
+  &::part(listbox) {
+    border-radius: 0.5rem;
+    box-shadow: 0px 8px 20px rgba(#002603, 0.16);
+    border: none;
+    background-color: var(--color-white);
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  &::part(combobox) {
+    box-shadow: none;
+    border-color: var(--color-gray-40);
+  }
+  sl-option {
+    &:hover {
+      &::part(base) {
+        background-color: var(--color-gray-10);
+      }
+    }
+    &::part(base) {
+      --sl-color-primary-600: var(--color-gray-10);
+      color: var(--color-black);
+      font-size: 0.875rem;
+      font-family: 'Geologica', sans-serif;
+      position: relative;
+      min-height: 40px;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      &::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0.5rem;
+        right: 0.5rem;
+        height: 1px;
+        background-color: var(--color-gray-30);
+      }
     }
   }
 }
