@@ -1,0 +1,285 @@
+{% extends "layouts/base.njk" %}
+
+{% from "data/catalog-page.njk" import catalog %}
+{% from "data/catalog-page.njk" import productsList %}
+
+{% set title = "Vituum + Nunjucks" %}
+
+{% block content %}
+
+  <main class="catalog-page">
+    <div class="container">
+      <div class="catalog-page__grid">
+        <aside class="catalog-page__nav">
+          {% for item in catalog %}
+            <section class="catalog-page__nav_section">
+              <h3>{{ item.title }}</h3>
+              <ul>
+                {% for category in item.categories %}
+                  <li>
+                    <a class="underline" href="/catalog/{{ category.id }}">{{ category.name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endfor %}
+        </section>
+      </aside>
+      <div class="catalog-page__content">
+        <sl-breadcrumb>
+          <sl-breadcrumb-item href="#">Озеленення і Фітодизайн</sl-breadcrumb-item>
+          <sl-breadcrumb-item href="#">Кімнатні рослини</sl-breadcrumb-item>
+          <sl-breadcrumb-item href="#">Орхідеї</sl-breadcrumb-item>
+        </sl-breadcrumb>
+
+        <div class="catalog-page__content_filters">
+          <sl-select placeholder="Розмір">
+            <sl-option value="option-1">Королівські (9)</sl-option>
+            <sl-option value="option-2">Стандарт (53)</sl-option>
+            <sl-option value="option-3">Міді (26)</sl-option>
+            <sl-option value="option-4">Міні (24)</sl-option>
+          </sl-select>
+          <sl-select placeholder="Візерунок">
+            <sl-option value="option-1">Крапочки (30)</sl-option>
+            <sl-option value="option-2">Полоси (17)</sl-option>
+            <sl-option value="option-3">Без візерунку (61)</sl-option>
+          </sl-select>
+          <sl-select placeholder="Колір" multiple clearable>
+            <sl-option value="option-1">Темно-рожевий (54)</sl-option>
+            <sl-option value="option-2">Світло-рожевий (26)</sl-option>
+            <sl-option value="option-3">Жовтий (25)</sl-option>
+            <sl-option value="option-4">Білий (37)</sl-option>
+            <sl-option value="option-5">Персиковий (11)</sl-option>
+            <sl-option value="option-6">Помаранчевий (3)</sl-option>
+            <sl-option value="option-7">Коричневий (3)</sl-option>
+          </sl-select>
+        </div>
+
+        <div class="catalog-page__content_tags">
+          <sl-tag removable>Стандарт</sl-tag>
+          <sl-tag removable>Темно-рожевий</sl-tag>
+          <sl-tag removable>Помаранчевий</sl-tag>
+        </div>
+
+        <div class="catalog-page__content_showed">
+          Показано <span>1 - 20</span> з <span>1230</span>
+        </div>
+        <h1>Кімнатні рослини</h1>
+        <div class="catalog-page__content_description">
+          Правильно підібрати кімнатні рослини вам допоможе консультант студії фітодизайну «Флорен». Також ви завжди можете отримати консультацію та купити кімнатні рослини та квіти в горщиках з доставкою в нашому магазині за адресою м. Київ, пр. Берестейський (Перемоги) 70.
+        </div>
+        <div class="catalog-page__content_products">
+
+          <!-- Product Card Start-->
+          <div class="catalog-page__content_product-card">
+            <div class="product-card__wrapper">
+              <div class="product-card__image">
+                <a href="/catalog/{{ product.id }}">
+                  <img src="/img/homepage/product-2.png" alt="{{ product.name }}"/>
+                </a>
+              </div>
+              <div class="product-card__name">
+                <a href="">Фікус Лірата (Фікове дерево)</a>
+              </div>
+
+              <div class="product-card__price">
+                114,99 ₴ <del>200,99 ₴</del>
+                {# If in cart add this block #}
+                <div class="product-card__in-cart">
+                  <span class="icon icon-basket"></span>
+                </div>
+              </div>
+
+              <div class="product-card__options">
+                <section>
+                  <h5>Доступні варіанти:</h5>
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+                <section>
+                  <h5>Кольори:</h5>
+                  <div class="colors-list">
+                    <span style="background-color: #C33494;"></span>
+                    <span style="background-color: #FFCAD4;"></span>
+                    <span style="background-color: #F6BB05;"></span>
+                    <span style="background-color: #FFFFFF;"></span>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+          <!-- Product Card End -->
+          {% for product in productsList %}
+            {% if loop.index <= 24 %}
+              <div class="catalog-page__content_product-card">
+                <div class="product-card__wrapper">
+                  <div class="product-card__image">
+                    <a href="/catalog/{{ product.id }}">
+                      <img src="{{ product.image }}" alt="{{ product.name }}"/>
+                    </a>
+                  </div>
+                  <div class="product-card__name">
+                    <a href="/catalog/{{ product.id }}">{{ product.name }}</a>
+                  </div>
+                  {% if product.price === 'Під замовлення' %}
+                    <div class="product-card__custom-order">{{ product.price }}</div>
+                  {% else %}
+                    <div class="product-card__price">{{ product.price }}</div>
+                  {% endif %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="catalog-page__content_more">
+          <button class="button button--primary">Показати ще 24 товара</button>
+        </div>
+        <div class="pagination">
+          <a href="" class="pagination__link disabled">
+            <img src="/img/icons/icon-arrow-left-long.svg.svg" alt="Попередня сторінка">
+          </a>
+          <a href="" class="pagination__link active">1</a>
+          <a href="" class="pagination__link">2</a>
+          <a href="" class="pagination__link">3</a>
+          <a href="" class="pagination__link">4</a>
+          <a href="" class="pagination__link">5</a>
+          <a href="" class="pagination__link">
+            <img src="/img/icons/icon-arrow-right-long.svg" alt="Наступна сторінка">
+          </a>
+        </div>
+
+        <!-- Article Section -->
+        <article class="catalog-page__content_article">
+          <section class="article-section">
+            <h3 class="article-section__title">Орхідея фаленопсис</h3>
+            <div class="article-section__content">
+              <div class="expandable-text" data-max-chars="300">
+                <div class="expandable-text__content">
+                  <p>Квітка phalaenopsis (пхалаєнопсис) — орхідея, що вирізняється сортовою та видовою різноманітністю. Сьогодні важко уявити будинок або навіть суворий офіс, який не прикрашає квітка живої орхідеї фаленопсис. Цей іноземець завоював почесне місце серед інших декоративних квітучих рослин. 15 років тому в наших магазинах нечасто можна було зустріти його. Але завдяки невибагливості рослини та дивовижній її декоративності вона упевнено увійшла у наше життя.</p>
+                </div>
+                <button class="btn expandable-text__button">Читати повністю</button>
+              </div>
+            </div>
+          </section>
+          <section class="article-section">
+            <h3 class="article-section__title">Сортова різноманітність фаленопсисів (орхідеї phalaenopsis)</h3>
+            <div class="article-section__content">
+              <div class="expandable-text" data-max-chars="650">
+                <div class="expandable-text__content">
+                  <p>Розповімо вам про чотири поширені різновиди квітки орхідеї фаленопсис.</p>
+                  <ol>
+                    <li>Звичайний. Рослину із квітками діаметром 7-8 см можна зустріти завжди на полицях нашого салону. Вирізняється невибагливістю, тривалим цвітінням та різноманітним забарвленням. За умови належного догляду розкриті бутони тримаються понад 6 місяців.</li>
+                    <li>Грандіфлора. Великі красиві квітки розміром 10-12 см. Шикарна рослина з виразним цвітінням — вдалий подарунок як жінці, так і чоловікові.</li>
+                    <li>Мультиквітковий. Рослина з буйним цвітінням випускає кілька квітконосів із розгалуженими гілками - стрілками, усіяними бутонами. Цвіте довго, зів'ялі квітки замінюють молоденькі. Один кущ випускає до 4 квітконосів. Розмістіть в одне кашпо кілька горщиків із такою рослиною — отримаєте розкішну яскраву композицію.</li>
+                    <li>Мініфаленопсиси. Кімнатні рослини невеликого розміру, обсипані орхідеями у вигляді метелика - захопливе видовище.</li>
+                  </ol>
+                </div>
+                <button class="btn expandable-text__button">Читати повністю</button>
+              </div>
+            </div>
+          </section>
+          <section class="article-section">
+            <h3 class="article-section__title">Скільки стоятиме у горщику кімнатна орхідея, куплена в Україні?</h3>
+            <div class="article-section__content">
+              <p>Існує упередження, що квітку, рясно всіяну квітами і бутонами, не варто купувати, тому що вона не стоятиме тривало і радуватиме нас красою недовго. Це неправда. Мінімальна тривалість цвітіння залежить від сорту квітки та умов її утримання, загалом триває від 3 до 6 місяців.</p>
+              <p>Пів року яскравої краси – це середня норма. Одночасно у квітучої рослини відбуваються і розкриття бруньок, і набухання нових вічок, які формуватимуть молоді бутони. Відщипуйте відцвілі квітки на блідих корінцях, щоб продовжити декоративний період та стимулювати розвиток бутонів.</p>
+              <p>Сухий квітконос зрізайте. Якщо він наполовину зелений і ще пружний, відріжте ту його частину, що засохла. З бутонів, що несформувалися, з часом можливий розвиток нових квітконосів або «діток».</p>
+            </div>
+          </section>
+          <section class="article-section">
+            <h3 class="article-section__title">Від чого залежить ціна?</h3>
+            <div class="article-section__content">
+              <div class="expandable-text" data-max-chars="650">
+                <div class="expandable-text__content">
+                  <p>Вартість орхідеї залежить від декількох факторів, що визначають її декоративність.</p>
+                  <ul>
+                    <li>Від розміру. Вони різні за висотою. Це обумовлене сортовою приналежністю рослини, а також умовами її вирощування.</li>
+                    <li>Від сорту. Естетичний вигляд залежить не тільки від кількості квіток чи наявності бутонів, а й від сортової приналежності. Мультицвіт, грандифлора або міні - різні за зовнішнім виглядом та своїм призначенням фаленопсиси в горщиках.</li>
+                    <li>Від кількості стовбурів. Голландські селекціонери вивели багатостовбурові фаленопсиси. Їхня кількість - до 5 квітконосів. Сукупність квітучих стовбурів формує містичну красу. Такі екземпляри й коштують дорожче.</li>
+                    <li>Від техніки вирощування. Існують різні способи вирощування фаленопсисів. Наприклад, відомий голландський садівник спеціалізується на вирощуванні грандифлори – фаленопсисів білого кольору. Особливістю є мала кількість і невеликий розмір зеленого листя, а головне - наявність єдиної квітки, але величезного розміру. Купити таку велику єдину квітку орхідеї в горщику можна і в Україні, ціна її у нашому салоні в Києві висока. Придбавши такий розкішний екземпляр, ви зрозумієте: унікальність і неповторність розкішної рослини варта витрачених коштів.</li>
+                  </ul>
+                </div>
+                <button class="btn expandable-text__button">Читати повністю</button>
+              </div>
+            </div>
+          </section>
+          <section class="article-section">
+            <h3 class="article-section__title">Де купити чи замовити кімнатну орхідею за прийнятною ціною з доставкою у Києві?</h3>
+            <div class="article-section__content">
+              <div class="expandable-text" data-max-chars="650">
+                <div class="expandable-text__content">
+                  <p>Велика квітуча червона, біла, бузкова, зототиста голландська орхідея в горщику - фаленопсис можна купити за доступною ціною в нашому салоні (Київ, Україна). На полицях салону студії фітодизайну «Флорен» — продаж квітучих орхідей фаленопсис в Україні за ціною, що відповідає якості та декоративному вигляду. Купівля трендової рослини – інвестиція у красу. Ми продєамо голландські високосортові орхідеї у магазині студії за адресою: Київ, п-т Берестейський, 70, Україна.</p>
+                  <p>Здійснюємо продаж і покупку орхідеї в Київ через інтернет магазин: на сторінках нашого сайту ви можете вибрати і купити зразок, що сподобався. Зателефонуйте нашому менеджеру для уточнення розміру, сорту, ціни та наявності квітки. Замовляйте, обговорюйте і оформлюйте замовлення, купівлю живої, красивої великої чи малої квітучої орхідеї фаленопсис у Києві через інтернет - онлайн-магазин студії фітодизайну. Ви зможете купити у нас по інтернету та отримати орхідею, скориставшись поштою України або замовити доставку в нашому магазині.</p>
+                </div>
+                <button class="btn expandable-text__button">Читати повністю</button>
+              </div>
+            </div>
+          </section>
+        </article>
+
+        <!-- Comments Form Section -->
+        <div class="catalog-page__content_comments">
+          <h2>Відгук або запитання</h2>
+          <div class="comments__form">
+            <sl-input placeholder="ПІБ"></sl-input>
+            <sl-input placeholder="Телефон або e-mail (не буде опубліковано)"></sl-input>
+            <sl-textarea placeholder="Комментар" rows="1" resize="auto"></sl-textarea>
+            <div class="comments__form_rating">
+              <span>Ваша оцінка:</span>
+              <sl-rating></sl-rating>
+            </div>
+            <button class="button button--primary">Відправити</button>
+          </div>
+        </div>
+
+        <!-- Comments List Section -->
+        <div class="catalog-page__content_comments-list">
+          <!-- Comment Item -->
+          <div class="comments__item">
+            <div class="comments__item-date">11 квітня 2024</div>
+            <div class="comments__item-grid">
+              <div class="comments__item-title">
+                <b>Хивренко Александр</b>
+                <sl-rating size="small" value="5" readonly></sl-rating>
+              </div>
+              <div class="comments__item-text">Купувала у даному магазині онлайн гортензію в горщику, загалом 3 горщика (один замовляли додатково). Дуже ввічливі і відповідальні, весь час були за звʼязку. Надали фото всіх квітів зі святковою упаковкою. Організували доставку по області і вчасно доставили в чудовому вигляді. Дуже були задоволені! Дякую!</div>
+            </div>
+          </div>
+          <!-- Comment Item -->
+          <div class="comments__item">
+            <div class="comments__item-date">12 грудня 2023</div>
+            <div class="comments__item-grid">
+              <div class="comments__item-title">
+                <b>Катерина</b>
+                <sl-rating size="small" value="5" readonly></sl-rating>
+              </div>
+              <div class="comments__item-text">У вас широкий вибір орхідей, що радує. Красиві. Видно, що ви професіонали в своїй справі, тому що рослини доглянуті й цвітуть. Значить, за ними доглядають правильно.</div>
+            </div>
+          </div>
+          <!-- Comment Item -->
+          <div class="comments__item">
+            <div class="comments__item-date">31 липня 2023</div>
+            <div class="comments__item-grid">
+              <div class="comments__item-title">
+                <b>Олеся П.</b>
+                <sl-rating size="small" value="5" readonly></sl-rating>
+              </div>
+              <div class="comments__item-text">Квіти завжди є чудовим подарунком, вони викликають приємні емоції та піднімають настрій. Придбала рослину на подарунок, бо захопилася символізмом квітки кохання)) Задоволена своїм вибором і допомогою професійних консультантів.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="catalog-page__last-works">
+    {% include "partials/homepage/last-works.njk" %}
+  </div>
+
+</main>
+
+{% endblock %}
