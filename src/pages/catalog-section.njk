@@ -16,7 +16,7 @@
               <h3>{{ item.title }}</h3>
               <ul>
                 {% for category in item.categories %}
-                  <li>
+                  <li class="{% if category.active %}active{% endif %}">
                     <a class="underline" href="/catalog/{{ category.id }}">{{ category.name }}</a>
                   </li>
                 {% endfor %}

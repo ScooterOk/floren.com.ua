@@ -31,10 +31,11 @@
       & > ul {
         li {
           position: relative;
-          padding: getRem(4) getRem(8) getRem(4) getRem(32);
+          padding: getRem(6) getRem(8) getRem(6) getRem(32);
           font-size: getRem(14);
           font-weight: 300;
           position: relative;
+          border-radius: getRem(8);
           &::before {
             content: '';
             position: absolute;
@@ -44,6 +45,13 @@
             height: 2px;
             border-radius: 1px;
             background: var(--color-gray-60);
+          }
+          &.active {
+            background: var(--color-gray-20) url('/img/icons/icon-check.svg')
+              no-repeat getRem(8) getRem(8) / getRem(16) getRem(16);
+            &::before {
+              display: none;
+            }
           }
         }
       }
