@@ -6,6 +6,15 @@ a.button {
   transition: background-color 0.2s ease;
   -webkit-mask-size: cover;
   mask-size: cover;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
+  font-size: getRem(18);
+  border-radius: 8px;
+  line-height: 1;
+  font-weight: 600;
+  padding-left: getRem(40);
+  padding-right: getRem(40);
   &:disabled {
     background-color: var(--color-gray-50);
     color: var(--color-black);
@@ -13,18 +22,21 @@ a.button {
     cursor: not-allowed;
     pointer-events: none;
   }
+  &--small {
+    min-height: 44px;
+  }
+  &--icon {
+    aspect-ratio: 1;
+    padding: 0;
+    justify-content: center;
+    & > * {
+      width: 24px;
+      height: 24px;
+    }
+  }
   &--primary {
-    display: inline-flex;
-    align-items: center;
-    border-radius: 48px;
-    font-size: getRem(18);
-    line-height: 1;
-    font-weight: 600;
     background-color: var(--color-green-50);
     color: var(--color-white);
-    padding-left: getRem(40);
-    padding-right: getRem(40);
-    height: 48px;
     &:hover {
       background-color: var(--color-green-hover);
     }
@@ -46,12 +58,33 @@ a.button {
       background-color: var(--color-violet-hover);
     }
   }
+  &--outline {
+    border: 1px solid var(--color-gray-40);
+    background-color: var(--color-white);
+    &:hover {
+      background-color: var(--color-button-hover);
+    }
+  }
   &--arrow {
     padding-right: getRem(72);
     background-image: url('/img/icons/icon-arrow-right.svg');
     background-repeat: no-repeat;
     background-position: right 36px center;
     background-size: 20px 20px;
+  }
+  &--text {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var(--color-green-100);
+    padding: getRem(4) getRem(12);
+    transition: color 0.2s ease;
+    min-height: auto;
+    &:hover {
+      color: var(--color-green-50);
+    }
+  }
+  &--pill {
+    border-radius: 48px;
   }
 }
 

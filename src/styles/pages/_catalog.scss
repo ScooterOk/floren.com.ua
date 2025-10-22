@@ -508,17 +508,4 @@
       }
     }
   }
-  &__last-works {
-    margin-top: 80px;
-    background: var(--color-green-20) url('/img/bg-leaves-back.svg') no-repeat
-      center / cover;
-    .last-works {
-      .homepage__last-works-leaf-1 {
-        display: none;
-      }
-      .homepage__last-works-leaf-2 {
-        display: none;
-      }
-    }
-  }
 }

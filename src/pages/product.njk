@@ -1,0 +1,157 @@
+{% extends "layouts/base.njk" %}
+
+{% from "data/catalog-page.njk" import catalog %}
+{% from "data/catalog-page.njk" import productsList %}
+
+{% set title = "Vituum + Nunjucks" %}
+
+{% block content %}
+
+  <main class="product-page">
+    <div class="container">
+      <div class="product-page__grid">
+        <aside class="product-page__nav">
+          {% for item in catalog %}
+            <section class="product-page__nav_section">
+              <h3>{{ item.title }}</h3>
+              <ul>
+                {% for category in item.categories %}
+                  <li>
+                    <a class="underline" href="/catalog/{{ category.id }}">{{ category.name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endfor %}
+        </aside>
+        <div class="product-page__content">
+          {# Breadcrumbs #}
+          <sl-breadcrumb>
+            <sl-breadcrumb-item href="#">Озеленення і Фітодизайн</sl-breadcrumb-item>
+            <sl-breadcrumb-item href="#">Кімнатні рослини</sl-breadcrumb-item>
+            <sl-breadcrumb-item href="#">Орхідеї</sl-breadcrumb-item>
+          </sl-breadcrumb>
+          <div class="product-page__content_grid">
+            {# Product gallery #}
+            <div class="product-page__gallery">
+              <div
+              class="hover-photo-viewer"
+              data-photo-viewer="project-photo-viewer">
+                <div class="hover-photo-viewer__main">
+                  <img src="/img/homepage/ozelenenie-restorana-7.jpg" alt=""/>
+                </div>
+                <ul class="hover-photo-viewer__thumbs">
+                  <li class="active">
+                    <img src="/img/homepage/ozelenenie-restorana-7.jpg" alt=""/>
+                  </li>
+                  <li>
+                    <img src="/img/homepage/ozelenenie-restorana-6.jpg" alt=""/>
+                  </li>
+                  <li>
+                    <img src="/img/homepage/ozelenenie-restorana-5.jpg" alt=""/>
+                  </li>
+                  <li>
+                    <img
+                    src="/img/homepage/ozelenenie-office-kiev-4.jpg"
+                    alt=""/>
+                  </li>
+                  <li>
+                    <img
+                    src="/img/homepage/ozelenenie-office-kiev-3.jpg"
+                    alt=""/>
+                  </li>
+                  <li>
+                    <img
+                    src="/img/homepage/ozelenenie-office-kiev-2.jpg"
+                    alt=""/>
+                  </li>
+                  <li>
+                    <img
+                    src="/img/homepage/ozelenenie-office-kiev-1.jpg"
+                    alt=""/>
+                  </li>
+                </ul>
+              </div>
+              <a href="">
+                <span class="icon icon-photogallery"></span> Орхідея Фаленопсис Муса Пінк – фото в інтер'єрі</a>
+            </div>
+
+            {# Product details #}
+            <div class="product-page__details">
+              <div>Артикул: 7000</div>
+              <h1>Орхідея Фаленопсис Муса Пінк</h1>
+              <section class="product-page__options">
+                <h3>Доступні варіанти:</h3>
+                <div class="product-page__size">
+                  <sl-radio-group label="Select an option" name="a" value="1">
+                    <sl-radio value="1">
+                      <div>
+                        <div>Ø 10, висота 45 см</div>
+                        <div>
+                          450<sup>грн</sup>
+                        </div>
+                        <sl-tag variant="success">Є в наявності</sl-tag>
+                        <a href="">
+                          <img src="/img/icons/icon-video-button.svg" alt="Відеоогляд товару"/>
+                        </a>
+                      </div>
+                    </sl-radio>
+                    {# <sl-radio value="2">Ø 27, висота 100 см</sl-radio>
+                    <sl-radio value="3">Ø 24, висота 100 см</sl-radio>
+                    <sl-radio value="4">Ø 17, висота 70 см</sl-radio>
+                    <sl-radio value="5">Ø 14, висота 50 см</sl-radio>
+                    <sl-radio value="6" disabled>Ø 12, висота 40 см</sl-radio> #}
+                  </sl-radio-group>
+                </div>
+                <div class="product-page__color">
+                  <sl-radio-group label="Оберіть колір" name="color" value="blue">
+                    <sl-radio-button value="blue">
+                      <img src="/img/product/product-color-blue.png" alt="">
+                    </sl-radio-button>
+                    <sl-radio-button value="green">
+                      <img src="/img/product/product-color-green.png" alt="">
+                    </sl-radio-button>
+                    <sl-radio-button value="pink">
+                      <img src="/img/product/product-color-pink.png" alt="">
+                    </sl-radio-button>
+                    <sl-radio-button value="red">
+                      <img src="/img/product/product-color-red.png" alt="">
+                    </sl-radio-button>
+                    <sl-radio-button value="yellow">
+                      <img src="/img/product/product-color-yellow.png" alt="">
+                    </sl-radio-button>
+                  </sl-radio-group>
+                </div>
+              </section>
+
+              <section class="product-page__actions">
+                <div class="product-page__price">
+                  1965<sup>грн</sup>
+                </div>
+                <div class="product-page__actions_button">
+                  <button href="" class="button button--primary">
+                    До кошика
+                  </button>
+                  <button href="#" class="button button--outline button--icon button--small" aria-label="Додати до улюблених">
+                    <span class="icon icon-heart"/>
+                  </button>
+                  <button href="#" class="button button--outline button--small" aria-label="Особистий кабінет">
+                    <img src="/img/icons/icon-question.svg" alt="">
+                    <b>Порадитись</b>
+                  </button>
+                </div>
+              </section>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main__last-works">
+      {% include "partials/homepage/last-works.njk" %}
+    </div>
+
+  </main>
+
+  {% include "components/photo-viewer-modal.njk" %}
+{% endblock %}
