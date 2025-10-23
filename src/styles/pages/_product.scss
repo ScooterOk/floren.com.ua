@@ -1,0 +1,254 @@
+@use '../functions' as *;
+@use '../mixins' as *;
+.product-page {
+  &__grid {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+  }
+  &__nav {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    &_section {
+      & > h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin-bottom: 4px;
+        padding: getRem(4) getRem(8) getRem(4) getRem(32);
+        position: relative;
+        &::before {
+          content: '';
+          position: absolute;
+          left: getRem(14);
+          top: getRem(14);
+          width: getRem(4);
+          height: getRem(4);
+          border-radius: 50%;
+          background: currentColor;
+        }
+      }
+      & > ul {
+        li {
+          position: relative;
+          padding: getRem(6) getRem(8) getRem(6) getRem(32);
+          font-size: getRem(14);
+          font-weight: 300;
+          position: relative;
+          border-radius: getRem(8);
+          &::before {
+            content: '';
+            position: absolute;
+            left: getRem(14);
+            top: getRem(14);
+            width: 9px;
+            height: 2px;
+            border-radius: 1px;
+            background: var(--color-gray-60);
+          }
+          &.active {
+            background: var(--color-gray-20) url('/img/icons/icon-check.svg')
+              no-repeat getRem(8) getRem(8) / getRem(16) getRem(16);
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
+  &__content {
+    &_grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: getRem(48);
+    }
+  }
+
+  // Product gallery
+  &__gallery {
+    &_link {
+      margin-top: 20px;
+      display: inline-flex;
+      align-items: center;
+      padding: getRem(12) getRem(30);
+      border: 1px solid var(--color-gray-40);
+      border-radius: getRem(8);
+      gap: getRem(10);
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+      .icon {
+        width: 32px;
+        height: 32px;
+      }
+      &:hover {
+        background-color: var(--color-button-hover);
+      }
+    }
+  }
+
+  // Product details
+  &__details {
+    &_artikul {
+      font-size: getRem(12);
+      font-weight: 300;
+      margin-bottom: getRem(8);
+      color: var(--color-gray-100);
+    }
+    h1 {
+      font-size: getRem(28);
+      font-weight: 600;
+      margin-bottom: getRem(36);
+    }
+  }
+
+  // Product options
+  &__options {
+    border: 1px solid var(--color-gray-30);
+    border-radius: getRem(8);
+    position: relative;
+    padding: getRem(16) getRem(8);
+    display: flex;
+    flex-direction: column;
+    gap: getRem(16);
+    margin-bottom: getRem(24);
+    h3 {
+      position: absolute;
+      top: -12px;
+      left: 16px;
+      font-size: getRem(14);
+      font-weight: 600;
+      padding: getRem(0) getRem(8);
+      background-color: var(--color-white);
+    }
+    &_size {
+      sl-radio {
+        padding: getRem(8) getRem(12);
+        border-radius: getRem(8);
+        transition: background-color 0.3s ease;
+        &:hover {
+          background-color: var(--color-button-hover);
+        }
+        &::part(base) {
+          width: 100%;
+          display: flex;
+          align-items: center;
+        }
+        &::part(label) {
+          width: 100%;
+          display: flex;
+        }
+      }
+      label {
+        display: flex;
+        align-items: center;
+        flex-grow: 1;
+        cursor: pointer;
+        .size__name {
+          margin-right: auto;
+          font-size: getRem(14);
+          font-weight: 400;
+        }
+        .size__price {
+          font-size: getRem(14);
+          font-weight: 700;
+          position: relative;
+          padding-right: 1.2rem;
+          margin-right: 0.5em;
+          sup {
+            font-size: getRem(10);
+            font-weight: 700;
+            position: absolute;
+            top: -0.2rem;
+            right: 0;
+          }
+        }
+        sl-tag {
+          font-size: getRem(14);
+          font-weight: 300;
+          color: var(--color-green-100);
+          background: var(--color-green-20)
+            url('/img/icons/icon-check-circle.svg') no-repeat getRem(9) center /
+            getRem(16) getRem(16);
+          padding: getRem(4) getRem(8) getRem(4) getRem(32);
+          border-radius: getRem(20);
+        }
+        .size__video-link {
+          margin-left: getRem(8);
+          width: getRem(24);
+          height: getRem(24);
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          transition: opacity 0.3s ease;
+          &:hover {
+            opacity: 0.8;
+          }
+        }
+      }
+    }
+    &_color {
+      padding-left: getRem(12);
+      sl-radio-group {
+        display: flex;
+        &::part(form-control-label) {
+          font-size: getRem(14);
+          font-weight: 600;
+          margin-bottom: getRem(8);
+          line-height: 1.5;
+        }
+        sl-radio-button {
+          padding: 0;
+          margin-right: 12px;
+          --sl-spacing-medium: 0;
+          &::part(button--checked) {
+            box-shadow: 0 0 2px 2px var(--color-green-50);
+          }
+          &::part(button) {
+            border: none;
+            border-radius: getRem(4);
+            background-color: transparent;
+            transition: box-shadow 0.3s ease;
+            &:hover {
+              box-shadow: 0 0 2px 2px var(--color-green-50);
+            }
+          }
+
+          img {
+            width: 40px;
+            height: 40px;
+          }
+        }
+      }
+    }
+  }
+
+  // Product price
+  &__price {
+    font-size: getRem(28);
+    font-weight: 600;
+    margin-bottom: getRem(24);
+    position: relative;
+    display: inline-flex;
+    padding-right: getRem(40);
+    sup {
+      font-size: getRem(20);
+      font-weight: 600;
+      position: absolute;
+      top: -0.1rem;
+      right: 0;
+    }
+  }
+
+  // Product actions
+  &__actions {
+    &_buttons {
+      display: flex;
+      align-items: center;
+      gap: getRem(16);
+      .consult {
+        gap: getRem(8);
+      }
+    }
+  }
+}
