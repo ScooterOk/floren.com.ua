@@ -183,16 +183,384 @@
                 </div>
               </section>
 
+              <section class="product-page__delivery">
+                <sl-tab-group>
+                  <sl-tab slot="nav" panel="info">Інформація</sl-tab>
+                  <sl-tab slot="nav" panel="delivery">Доставка</sl-tab>
+                  <sl-tab slot="nav" panel="payment">Оплата</sl-tab>
+
+                  <sl-tab-panel name="info" class="product-page__delivery_info">
+                    <ul>
+                      <li>Висота від підлоги вказана разом із горщиком</li>
+                      <li>Рослина поставляється в пластиковому горщику для транспортування</li>
+                      <li>100% оригінальний товар, сертифікат</li>
+                      <li>Надсилаємо фото реальної рослини після оформлення замовлення</li>
+                      <li>Доставляємо в упаковці та теплій машині</li>
+                    </ul>
+                  </sl-tab-panel>
+                  <sl-tab-panel name="delivery">
+                    <div class="product-page__delivery_list">
+                      <div class="delivery__item">
+                        <img class="delivery__item_icon" src="/img/icons/icon-post.svg" alt="">
+                        <div class="delivery__item_info">
+                          <p>Самовивіз із магазинів у Києві:</p>
+                          <ul>
+                            <li>пр. Берестейський, 70</li>
+                          </ul>
+                        </div>
+                        <div class="delivery__item_price">безкоштовно</div>
+                      </div>
+                      <div class="delivery__item">
+                        <img class="delivery__item_icon" src="/img/icons/icon-track.svg" alt="">
+                        <div class="delivery__item_info">
+                          <p>Кур'єром по Києву:</p>
+                          <p>
+                            <a href="">Детальніше</a>
+                          </p>
+                        </div>
+                        <div class="delivery__item_price">от 200 <sup>грн</sup>
+                        </div>
+                      </div>
+                      <div class="delivery__item">
+                        <img class="delivery__item_icon" src="/img/icons/icon-nova-poshta.svg" alt="">
+                        <div class="delivery__item_info">
+                          <p>Доставка у відділення Нової Пошти:</p>
+                          <p>
+                            <a href="">Детальніше</a>
+                          </p>
+                        </div>
+                        <div class="delivery__item_price">от 80 <sup>грн</sup>
+                        </div>
+                      </div>
+                    </div>
+                  </sl-tab-panel>
+                  <sl-tab-panel name="payment">
+                    <div class="product-page__delivery_list">
+                      <div class="delivery__item">
+                        <img class="delivery__item_icon" src="/img/icons/icon-cash.svg" alt="">
+                        <div class="delivery__item_info">
+                          Готівкою при отриманні
+                        </div>
+                      </div>
+                      <div class="delivery__item">
+                        <img class="delivery__item_icon" src="/img/icons/icon-card.svg" alt="">
+                        <div class="delivery__item_info">
+                          Картою на сайті VISA / Mastercard
+                        </div>
+                      </div>
+                      <div class="delivery__item">
+                        <img class="delivery__item_icon" src="/img/icons/icon-order.svg" alt="">
+                        <div class="delivery__item_info">
+                          Безготівковий розрахунок для юридичних осіб
+                        </div>
+                      </div>
+                    </div>
+                  </sl-tab-panel>
+                </sl-tab-group>
+              </section>
             </div>
           </div>
+
+          {# Services #}
+          <div class="product-page__services">
+            <section class="services__item">
+              <div class="services__item_icon">
+                <img src="/img/icons/icon-fitodesign.svg" alt="">
+              </div>
+              <div class="services__item_link">
+                <a class="underline" href="/">Озеленення інтер'єру</a>
+              </div>
+            </section>
+            <section class="services__item">
+              <div class="services__item_icon">
+                <img src="/img/icons/icon-transplantation.svg" alt="">
+              </div>
+              <div class="services__item_link">
+                <a class="underline" href="/">Послуги з пересадки рослин</a>
+              </div>
+            </section>
+            <section class="services__item">
+              <div class="services__item_icon">
+                <img src="/img/icons/icon-care.svg" alt="">
+              </div>
+              <div class="services__item_link">
+                <a class="underline" href="/">Професійний догляд за рослинами</a>
+              </div>
+            </section>
+          </div>
+
+          <div class="product-page__description">
+            <sl-tab-group>
+              <sl-tab slot="nav" panel="description">Опис</sl-tab>
+              <sl-tab slot="nav" panel="accessories">Аксесуари для рослин</sl-tab>
+              <sl-tab slot="nav" panel="care">Особливості догляду</sl-tab>
+              <sl-tab slot="nav" panel="reviews">Відгуки</sl-tab>
+
+              {# Опис #}
+              <sl-tab-panel name="description" >
+                <div class="product-page__description_info">
+                  <section>
+                    <h3>Освітлення</h3>
+                    <p>Для довгого цвітіння орхідеям потрібно багато світла. Ідеальні умови для них в місцях куди сонце потрапляє на декілька годин в день (зранку чи ввечері). Якщо ж орхідею поставити біля північного вікна (пряме сонце не потрапляє), то бажано тримати її якомога ближче до скла та не притіняти вікна шторами. Тоді вона зможе рости та розвиватись, але буде менша ймовірність цвітіння. Якщо розмістити орхідею біля південного вікна (пряме сонце цілий день), то на листках будуть з’являтись білі сухі плями (опіки), вони жовтітимуть та з часом орхідея може загинути. </p>
+                  </section>
+
+                  <section>
+                    <h3>Температура повітря</h3>
+                    <p>Навесні та влітку температура бажана вище 18 °C , ідеально — 20-25°C. Взимку і восени (після цвітіння) температура може бути прохолодна — 15-18°C, в цей час полив проводять через декілька днів після висихання коренів.</p>
+                  </section>
+                  <section>
+                    <h3>Полив</h3>
+                    <p>Поливаючи орхідеї, варто орієнтуватись на рівень просихання їх коренів. Якщо рослина знаходиться у прозорому пластиковому горщику та вставлена в кашпо — просто 1 раз на тиждень оглядайте корені. Якщо за тиждень корені не змінили колір — залиште орхідею без поливу ще на декілька днів. Для них нормапьно просихати між поливами 2-3 тижні. Коли корені в горщику змінюють свій колір з зеленого на сріблястий, то замочіть орхідею у воді будь-яким зручним способом: </p>
+                    <p>— налийте теплої води повне кашпо та залишіть на 1-2 години (можна на ніч); </p>
+                    <p>— поставте в ванну/душ та пролийте з душу теплою водою, змочуючи листя (але не потрапляючи на квіти), залишіть в вологій ванні на декілька годин; </p>
+                    <p>— якщо рослина в теплому та сонячному місці, то після відстоювання у воді залиште 1-2 см води на дні кашпо.</p>
+                  </section>
+                </div>
+              </sl-tab-panel>
+
+              <sl-tab-panel name="accessories">
+                <div class="product-page__description_accessories">
+                  <section>
+                    <h3>Грунт та добрива</h3>
+                    <div class="accessories__list">
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-1.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Заміокулькас</b>
+                          </a>
+                          <span>129,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-2.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-3.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Розумний вазон Lechuza Delta</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-4.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-5.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h3>Інші товари у категорії: Орхідеї</h3>
+                    <div class="accessories__list">
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-1.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Заміокулькас</b>
+                          </a>
+                          <span>129,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-2.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-3.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Розумний вазон Lechuza Delta</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-4.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-5.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+
+                  <section>
+                    <h3>Дивіться також</h3>
+                    <div class="accessories__list">
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-1.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Заміокулькас</b>
+                          </a>
+                          <span>129,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-2.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-3.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Розумний вазон Lechuza Delta</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-4.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                      <div class="accessories__list_item">
+                        <a href="" class="accessories__list_item-image">
+                          <img src="/img/homepage/product-5.png" alt="">
+                        </a>
+                        <div class="accessories__list_item-info">
+                          <a href="">
+                            <b>Антуріум</b>
+                          </a>
+                          <span>114,99 ₴</span>
+                          <sl-rating value="5" readonly></sl-rating>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+              </sl-tab-panel>
+              <sl-tab-panel name="care">
+                <div class="product-page__description_care">
+                  <table>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <b>Температура</b>
+                        </td>
+                        <td>комфортна — 18-25ºC Мінімум: 12 ºC Максимум: 40 ºC</td>
+                        <td>
+                          <b>Освітлення</b>
+                        </td>
+                        <td>Яскраве, розсіяне.</td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <b>Полив</b>
+                        </td>
+                        <td>Вологолюбна рослина. Рекомендуємо періодично опускати у воду або наливати її в піддон.</td>
+                        <td>
+                          <b>Вологість повітря</b>
+                        </td>
+                        <td>бажана підвищена вологість повітря.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </sl-tab-panel>
+              <sl-tab-panel name="reviews">
+                {% include "partials/reviews.njk" %}
+              </sl-tab-panel>
+            </sl-tab-group>
+          </div>
+
         </div>
       </div>
-    </div>
-    <div class="main__last-works">
-      {% include "partials/homepage/last-works.njk" %}
-    </div>
 
-  </main>
+      <div class="main__last-works">
+        {% include "partials/homepage/last-works.njk" %}
+      </div>
 
-  {% include "components/photo-viewer-modal.njk" %}
-{% endblock %}
+    </main>
+
+    {% include "components/photo-viewer-modal.njk" %}
+  {% endblock %}

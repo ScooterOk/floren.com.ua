@@ -608,3 +608,106 @@ sl-radio {
     pointer-events: none;
   }
 }
+
+sl-tab-group {
+  --track-width: 0;
+  &::part(tabs) {
+    gap: getRem(24);
+  }
+}
+sl-tab {
+  --sl-color-neutral-600: var(--color-violet);
+  --sl-color-primary-600: var(--color-black);
+  &:not([aria-selected='true']) {
+    &::part(base) {
+      text-decoration: underline;
+      text-decoration-color: var(--color-green-100);
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.25rem;
+      transition:
+        color 0.2s ease,
+        text-decoration-color 0.2s ease;
+      &:hover {
+        color: var(--sl-color-neutral-600);
+        text-decoration-color: transparent;
+      }
+    }
+  }
+  &::part(base) {
+    padding: 0;
+    font-size: getRem(16);
+    font-weight: 600;
+  }
+}
+
+sl-tab-panel {
+  &::part(base) {
+    padding: getRem(24) 0 0 0;
+  }
+}
+
+.reviews-section {
+  padding: getRem(48);
+  background-color: var(--color-white);
+  border-radius: getRem(16);
+  display: grid;
+  grid-template-columns: 232px 1fr;
+  gap: getRem(32);
+  box-shadow: 0 8px 40px 0 rgba(0, 38, 3, 0.08);
+  h2 {
+    font-size: getRem(28);
+    font-weight: 600;
+  }
+  .reviews-section__form {
+    display: flex;
+    flex-direction: column;
+    gap: getRem(16);
+    &_rating {
+      display: flex;
+      align-items: center;
+      gap: getRem(16);
+    }
+    & > button {
+      align-self: flex-start;
+    }
+  }
+}
+
+.reviews-section__comments {
+  margin: getRem(24) 0;
+  .comments__item {
+    border-bottom: 1px solid var(--color-gray-30);
+    padding: getRem(24) 0;
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+    &-date {
+      font-size: getRem(14);
+      color: var(--color-gray-100);
+      font-weight: 300;
+      margin-bottom: getRem(8);
+    }
+    &-grid {
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: getRem(24);
+    }
+    &-title {
+      display: flex;
+      flex-direction: column;
+      gap: getRem(4);
+      b {
+        font-weight: 600;
+        display: block;
+      }
+      sl-rating {
+        --symbol-size: 0.75rem;
+      }
+    }
+    &-text {
+      font-size: getRem(14);
+      font-weight: 300;
+    }
+  }
+}
