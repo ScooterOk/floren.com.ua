@@ -3,6 +3,7 @@ import vituum from 'vituum';
 import nunjucks from '@vituum/vite-plugin-nunjucks';
 import VitePluginSvgSpritemap from '@spiriit/vite-plugin-svg-spritemap';
 import { viteStaticCopy } from 'vite-plugin-static-copy'; // 1. Import the plugin
+import pages from './src/data/pages.js';
 
 export default defineConfig(({ command, mode }) => {
   const isProduction = mode === 'production';
@@ -26,6 +27,7 @@ export default defineConfig(({ command, mode }) => {
         root: './src',
         globals: {
           spritemap: spritemapPath,
+          pages: pages,
         },
       }),
       // 2. Add plugin for copying

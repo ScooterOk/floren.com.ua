@@ -1,0 +1,19 @@
+{% extends "layouts/preview.njk" %}
+
+{% set title = "Floren — Перегляд сторінок" %}
+
+{% block content %}
+  <div class="pages-grid">
+    {% for page in pages.pages %}
+      <a href="{{ page.url }}" class="page-card">
+        <h2>{{ page.title }}</h2>
+        <p>Файл: {{ page.filename }}</p>
+        <span class="page-link">Відкрити сторінку →</span>
+      </a>
+    {% endfor %}
+  </div>
+
+  <p class="pages-count">
+    Всього сторінок: {{ pages.pages.length }}
+  </p>
+{% endblock %}
