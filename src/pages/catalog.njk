@@ -10,6 +10,8 @@
   <main class="catalog-page">
     <div class="container">
       <div class="catalog-page__grid">
+
+        {# Sidebar navigation - категорії каталогу #}
         <aside class="catalog-page__nav">
           {% for item in catalog %}
             <section class="catalog-page__nav_section">
@@ -24,20 +26,31 @@
             </section>
           {% endfor %}
         </aside>
+
+        {# Main content area #}
         <div class="catalog-page__content">
+
+          {# Breadcrumbs #}
           <sl-breadcrumb>
             <sl-breadcrumb-item href="#">Озеленення і Фітодизайн</sl-breadcrumb-item>
             <sl-breadcrumb-item href="#">Кімнатні рослини</sl-breadcrumb-item>
           </sl-breadcrumb>
+
+          {# Info показано скільки товарів #}
           <div class="catalog-page__content_showed">
           Показано <span>1 - 25</span> з <span>1230</span>
           </div>
+
+          {# Заголовок і опис категорії #}
           <h1>Кімнатні рослини</h1>
           <div class="catalog-page__content_description">
-          Правильно підібрати кімнатні рослини вам допоможе консультант студії фітодизайну «Флорен». Також ви завжди можете отримати консультацію та купити кімнатні рослини та квіти в горщиках з доставкою в нашому магазині за адресою м. Київ, пр. Берестейський (Перемоги) 70.
+          Правильно підібрати кімнатні рослини вам допоможе консультант студії фітодизайну «Флорен». Також ви завжди можете отримати консультацію та купити кімнатні рослини та квіти в горщиках з доставкою в нашому магазині за адресою м. Київ, пр. Берестейський (Перемоги) 70.
         </div>
+
+          {# Сітка товарів #}
           <div class="catalog-page__content_products">
             {% for product in productsList %}
+              {# Картка продукту #}
               <div class="catalog-page__content_product-card">
                 <div class="product-card__wrapper">
                   <div class="product-card__image">
@@ -57,9 +70,13 @@
               </div>
             {% endfor %}
           </div>
+
+          {# Кнопка "Показати ще" #}
           <div class="catalog-page__content_more">
             <button class="button button--primary button--pill">Показати ще 24 товара</button>
           </div>
+
+          {# Pagination #}
           <div class="pagination">
             <a href="" class="pagination__link disabled">
               <img src="/img/icons/icon-arrow-left-long.svg.svg" alt="Попередня сторінка">
@@ -74,6 +91,7 @@
             </a>
           </div>
 
+          {# SEO article section #}
           <article class="catalog-page__content_article">
             <section class="article-section">
               <h3 class="article-section__title">Кімнатні рослини для затишку та гармонії</h3>

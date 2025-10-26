@@ -6,18 +6,38 @@
 {% block content %}
 
   <main class="homepage">
+    <!-- Головний слайдер -->
     <div class="container">{% include "partials/homepage/hero-swiper.njk" %}</div>
+    
+    <!-- Секція озеленення інтер'єру -->
     <!-- prettier-ignore -->
     {% include "partials/homepage/interior-landscaping.njk" %}
+    
+    <!-- Секція проектів озеленення -->
     {% include "partials/homepage/landscaping-projects.njk" %}
+    
+    <!-- Секція останніх робіт -->
     {% include "partials/homepage/last-works.njk" %}
+    
+    <!-- Секція у цифрах -->
     {% include "partials/homepage/in-numbers.njk" %}
+    
+    <!-- Слайдер клієнтів -->
     {% include "partials/homepage/clients-swiper.njk" %}
+    
+    <!-- Секція популярних товарів -->
     {% include "partials/homepage/popular-products.njk" %}
+    
+    <!-- Секція порад -->
     {% include "partials/homepage/advices.njk" %}
+    
+    <!-- Секція інформації -->
     {% include "partials/homepage/information.njk" %}
+    
+    <!-- Секція рейтингу -->
     {% include "partials/homepage/rating.njk" %}
   </main>
 
+  <!-- Модальне вікно перегляду фото -->
   {% include "components/photo-viewer-modal.njk" %}
 {% endblock %}

@@ -1,7 +1,12 @@
+{# Overlay для каталогу #}
 <div class="catalog-overlay" id="catalog-overlay"></div>
+
+{# Header site #}
 <header class="header">
   <div class="container">
     <nav class="header__nav" aria-label="Головне меню сайту">
+
+      {# Dropdown локації/магазинів #}
       <!-- Location dropdown element start -->
       <sl-tooltip
         id="location-tooltip"
@@ -12,7 +17,7 @@
         distance="0"
       >
         <div slot="content" class="header__nav-location--content">
-          <img src="/img/icon-shop.svg" alt="icon-shop" />
+          <img src="/img/icon-shop.svg" alt="icon-shop"/>
           <div class="description">
             <button
               class="icon-button header__nav-location--close"
@@ -20,7 +25,7 @@
               data-event="click"
               data-callback="toggleLocation"
             >
-              <svg class="icon icon-close" />
+              <svg class="icon icon-close"/>
             </button>
             <a
               href="https://goo.gl/maps/UPpaCBkrMd2TWfXq7"
@@ -38,12 +43,13 @@
           data-event="click"
           data-callback="toggleLocation"
         >
-          <svg class="icon icon-location" />
+          <svg class="icon icon-location"/>
           Магазини у Києві
         </sl-button>
       </sl-tooltip>
       <!-- Location dropdown element end -->
 
+      {# Меню навігації #}
       <!-- Navigation menu start -->
       <ul class="header__nav-list">
         <li class="header__nav-item">
@@ -61,12 +67,13 @@
       </ul>
       <!-- Navigation menu end -->
 
+      {# Вибір мови #}
       <!-- Language dropdown element start -->
       <div class="header__nav-lang">
         <sl-dropdown class="dropdown">
           <sl-button class="header__nav-lang--button" slot="trigger" caret
             >Українською
-            <svg class="icon icon-down" />
+            <svg class="icon icon-down"/>
           </sl-button>
           <sl-menu>
             <sl-menu-item data-checked value="ua">Українською</sl-menu-item>
@@ -77,10 +84,12 @@
       </div>
       <!-- Language dropdown element end -->
     </nav>
+
+    {# Основна частина header з лого, телефонами, пошуком, кошиком #}
     <div class="header__main">
       <div class="header__main--left">
         <a href="/" class="header__main--logo">
-          <img src="/img/main-logo.svg" alt="Logo" />
+          <img src="/img/main-logo.svg" alt="Logo"/>
         </a>
         <sl-tooltip
           id="phones-tooltip"
@@ -97,32 +106,32 @@
               data-event="click"
               data-callback="togglePhones"
             >
-              <svg class="icon icon-close" />
+              <svg class="icon icon-close"/>
             </button>
             <div class="phones-tooltip--item">
-              <img src="/img/icons/icon-phone.svg" alt="Phone" />
+              <img src="/img/icons/icon-phone.svg" alt="Phone"/>
               <div class="phones-tooltip--item-wrapper">
                 <p class="item-phone">(044) 344-28-95, (050) 660-52-75</p>
                 <p class="item-hours">По буднях 09:00 - 19:30</p>
                 <p class="item-messengers">
                   <a href="">
-                    <svg class="icon icon-whatsapp" />
+                    <svg class="icon icon-whatsapp"/>
                   </a>
                   <a href="">
-                    <svg class="icon icon-telegram" />
+                    <svg class="icon icon-telegram"/>
                   </a>
                 </p>
               </div>
             </div>
             <div class="phones-tooltip--item">
-              <img src="/img/icons/icon-feedback.svg" alt="Feedback" />
+              <img src="/img/icons/icon-feedback.svg" alt="Feedback"/>
               <div class="phones-tooltip--item-wrapper">
                 <a class="item-feedback" href="">Форма зворотнього звʼязку</a>
               </div>
             </div>
           </div>
           <div class="header__main--phones">
-            <img src="/img/icons/icon-phone.svg" alt="Phone" />
+            <img src="/img/icons/icon-phone.svg" alt="Phone"/>
             <div class="header__main--phones-wrapper">
               <div class="header__main--phones-hidden">
                 (044) 344..
@@ -140,6 +149,8 @@
           </div>
         </sl-tooltip>
       </div>
+
+      {# Права частина: пошук, профіль, улюблені, кошик #}
       <div class="header__main--right">
         <!-- Search form start -->
         <form action="" class="header__main--search">
@@ -148,8 +159,8 @@
               class="search-icon"
               src="/img/icons/icon-search.svg"
               alt="Search"
-            />
-            <input class="search-input" type="search" placeholder="Шефлера" />
+/>
+            <input class="search-input" type="search" placeholder="Шефлера"/>
             <button class="search-button">Пошук</button>
           </div>
         </form>
@@ -157,20 +168,21 @@
 
         <div class="header__main--profile">
           <a href="#" class="icon-button" aria-label="Особистий кабінет">
-            <svg class="icon icon-user" />
+            <svg class="icon icon-user"/>
           </a>
           <a href="#" class="icon-button" aria-label="Обране">
             <span class="badge warning">10</span>
-            <svg class="icon icon-heart" />
+            <svg class="icon icon-heart"/>
           </a>
           <a href="#" class="icon-button" aria-label="Кошик">
             <span class="badge success">2</span>
-            <svg class="icon icon-basket" />
+            <svg class="icon icon-basket"/>
           </a>
         </div>
       </div>
     </div>
 
+    {# Меню каталогу #}
     {% include "partials/catalog.njk" %}
   </div>
 </header>

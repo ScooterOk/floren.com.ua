@@ -10,6 +10,8 @@
   <main class="product-page">
     <div class="container">
       <div class="product-page__grid">
+        
+        {# Sidebar navigation - категорії каталогу #}
         <aside class="product-page__nav">
           {% for item in catalog %}
             <section class="product-page__nav_section">
@@ -24,6 +26,8 @@
             </section>
           {% endfor %}
         </aside>
+
+        {# Main content area #}
         <div class="product-page__content">
           {# Breadcrumbs #}
           <sl-breadcrumb>
@@ -31,7 +35,10 @@
             <sl-breadcrumb-item href="#">Кімнатні рослини</sl-breadcrumb-item>
             <sl-breadcrumb-item href="#">Орхідеї</sl-breadcrumb-item>
           </sl-breadcrumb>
+
           <div class="product-page__content_grid">
+            
+            {# Галерея фото продукту #}
             {# Product gallery #}
             <div class="product-page__gallery">
               <div
@@ -73,10 +80,13 @@
                 <span class="icon icon-photogallery"></span> Орхідея Фаленопсис Муса Пінк – фото в інтер'єрі</a>
             </div>
 
+            {# Деталі продукту: артикул, назва, опції, ціна, кнопки #}
             {# Product details #}
             <div class="product-page__details">
               <div class="product-page__details_artikul">Артикул: 7000</div>
               <h1>Орхідея Фаленопсис Муса Пінк</h1>
+
+              {# Опції: розмір і колір #}
               <section class="product-page__options">
                 <h3>Доступні варіанти:</h3>
                 <div class="product-page__options_size">
@@ -164,6 +174,7 @@
                 </div>
               </section>
 
+              {# Ціна і кнопки дій #}
               <section class="product-page__actions">
                 <div class="product-page__price">
                   1965
@@ -183,6 +194,7 @@
                 </div>
               </section>
 
+              {# Табси: інформація, доставка, оплата #}
               <section class="product-page__delivery">
                 <sl-tab-group>
                   <sl-tab slot="nav" panel="info">Інформація</sl-tab>
@@ -261,6 +273,7 @@
             </div>
           </div>
 
+          {# Додаткові послуги #}
           {# Services #}
           <div class="product-page__services">
             <section class="services__item">
@@ -289,6 +302,7 @@
             </section>
           </div>
 
+          {# Табси з описом продукту, аксесуарами, доглядом, відгуками #}
           <div class="product-page__description">
             <sl-tab-group>
               <sl-tab slot="nav" panel="description">Опис</sl-tab>
@@ -556,11 +570,13 @@
         </div>
       </div>
 
+      {# Секція "Останні роботи" #}
       <div class="main__last-works">
         {% include "partials/homepage/last-works.njk" %}
       </div>
 
     </main>
 
+    {# Модальне вікно перегляду фото #}
     {% include "components/photo-viewer-modal.njk" %}
   {% endblock %}

@@ -17,10 +17,17 @@
     <!-- <link rel="stylesheet" href="../styles/style.css" /> -->
   </head>
   <body>
+    <!-- Шапка сайту -->
     <!-- prettier-ignore -->
     {% include "partials/header.njk" %}
+    
+    <!-- Основний контент сторінки -->
     {% block content %}{% endblock %}
+    
+    <!-- Підвал сайту -->
     {% include "partials/footer.njk" %}
+    
+    <!-- Головний JS файл -->
     <script type="module" src="/src/scripts/main.js"></script>
   </body>
 </html>

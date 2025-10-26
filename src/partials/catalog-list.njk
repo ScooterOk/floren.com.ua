@@ -1,3 +1,5 @@
+{# Список категорій каталогу #}
+
 <!-- prettier-ignore -->
 {% set categories = [
   {
@@ -22,18 +24,21 @@
   }
 ] %}
 
+{# Dropdown список категорій #}
 <div class="header__catalog_list">
   <div class="header__catalog_list-wrapper">
+
+    {# Список категорій - ліва частина #}
     <ul class="category-list">
       <li class="active" data-category="room-plants">
         <a href="">
-          <img src="/img/icons/icon-plants-home.svg" alt="Кімнатні рослини" />
+          <img src="/img/icons/icon-plants-home.svg" alt="Кімнатні рослини"/>
           <span>Кімнатні рослини</span>
         </a>
       </li>
       <li data-category="plant-pots">
         <a href="">
-          <img src="/img/icons/icon-pot.svg" alt="Горщики для рослин" />
+          <img src="/img/icons/icon-pot.svg" alt="Горщики для рослин"/>
           <span>Горщики для рослин</span>
         </a>
       </li>
@@ -42,7 +47,7 @@
           <img
             src="/img/icons/icon-accessories.svg"
             alt="Аксесуари для рослин"
-          />
+/>
           <span>Аксесуари для рослин</span>
         </a>
       </li>
@@ -51,7 +56,7 @@
           <img
             src="/img/icons/icon-exteriror-works.svg"
             alt="Екстер'єрні роботи"
-          />
+/>
           <span>Екстер'єрні роботи</span>
         </a>
       </li>
@@ -60,9 +65,9 @@
           <img
             src="/img/icons/icon-lawn-autowater.svg"
             alt="Створення газону і автополив"
-          />
+/>
           <span>
-            Створення газону<br />
+            Створення газону<br/>
             і автополив</span
           >
         </a>
@@ -72,9 +77,9 @@
           <img
             src="/img/icons/icon-care-services.svg"
             alt="Послуги з догляду за ділянкою"
-          />
+/>
           <span>
-            Послуги з догляду<br />
+            Послуги з догляду<br/>
             за ділянкою</span
           >
         </a>
@@ -84,11 +89,13 @@
           <img
             src="/img/icons/icon-landschaft-design.svg"
             alt="Ландшафтний дизайн"
-          />
+/>
           <span>Ландшафтний дизайн</span>
         </a>
       </li>
     </ul>
+
+    {# Контент категорій - права частина #}
     <div class="category-content">
       <!-- prettier-ignore -->
       {% include 'partials/categories/room-plants.njk' %}
