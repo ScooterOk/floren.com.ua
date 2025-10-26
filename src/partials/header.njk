@@ -1,12 +1,12 @@
-{# Overlay для каталогу #}
+<!-- Overlay для каталогу -->
 <div class="catalog-overlay" id="catalog-overlay"></div>
 
-{# Header site #}
+<!-- Header site -->
 <header class="header">
   <div class="container">
     <nav class="header__nav" aria-label="Головне меню сайту">
 
-      {# Dropdown локації/магазинів #}
+      <!-- Dropdown локації/магазинів -->
       <!-- Location dropdown element start -->
       <sl-tooltip
         id="location-tooltip"
@@ -49,7 +49,7 @@
       </sl-tooltip>
       <!-- Location dropdown element end -->
 
-      {# Меню навігації #}
+      <!-- Меню навігації -->
       <!-- Navigation menu start -->
       <ul class="header__nav-list">
         <li class="header__nav-item">
@@ -67,7 +67,7 @@
       </ul>
       <!-- Navigation menu end -->
 
-      {# Вибір мови #}
+      <!-- Вибір мови -->
       <!-- Language dropdown element start -->
       <div class="header__nav-lang">
         <sl-dropdown class="dropdown">
@@ -85,7 +85,7 @@
       <!-- Language dropdown element end -->
     </nav>
 
-    {# Основна частина header з лого, телефонами, пошуком, кошиком #}
+    <!-- Основна частина header з лого, телефонами, пошуком, кошиком -->
     <div class="header__main">
       <div class="header__main--left">
         <a href="/" class="header__main--logo">
@@ -150,7 +150,7 @@
         </sl-tooltip>
       </div>
 
-      {# Права частина: пошук, профіль, улюблені, кошик #}
+      <!-- Права частина: пошук, профіль, улюблені, кошик -->
       <div class="header__main--right">
         <!-- Search form start -->
         <form action="" class="header__main--search">
@@ -182,7 +182,7 @@
       </div>
     </div>
 
-    {# Меню каталогу #}
+    <!-- Меню каталогу -->
     {% include "partials/catalog.njk" %}
   </div>
 </header>

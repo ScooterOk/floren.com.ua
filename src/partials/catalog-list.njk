@@ -1,4 +1,4 @@
-{# Список категорій каталогу #}
+<!-- Список категорій каталогу -->
 
 <!-- prettier-ignore -->
 {% set categories = [
@@ -24,11 +24,11 @@
   }
 ] %}
 
-{# Dropdown список категорій #}
+<!-- Dropdown список категорій -->
 <div class="header__catalog_list">
   <div class="header__catalog_list-wrapper">
 
-    {# Список категорій - ліва частина #}
+    <!-- Список категорій - ліва частина -->
     <ul class="category-list">
       <li class="active" data-category="room-plants">
         <a href="">
@@ -95,7 +95,7 @@
       </li>
     </ul>
 
-    {# Контент категорій - права частина #}
+    <!-- Контент категорій - права частина -->
     <div class="category-content">
       <!-- prettier-ignore -->
       {% include 'partials/categories/room-plants.njk' %}

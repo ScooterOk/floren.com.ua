@@ -11,7 +11,7 @@
     <div class="container">
       <div class="catalog-page__grid">
 
-        {# Sidebar navigation - категорії каталогу #}
+        <!-- Sidebar navigation - категорії каталогу -->
         <aside class="catalog-page__nav">
           {% for item in catalog %}
             <section class="catalog-page__nav_section">
@@ -27,17 +27,17 @@
           {% endfor %}
         </aside>
 
-        {# Main content area #}
+        <!-- Main content area -->
         <div class="catalog-page__content">
 
-          {# Breadcrumbs #}
+          <!-- Breadcrumbs -->
           <sl-breadcrumb>
             <sl-breadcrumb-item href="#">Озеленення і Фітодизайн</sl-breadcrumb-item>
             <sl-breadcrumb-item href="#">Кімнатні рослини</sl-breadcrumb-item>
             <sl-breadcrumb-item href="#">Орхідеї</sl-breadcrumb-item>
           </sl-breadcrumb>
 
-          {# Фільтри товарів #}
+          <!-- Фільтри товарів -->
           <div class="catalog-page__content_filters">
             <sl-select placeholder="Розмір">
               <sl-option value="option-1">Королівські (9)</sl-option>
@@ -61,7 +61,7 @@
             </sl-select>
           </div>
 
-          {# Активні теги фільтрів #}
+          <!-- Активні теги фільтрів -->
           <div class="catalog-page__content_tags">
             <sl-tag removable>Стандарт</sl-tag>
             <sl-tag removable>Темно-рожевий</sl-tag>
@@ -69,21 +69,21 @@
             <button class="button button--text">Скинути фільтри</button>
           </div>
 
-          {# Info показано скільки товарів #}
+          <!-- Info показано скільки товарів -->
           <div class="catalog-page__content_showed">
           Показано <span>1 - 20</span> з <span>1230</span>
           </div>
 
-          {# Заголовок і опис категорії #}
+          <!-- Заголовок і опис категорії -->
           <h1>Кімнатні рослини</h1>
           <div class="catalog-page__content_description">
           Правильно підібрати кімнатні рослини вам допоможе консультант студії фітодизайну «Флорен». Також ви завжди можете отримати консультацію та купити кімнатні рослини та квіти в горщиках з доставкою в нашому магазині за адресою м. Київ, пр. Берестейський (Перемоги) 70.
         </div>
 
-          {# Сітка товарів #}
+          <!-- Сітка товарів -->
           <div class="catalog-page__content_products">
 
-            {# Приклад картки продукту з опціями #}
+            <!-- Приклад картки продукту з опціями -->
             <!-- Product Card Start-->
             <div class="catalog-page__content_product-card">
               <div class="product-card__wrapper">
@@ -98,7 +98,7 @@
 
                 <div class="product-card__price">
                 114,99 ₴ <del>200,99 ₴</del>
-                  {# If in cart add this block #}
+                  <!-- If in cart add this block -->
                   <div class="product-card__in-cart">
                     <span class="icon icon-basket"></span>
                   </div>
@@ -129,7 +129,7 @@
             </div>
             <!-- Product Card End -->
 
-            {# Список товарів #}
+            <!-- Список товарів -->
             {% for product in productsList %}
               {% if loop.index <= 24 %}
                 <div class="catalog-page__content_product-card">
@@ -153,12 +153,12 @@
             {% endfor %}
           </div>
 
-          {# Кнопка "Показати ще" #}
+          <!-- Кнопка "Показати ще" -->
           <div class="catalog-page__content_more">
             <button class="button button--primary button--pill">Показати ще 24 товара</button>
           </div>
 
-          {# Pagination #}
+          <!-- Pagination -->
           <div class="pagination">
             <a href="" class="pagination__link disabled">
               <img src="/img/icons/icon-arrow-left-long.svg.svg" alt="Попередня сторінка">
@@ -242,7 +242,7 @@
             </section>
           </article>
 
-          {# Форма відгуків #}
+          <!-- Форма відгуків -->
           <!-- Comments Form Section -->
           <div class="catalog-page__content_comments">
             <h2>Відгук або запитання</h2>
@@ -258,7 +258,7 @@
             </div>
           </div>
 
-          {# Список відгуків #}
+          <!-- Список відгуків -->
           <!-- Comments List Section -->
           <div class="catalog-page__content_comments-list">
             <!-- Comment Item -->
