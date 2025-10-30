@@ -12,7 +12,7 @@ import {
   Pagination,
   Thumbs,
 } from 'swiper/modules';
-import { onYouTubeIframeAPIReady } from './main';
+import { generateRandomId } from './main';
 
 /**
  * Configuration object for different Swiper instances.
@@ -156,12 +156,27 @@ export const initSwipers = () => {
       }
     );
 
+    window.swipers.mainSwiper.on('slideChange', () => {
+      // Stop all YouTube players when the slide changes
+      window.youtubePlayers.forEach((player) => {
+        if (player.stopVideo) {
+          player.stopVideo();
+        }
+      });
+    });
+
     // Add event listeners to close the photo viewer modal
     document
       .querySelectorAll('.photo-viewer__overlay, .photo-viewer__close-button')
       ?.forEach((el) => {
         el.addEventListener('click', () => {
           document.querySelector('.photo-viewer')?.classList.remove('active');
+          // Stop all YouTube players when closing the viewer
+          window.youtubePlayers.forEach((player) => {
+            if (player.stopVideo) {
+              player.stopVideo();
+            }
+          });
         });
       });
   }
@@ -203,11 +218,13 @@ export const initHoverPhotoViewers = () => {
         activeIndex++;
       }
 
-      console.log(thumbs);
+      const images = Array.from(thumbs).map((thumb) => ({
+        src:
+          thumb.querySelector('img')?.src ||
+          thumb.querySelector('[data-video-src]')?.dataset.videoSrc,
+        type: thumb.querySelector('img') ? 'image' : 'video',
+      }));
 
-      const images = Array.from(thumbs).map(
-        (thumb) => thumb.querySelector('img').src
-      );
       activatePhotoViewer(images, activeIndex);
     });
 
@@ -254,21 +271,26 @@ function activatePhotoViewer(images, index = 0) {
     }
   });
 
+  const videoIdArray = [];
+
   // Add new slides to the thumbnails swiper
   const slides = images.map((item) => {
     if (item.type === 'image') {
       return `<div class="swiper-slide"><img src="${item.src}" /></div>`;
     } else {
-      return `<div class="swiper-slide"><iframe id="youtube-player"
-        width="560" 
-        height="315" 
-        src="${item.src}&enablejsapi=1" 
-        title="YouTube video player" 
-        frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerpolicy="strict-origin-when-cross-origin" 
-        allowfullscreen>
-      </iframe></div>`;
+      const videoId = generateRandomId();
+      videoIdArray.push(videoId);
+      return `
+      <div class="swiper-slide">
+        <iframe id="${videoId}"       
+          src="${item.src}&enablejsapi=1" 
+          title="YouTube video player" 
+          frameborder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerpolicy="strict-origin-when-cross-origin" 
+          allowfullscreen>
+        </iframe>
+      </div>`;
     }
   });
 
@@ -281,5 +303,11 @@ function activatePhotoViewer(images, index = 0) {
 
   photoViewer.classList.add('active');
 
-  window.player = new YT.Player('youtube-player');
+  videoIdArray.forEach((videoId) => {
+    const player = new YT.Player(videoId);
+    window.youtubePlayers.push(player);
+  });
+
+  // window.player = new YT.Player(videoId);
+  // window.scooterok.push(window.player);
 }

@@ -19,16 +19,16 @@ import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
 
 export { Autoplay, Navigation, Pagination, Thumbs, Swiper };
 
-window.player = null;
+window.youtubePlayers = [];
 
-export function onYouTubeIframeAPIReady() {
-  console.log('YouTube API is ready!');
-  window.player = new YT.Player('youtube-player', {
-    events: {
-      onReady: onPlayerReady, // Можна додати подію "onReady"
-    },
-  });
-}
+// export function onYouTubeIframeAPIReady() {
+//   console.log('YouTube API is ready!');
+//   window.player = new YT.Player('youtube-player', {
+//     events: {
+//       onReady: onPlayerReady, // Можна додати подію "onReady"
+//     },
+//   });
+// }
 
 export function startApp() {
   // console.log('startApp called');
@@ -40,6 +40,12 @@ export function startApp() {
   initExpandableText();
   initHoverPhotoViewers();
 }
+
+export const generateRandomId = (length = 10) => {
+  return Math.random()
+    .toString(36)
+    .substring(2, 2 + length);
+};
 
 // Auto-start when loaded in browser
 document.addEventListener('DOMContentLoaded', () => {
