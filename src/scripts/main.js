@@ -19,6 +19,17 @@ import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
 
 export { Autoplay, Navigation, Pagination, Thumbs, Swiper };
 
+window.player = null;
+
+export function onYouTubeIframeAPIReady() {
+  console.log('YouTube API is ready!');
+  window.player = new YT.Player('youtube-player', {
+    events: {
+      onReady: onPlayerReady, // Можна додати подію "onReady"
+    },
+  });
+}
+
 export function startApp() {
   // console.log('startApp called');
   initEvents();

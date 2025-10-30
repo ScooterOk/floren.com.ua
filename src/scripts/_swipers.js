@@ -12,6 +12,7 @@ import {
   Pagination,
   Thumbs,
 } from 'swiper/modules';
+import { onYouTubeIframeAPIReady } from './main';
 
 /**
  * Configuration object for different Swiper instances.
@@ -175,6 +176,7 @@ export const initHoverPhotoViewers = () => {
   document.querySelectorAll('[data-photo-viewer]').forEach((viewer) => {
     const main = viewer.querySelector('.hover-photo-viewer__main');
     const mainimage = viewer.querySelector('.hover-photo-viewer__main > img');
+    const thumbsBox = viewer.querySelector('.hover-photo-viewer__thumbs');
     const thumbs = viewer.querySelectorAll('.hover-photo-viewer__thumbs li');
 
     // Handle thumbnail hover to change the main image
@@ -192,11 +194,31 @@ export const initHoverPhotoViewers = () => {
       });
     });
 
-    // Handle click on the main image to open the full-screen photo viewer
-    main.addEventListener('click', (e) => {
+    thumbsBox.addEventListener('click', (e) => {
+      const li = e.target.closest('li');
+      let activeIndex = 0;
+      let prev = li;
+
+      while ((prev = prev.previousElementSibling)) {
+        activeIndex++;
+      }
+
+      console.log(thumbs);
+
       const images = Array.from(thumbs).map(
         (thumb) => thumb.querySelector('img').src
       );
+      activatePhotoViewer(images, activeIndex);
+    });
+
+    // Handle click on the main image to open the full-screen photo viewer
+    main.addEventListener('click', () => {
+      const images = Array.from(thumbs).map((thumb) => ({
+        src:
+          thumb.querySelector('img')?.src ||
+          thumb.querySelector('[data-video-src]')?.dataset.videoSrc,
+        type: thumb.querySelector('img') ? 'image' : 'video',
+      }));
       const activeIndex = Array.from(thumbs).findIndex((thumb) =>
         thumb.classList.contains('active')
       );
@@ -224,16 +246,40 @@ function activatePhotoViewer(images, index = 0) {
   thumbsSwiper.removeAllSlides();
 
   // Create new slides from the image array
-  const slides = images.map(
-    (src) => `<div class="swiper-slide"><img src="${src}" /></div>`
-  );
+  const thumbs = images.map((item) => {
+    if (item.type === 'image') {
+      return `<div class="swiper-slide"><img src="${item.src}" /></div>`;
+    } else {
+      return `<div class="swiper-slide"><button><span class="icon icon-video-button"></span><span>Відео</span></button></div>`;
+    }
+  });
+
+  // Add new slides to the thumbnails swiper
+  const slides = images.map((item) => {
+    if (item.type === 'image') {
+      return `<div class="swiper-slide"><img src="${item.src}" /></div>`;
+    } else {
+      return `<div class="swiper-slide"><iframe id="youtube-player"
+        width="560" 
+        height="315" 
+        src="${item.src}&enablejsapi=1" 
+        title="YouTube video player" 
+        frameborder="0" 
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+        referrerpolicy="strict-origin-when-cross-origin" 
+        allowfullscreen>
+      </iframe></div>`;
+    }
+  });
 
   // Add new slides to both swipers
   mainSwiper.appendSlide(slides);
-  thumbsSwiper.appendSlide(slides);
+  thumbsSwiper.appendSlide(thumbs);
 
   // Go to the specified slide and show the viewer
   mainSwiper.slideToLoop(index);
 
   photoViewer.classList.add('active');
+
+  window.player = new YT.Player('youtube-player');
 }
