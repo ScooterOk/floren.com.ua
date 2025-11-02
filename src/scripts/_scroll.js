@@ -1,37 +1,67 @@
 /**
  * Header scroll hide/show functionality
  */
+var lastScrollTop = 0;
+
 export const initHeaderScroll = () => {
-  const header = document.querySelector('.header');
-  if (!header) return;
+  const catalogRef = document.getElementById('catalog-menu');
+  window.addEventListener(
+    'scroll',
+    function () {
+      // or window.addEventListener("scroll"....
+      var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
+      console.log('st', st);
 
-  let lastScrollTop = 0;
-  let isScrolling = false;
-
-  const handleScroll = () => {
-    if (isScrolling) return;
-
-    isScrolling = true;
-    requestAnimationFrame(() => {
-      const scrollTop =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      // Якщо скролимо вниз і не на самому верху
-      if (scrollTop > lastScrollTop && scrollTop > 100) {
-        header.classList.add('header--hidden');
-      }
-      // Якщо скролимо вгору
-      else if (scrollTop < lastScrollTop) {
-        header.classList.remove('header--hidden');
+      if (st <= 64) {
+        catalogRef?.classList.remove('header__catalog--visible');
       }
 
-      lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-      isScrolling = false;
-    });
-  };
-
-  window.addEventListener('scroll', handleScroll, { passive: true });
+      if (st > lastScrollTop) {
+        // downscroll code
+        catalogRef?.classList.remove('header__catalog--visible');
+        console.log('Scrolling down');
+      } else if (st < lastScrollTop && st > 64) {
+        // upscroll code
+        console.log('Scrolling up');
+        catalogRef?.classList.add('header__catalog--visible');
+      } // else was horizontal scroll
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    },
+    false
+  );
 };
+
+// export const initHeaderScroll = () => {
+//   const header = document.querySelector('.header');
+//   if (!header) return;
+
+//   let lastScrollTop = 0;
+//   let isScrolling = false;
+
+//   const handleScroll = () => {
+//     if (isScrolling) return;
+
+//     isScrolling = true;
+//     requestAnimationFrame(() => {
+//       const scrollTop =
+//         window.pageYOffset || document.documentElement.scrollTop;
+
+//       // Якщо скролимо вниз і не на самому верху
+//       if (scrollTop > lastScrollTop && scrollTop > 100) {
+//         header.classList.add('header--hidden');
+//       }
+//       // Якщо скролимо вгору
+//       else if (scrollTop < lastScrollTop) {
+//         header.classList.remove('header--hidden');
+//       }
+
+//       lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+//       isScrolling = false;
+//     });
+//   };
+
+//   window.addEventListener('scroll', handleScroll, { passive: true });
+// };
 
 /**
  * Gets the width of the scrollbar.

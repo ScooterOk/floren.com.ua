@@ -37,7 +37,7 @@ main {
 
 .header {
   position: sticky;
-  top: 0;
+  top: -36px;
   z-index: 100;
   background-color: var(--color-white);
   transition: transform 0.3s ease-in-out;
@@ -356,7 +356,13 @@ main {
   &__catalog {
     display: flex;
     gap: 1rem;
-    position: relative;
+    position: sticky;
+    top: 32px;
+    z-index: 90;
+    transition: top 0.3s ease-in-out;
+    &--visible {
+      top: 96px;
+    }
     &--main {
       flex: 0 0 240px;
       .catalog-button {
