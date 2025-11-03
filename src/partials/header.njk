@@ -173,10 +173,13 @@
             <span class="badge warning">10</span>
             <svg class="icon icon-heart"/>
           </a>
-          <a href="#" class="icon-button" aria-label="Кошик">
+          <button class="icon-button" aria-label="Кошик" data-event="click" data-callback="openModal" data-modal-id="cart-modal">
             <span class="badge success">2</span>
             <svg class="icon icon-basket"/>
-          </a>
+          </button>
+
+          <!-- Cart modal -->
+          {% include "partials/cart-modal.njk" %}
         </div>
       </div>
     </div>
