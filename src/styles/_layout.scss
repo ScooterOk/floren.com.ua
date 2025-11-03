@@ -944,3 +944,27 @@ body.secondary-hovered {
     }
   }
 }
+
+.login-modal {
+  --width: 448px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: getRem(20);
+    .form-control {
+      width: 100%;
+      &--double {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      a {
+        color: var(--color-green-100);
+        font-size: getRem(14);
+      }
+      .button--primary {
+        width: 100%;
+      }
+    }
+  }
+}

@@ -486,6 +486,11 @@ sl-textarea {
   &::part(base) {
     // border-color: var(--sl-color-danger-600);
   }
+  &::part(form-control-label) {
+    font-size: getRem(14);
+    font-weight: 300;
+    margin-bottom: getRem(8);
+  }
   &::part(input) {
     font-family: 'Geologica', sans-serif;
     &::placeholder {
@@ -626,6 +631,19 @@ sl-radio {
   &[disabled] {
     cursor: not-allowed;
     pointer-events: none;
+  }
+}
+
+sl-checkbox {
+  --sl-toggle-size-medium: 20px;
+  --sl-input-font-family: 'Geologica', sans-serif;
+  --sl-input-font-size-medium: getRem(14);
+  --sl-input-font-weight: 300;
+  &::part(control) {
+    border-radius: 4px;
+  }
+  &::part(label) {
+    margin-top: getRem(-1);
   }
 }
 
