@@ -49,12 +49,16 @@ export default defineConfig(({ command, mode }) => {
           // Дозвольте Vite керувати іменем spritemap.svg для продакшену
           assetFileNames: (assetInfo) => {
             if (/\.(css)$/.test(assetInfo.name)) {
-              return `assets/css/[name]-[hash][extname]`;
+              // return `assets/css/[name]-[hash][extname]`;
+              return `assets/css/[name][extname]`;
             }
-            return `assets/[name]-[hash][extname]`;
+            // return `assets/[name]-[hash][extname]`;
+            return `assets/[name][extname]`;
           },
-          chunkFileNames: 'assets/js/[name]-[hash].js',
-          entryFileNames: 'assets/js/[name]-[hash].js',
+          // chunkFileNames: 'assets/js/[name]-[hash].js',
+          // entryFileNames: 'assets/js/[name]-[hash].js',
+          chunkFileNames: 'assets/js/[name].js',
+          entryFileNames: 'assets/js/[name].js',
         },
       },
     },

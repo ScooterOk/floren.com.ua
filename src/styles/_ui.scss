@@ -8,6 +8,7 @@ a.button {
   mask-size: cover;
   min-height: 48px;
   display: inline-flex;
+  justify-content: center;
   align-items: center;
   font-size: getRem(18);
   border-radius: 8px;
