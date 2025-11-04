@@ -166,13 +166,15 @@
         <!-- Search form end -->
 
         <div class="header__main--profile">
-          <a href="#" class="icon-button" aria-label="Особистий кабінет">
+          <a href="#" class="icon-button" aria-label="Особистий кабінет" data-event="click" data-callback="openModal" data-modal-id="sign-in-modal">
             <svg class="icon icon-user"/>
           </a>
           <a href="#" class="icon-button" aria-label="Обране">
             <span class="badge warning">10</span>
             <svg class="icon icon-heart"/>
           </a>
+
+          {# TODO: Add cart modal documentation #}
           <button class="icon-button" aria-label="Кошик" data-event="click" data-callback="openModal" data-modal-id="cart-modal">
             <span class="badge success">2</span>
             <svg class="icon icon-basket"/>
@@ -183,6 +185,9 @@
 
           <!-- Sign in modal -->
           {% include "partials/sign-in-modal.njk" %}
+
+          <!-- Sign up modal -->
+          {% include "partials/sign-up-modal.njk" %}
 
         </div>
       </div>

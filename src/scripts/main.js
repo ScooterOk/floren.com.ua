@@ -6,6 +6,9 @@ import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
+
+import 'intl-tel-input/build/css/intlTelInput.css';
+
 // shoelace components (side-effect imports)
 import './_shoelace';
 
@@ -16,6 +19,7 @@ import { initHoverPhotoViewers, initSwipers } from './_swipers';
 import { initClickOutsideHandlers } from './_clickOutside';
 import { initExpandableText } from './_expandableText';
 import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
+import { initIntlTelInput } from './_shoelace';
 
 export { Autoplay, Navigation, Pagination, Thumbs, Swiper };
 
@@ -39,6 +43,7 @@ export function startApp() {
   initSwipers();
   initExpandableText();
   initHoverPhotoViewers();
+  initIntlTelInput();
 }
 
 export const generateRandomId = (length = 10) => {

@@ -958,6 +958,12 @@ body.secondary-hovered {
         justify-content: space-between;
         align-items: center;
       }
+      label {
+        display: block;
+        font-size: getRem(14);
+        font-weight: 300;
+        margin-bottom: getRem(8);
+      }
       a {
         color: var(--color-green-100);
         font-size: getRem(14);

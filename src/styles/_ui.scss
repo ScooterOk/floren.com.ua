@@ -495,7 +495,38 @@ sl-textarea {
     font-family: 'Geologica', sans-serif;
     &::placeholder {
       font-size: getRem(14);
+      font-weight: 300;
+      color: var(--color-gray-80);
     }
+  }
+}
+
+input,
+textarea {
+  &::placeholder {
+    font-family: 'Geologica', sans-serif;
+    font-size: getRem(14);
+    font-weight: 300;
+    color: var(--color-gray-80);
+  }
+}
+
+.iti {
+  width: 100%;
+  &__tel-input {
+    all: unset;
+    width: 100%;
+    height: calc(2.5rem - 1px * 2);
+    border-radius: 0.5rem;
+    border: 1px solid var(--color-gray-40);
+    padding-left: getRem(112) !important;
+  }
+  &__country-container {
+    background-color: var(--color-gray-20);
+    border-radius: 0.5rem 0 0 0.5rem;
+  }
+  &__selected-dial-code {
+    padding-right: getRem(8);
   }
 }
 

@@ -1,9 +1,14 @@
-<sl-dialog id="sign-in-modal" label="Вхід" class="login-modal">
+<sl-dialog id="sign-up-modal" label="Вхід" class="login-modal">
   <form class="login-modal__form">
     <div class="form-control">
-      {# <sl-input label="Ваш телефон"  type="tel" data-tel-input></sl-input> #}
+      <sl-input label="ПІБ" placeholder="Прізвище Імʼя По батькові"></sl-input>
+    </div>
+    <div class="form-control">
       <label for="phone">Ваш телефон</label>
       <input id="phone" data-tel-input type="tel">
+    </div>
+    <div class="form-control">
+      <sl-input label="Email" type="email" placeholder="E-mail"></sl-input>
     </div>
     <div class="form-control">
       <sl-input label="Пароль" type="password" placeholder="********"></sl-input>
