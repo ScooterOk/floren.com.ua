@@ -1,0 +1,224 @@
+{% extends "layouts/base.njk" %}
+
+{% from "data/catalog-page.njk" import catalog %}
+{% from "data/catalog-page.njk" import productsList %}
+
+{% set title = "Корзина" %}
+
+{% block content %}
+
+  <main class="cart-page">
+    <div class="container">
+      <h1 class="cart-page__title">Корзина</h1>
+      <div class="cart-page__grid">
+        {# Order information #}
+        <div class="cart-page__order-information">
+          <section class="information__contact">
+            <div class="information__grid">
+              <form class="information__contact_form">
+                <h2>1. Контактні дані</h2>
+                <div class="form-grid">
+                  <div class="form-control">
+                    <sl-input label="ПІБ" placeholder="ПІБ"></sl-input>
+                  </div>
+                  <div class="form-control">
+                    <label for="phone">Ваш телефон</label>
+                    <input id="phone" data-tel-input type="tel">
+                  </div>
+                </div>
+                <div class="form-control">
+                  <sl-input label="E-mail" type="email" placeholder="E-mail"></sl-input>
+                </div>
+                <div class="form-control form-control--checkbox">
+                  <h3>Дані одержувача</h3>
+                  <sl-checkbox>Я одержувач</sl-checkbox>
+                </div>
+                <div class="form-grid">
+                  <div class="form-control">
+                    <sl-input label="ПІБ" placeholder="ПІБ"></sl-input>
+                  </div>
+                  <div class="form-control">
+                    <label for="phone">Ваш телефон</label>
+                    <input id="phone" data-tel-input type="tel">
+                  </div>
+                </div>
+              </form>
+
+              <div class="information__contact_login">
+                <svg class="icon icon-user"/>
+                <p>Зареєстровані? Авторизуйтесь і контактні данні автоматично заповняться</p>
+                <a href="" class="button button--outline">Увійти</a>
+                <a href="" class="underline">Зареєструватись</a>
+              </div>
+            </div>
+          </section>
+
+          <section class="information__shipping">
+            <h2>2. Спосіб доставки</h2>
+            <sl-radio-group name="shipping" value="1">
+              <sl-radio value="1">
+                <div class="radio-option">
+                  <img src="/img/icons/icon-post.svg" alt="">
+                  <span>Самовивіз із магазинів у Києві</span>
+                  <b>безкоштовно</b>
+                </div>
+              </sl-radio>
+              <sl-radio value="2">
+                <div class="radio-option">
+                  <img src="/img/icons/icon-track.svg" alt="">
+                  <span>Кур'єром по Києву</span>
+                  <b>от 200 <sup>грн</sup>
+                  </b>
+                </div>
+              </sl-radio>
+              <sl-radio value="3">
+                <div class="radio-option">
+                  <img src="/img/icons/icon-nova-poshta.svg" alt="">
+                  <span>Доставка у відділення Нової Пошти</span>
+                  <b>от 80 <sup>грн</sup>
+                  </b>
+                </div>
+              </sl-radio>
+            </sl-radio-group>
+            <div class="form-grid">
+              <div class="form-control">
+                <sl-input label="Дата самовивозу" type="date" placeholder="Date" value="2025-11-05"></sl-input>
+              </div>
+              <div class="form-control">
+                <sl-select placeholder="Виберіть час" label="Час самовивозу">
+                  <sl-option value="09:00 - 11:00">09:00 - 11:00</sl-option>
+                  <sl-option value="11:00 - 14:00">11:00 - 14:00</sl-option>
+                  <sl-option value="14:00 - 17:00">14:00 - 17:00</sl-option>
+                  <sl-option value="17:00 - 19:00">17:00 - 19:00</sl-option>
+                </sl-select>
+              </div>
+            </div>
+            <div class="form-control">
+              <sl-select placeholder="Виберіть адресу" label="Адреса магазину">
+                <sl-option value="пр. Берестейський, 70">пр. Берестейський, 70</sl-option>
+              </sl-select>
+            </div>
+          </section>
+
+          <section class="information__payment">
+            <h2>3. Спосіб оплати</h2>
+            <sl-radio-group name="payment" value="1">
+              <sl-radio value="1">
+                <div class="radio-option">
+                  <img src="/img/icons/icon-cash.svg" alt="">
+                  <span>Готівкою при отриманні</span>
+                </div>
+              </sl-radio>
+              <sl-radio value="2">
+                <div class="radio-option">
+                  <img src="/img/icons/icon-card.svg" alt="">
+                  <span>Картою на сайті VISA / Mastercard</span>
+                </div>
+              </sl-radio>
+              <sl-radio value="3">
+                <div class="radio-option">
+                  <img src="/img/icons/icon-order.svg" alt="">
+                  <span>Безготівковий розрахунок для юридичних осіб</span>
+                </div>
+              </sl-radio>
+            </sl-radio-group>
+          </section>
+
+          <section class="information__comment">
+            <h2>4. Коментар до замовлення</h2>
+            <div class="form-control">
+              <sl-textarea placeholder="Ваш коментар до замовлення"></sl-textarea>
+            </div>
+            <div class="form-control">
+              <sl-checkbox>Мені потрібна додаткова консультація</sl-checkbox>
+            </div>
+          </section>
+        </div>
+        <div class="cart-page__order-list">
+          <section class="cart-page__order-list_section">
+            <h2>Товари в замовленні</h2>
+            <ul class="cart-items-list">
+              <li class="cart-item">
+                <div class="cart-item__image">
+                  <a href="">
+                    <img src="/img/sevices/landscaping-artificial-plants.png" alt="">
+                  </a>
+                </div>
+                <div class="cart-item__details">
+                  <button class="cart-item__remove">
+                    <svg class="icon icon-trash"></svg>
+                  </button>
+                  <h3>
+                    <a href="">Орхідея Фаленопсис Муса Пінк</a>
+                  </h3>
+                  <div class="cart-item__details_options">Ø 10, висота 45 см</div>
+                  <div class="cart-item__details_controls">
+                    <div class="counter-input">
+                      <button>
+                        <img src="/img/icons/icon-minus.svg" alt="Видалити один товар">
+                      </button>
+                      <input type="number" value="1" min="1">
+                      <button>
+                        <img src="/img/icons/icon-plus.svg" alt="Додати один товар">
+                      </button>
+                    </div>
+                    <div class="cart-item__details_price">450 ₴</div>
+                  </div>
+                </div>
+              </li>
+              <li class="cart-item">
+                <div class="cart-item__image">
+                  <a href="">
+                    <img src="/img/sevices/plant-transplantation.png" alt="">
+                  </a>
+                </div>
+                <div class="cart-item__details">
+                  <button class="cart-item__remove">
+                    <svg class="icon icon-trash"></svg>
+                  </button>
+                  <h3>
+                    <a href="">Орхідея Фаленопсис Муса Пінк</a>
+                  </h3>
+                  <div class="cart-item__details_options">Ø 10, висота 45 см</div>
+                  <div class="cart-item__details_controls">
+                    <div class="counter-input">
+                      <button>
+                        <img src="/img/icons/icon-minus.svg" alt="Видалити один товар">
+                      </button>
+                      <input type="number" value="1" min="1">
+                      <button>
+                        <img src="/img/icons/icon-plus.svg" alt="Додати один товар">
+                      </button>
+                    </div>
+                    <div class="cart-item__details_price">450 ₴</div>
+                  </div>
+                </div>
+              </li>
+            </ul>
+            <div class="form-control">
+              <sl-checkbox>Потрібна пересадка рослин у новий горщик</sl-checkbox>
+            </div>
+            <div class="cart-page__order-list_summary">
+              <div class="summary__item">
+                <div class="summary__item_label">Вартість замовлення:</div>
+                <div class="summary__item_value">900 ₴</div>
+              </div>
+              <div class="summary__item">
+                <div class="summary__item_label">Доставка:</div>
+                <div class="summary__item_value">0 ₴</div>
+              </div>
+              <div class="summary__item total">
+                <div class="summary__item_label">Разом до сплати:</div>
+                <div class="summary__item_value">900 ₴</div>
+              </div>
+            </div>
+            <div class="cart-page__order-list_actions">
+              <button class="button button--primary">Підтвердити замовлення</button>
+              <sl-checkbox>Не передзвонюйте мені</sl-checkbox>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock %}
