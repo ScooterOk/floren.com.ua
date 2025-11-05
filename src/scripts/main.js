@@ -1,13 +1,12 @@
-import '../styles/index.scss';
-
-// import Swiper JS
-import Swiper from 'swiper';
 // import Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
-
 import 'intl-tel-input/build/css/intlTelInput.css';
+import '../styles/index.scss';
+
+// import Swiper JS
+import Swiper from 'swiper';
 
 // shoelace components (side-effect imports)
 import './_shoelace';
