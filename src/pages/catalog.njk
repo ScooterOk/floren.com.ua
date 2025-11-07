@@ -7,14 +7,14 @@
 
 {% block content %}
 
-  <main class="catalog-page">
+  <main class="double-column-page">
     <div class="container">
-      <div class="catalog-page__grid">
+      <div class="double-column-page__grid">
 
         <!-- Sidebar navigation - категорії каталогу -->
-        <aside class="catalog-page__nav">
+        <aside class="double-column-page__nav">
           {% for item in catalog %}
-            <section class="catalog-page__nav_section">
+            <section class="double-column-page__nav_section">
               <h3>{{ item.title }}</h3>
               <ul>
                 {% for category in item.categories %}
