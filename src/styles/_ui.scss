@@ -147,11 +147,7 @@ a.button {
       margin-left: getRem(8);
     }
     &:hover {
-      background-color: color-mix(
-        in srgb,
-        var(--color-gray-40),
-        transparent 75%
-      );
+      background-color: color-mix(in srgb, var(--color-gray-40), transparent 75%);
     }
   }
   &[open] sl-button {
@@ -181,8 +177,7 @@ a.button {
       & > sl-menu-item {
         &[data-checked] {
           &::part(base) {
-            background: url('/img/icons/icon-check.svg') no-repeat right 14px
-              center / 16px 16px;
+            background: url('/img/icons/icon-check.svg') no-repeat right 14px center / 16px 16px;
           }
         }
         &:focus-visible {
@@ -203,11 +198,7 @@ a.button {
           display: none;
         }
         &:hover {
-          background-color: color-mix(
-            in srgb,
-            var(--color-gray-40),
-            transparent 75%
-          );
+          background-color: color-mix(in srgb, var(--color-gray-40), transparent 75%);
         }
       }
     }
@@ -377,11 +368,7 @@ sl-rating {
       height: 24px;
     }
     &:hover {
-      background-color: color-mix(
-        in srgb,
-        var(--color-gray-40),
-        transparent 75%
-      );
+      background-color: color-mix(in srgb, var(--color-gray-40), transparent 75%);
     }
   }
   &__button-next,
@@ -402,11 +389,7 @@ sl-rating {
       color: var(--color-white);
     }
     &:hover {
-      background-color: color-mix(
-        in srgb,
-        var(--color-gray-40),
-        transparent 75%
-      );
+      background-color: color-mix(in srgb, var(--color-gray-40), transparent 75%);
     }
   }
   &__button-next {
