@@ -47,8 +47,7 @@
             background: var(--color-gray-60);
           }
           &.active {
-            background: var(--color-gray-20) url('/img/icons/icon-check.svg')
-              no-repeat getRem(8) getRem(8) / getRem(16) getRem(16);
+            background: var(--color-gray-20) url('/img/icons/icon-check.svg') no-repeat getRem(8) getRem(8) / getRem(16) getRem(16);
             &::before {
               display: none;
             }
@@ -139,7 +138,8 @@
           display: flex;
         }
       }
-      label {
+      & label,
+      a {
         display: flex;
         align-items: center;
         flex-grow: 1;
@@ -167,9 +167,7 @@
           font-size: getRem(14);
           font-weight: 300;
           color: var(--color-green-100);
-          background: var(--color-green-20)
-            url('/img/icons/icon-check-circle.svg') no-repeat getRem(9) center /
-            getRem(16) getRem(16);
+          background: var(--color-green-20) url('/img/icons/icon-check-circle.svg') no-repeat getRem(9) center / getRem(16) getRem(16);
           padding: getRem(4) getRem(8) getRem(4) getRem(32);
           border-radius: getRem(20);
         }

@@ -39,25 +39,53 @@
 
           <!-- Фільтри товарів -->
           <div class="catalog-page__content_filters">
-            <sl-select placeholder="Розмір">
-              <sl-option value="option-1">Королівські (9)</sl-option>
-              <sl-option value="option-2">Стандарт (53)</sl-option>
-              <sl-option value="option-3">Міді (26)</sl-option>
-              <sl-option value="option-4">Міні (24)</sl-option>
+            <sl-select placeholder="Розмір" value="option-2">
+              <sl-option value="option-1">
+                <a href="">Королівські (9)</a>
+              </sl-option>
+              <sl-option value="option-2">
+                <a href="">Стандарт (53)</a>
+              </sl-option>
+              <sl-option value="option-3">
+                <a href="">Міді (26)</a>
+              </sl-option>
+              <sl-option value="option-4" disabled>
+                <a href="">Міні (0)</a>
+              </sl-option>
             </sl-select>
             <sl-select placeholder="Візерунок">
-              <sl-option value="option-1">Крапочки (30)</sl-option>
-              <sl-option value="option-2">Полоси (17)</sl-option>
-              <sl-option value="option-3">Без візерунку (61)</sl-option>
+              <sl-option value="option-1">
+                <a href="">Крапочки (30)</a>
+              </sl-option>
+              <sl-option value="option-2">
+                <a href="">Полоси (17)</a>
+              </sl-option>
+              <sl-option value="option-3">
+                <a href="">Без візерунку (61)</a>
+              </sl-option>
             </sl-select>
             <sl-select placeholder="Колір" multiple clearable>
-              <sl-option value="option-1">Темно-рожевий (54)</sl-option>
-              <sl-option value="option-2">Світло-рожевий (26)</sl-option>
-              <sl-option value="option-3">Жовтий (25)</sl-option>
-              <sl-option value="option-4">Білий (37)</sl-option>
-              <sl-option value="option-5">Персиковий (11)</sl-option>
-              <sl-option value="option-6">Помаранчевий (3)</sl-option>
-              <sl-option value="option-7">Коричневий (3)</sl-option>
+              <sl-option value="option-1">
+                <a href="">Темно-рожевий (54)</a>
+              </sl-option>
+              <sl-option value="option-2">
+                <a href="">Світло-рожевий (26)</a>
+              </sl-option>
+              <sl-option value="option-3">
+                <a href="">Жовтий (25)</a>
+              </sl-option>
+              <sl-option value="option-4">
+                <a href="">Білий (37)</a>
+              </sl-option>
+              <sl-option value="option-5">
+                <a href="">Персиковий (11)</a>
+              </sl-option>
+              <sl-option value="option-6">
+                <a href="">Помаранчевий (3)</a>
+              </sl-option>
+              <sl-option value="option-7">
+                <a href="">Коричневий (3)</a>
+              </sl-option>
             </sl-select>
           </div>
 
@@ -66,7 +94,7 @@
             <sl-tag removable>Стандарт</sl-tag>
             <sl-tag removable>Темно-рожевий</sl-tag>
             <sl-tag removable>Помаранчевий</sl-tag>
-            <button class="button button--text">Скинути фільтри</button>
+            <a href="#" class="button button--text">Скинути фільтри</a>
           </div>
 
           <!-- Info показано скільки товарів -->

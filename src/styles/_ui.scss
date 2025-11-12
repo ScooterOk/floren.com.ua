@@ -589,6 +589,22 @@ sl-select {
     border-color: var(--color-gray-40);
   }
   sl-option {
+    position: relative;
+    &[disabled] {
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+    a {
+      position: absolute;
+      inset: 0;
+      display: block;
+      padding: 0.5rem 1rem 0.5rem getRem(28);
+      font-size: inherit;
+      line-height: getRem(24);
+    }
+    &::part(checked-icon) {
+      color: var(--color-green-50);
+    }
     &:hover {
       &::part(base) {
         background-color: var(--color-gray-10);
