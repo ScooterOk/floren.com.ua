@@ -165,11 +165,23 @@
         }
         sl-tag {
           font-size: getRem(14);
-          font-weight: 300;
-          color: var(--color-green-100);
-          background: var(--color-green-20) url('/img/icons/icon-check-circle.svg') no-repeat getRem(9) center / getRem(16) getRem(16);
+          font-weight: 400;
+
           padding: getRem(4) getRem(8) getRem(4) getRem(32);
           border-radius: getRem(20);
+          min-width: 163px;
+          &[variant='success'] {
+            color: var(--color-green-100);
+            background: var(--color-green-20) url('/img/icons/icon-check-circle.svg') no-repeat getRem(9) center / getRem(16) getRem(16);
+          }
+          &[variant='danger'] {
+            color: var(--color-gray-100);
+            background: var(--color-gray-20) url('/img/icons/icon-minus-circle.svg') no-repeat getRem(9) center / getRem(16) getRem(16);
+          }
+          &[variant='order'] {
+            color: var(--color-gray-100);
+            background: var(--color-gray-20) url('/img/icons/icon-warning-circle.svg') no-repeat getRem(9) center / getRem(16) getRem(16);
+          }
         }
         .size__video-link {
           margin-left: getRem(8);

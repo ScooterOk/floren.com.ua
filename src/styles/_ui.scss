@@ -404,7 +404,7 @@ sl-rating {
 .hover-photo-viewer {
   &__main {
     width: 100%;
-    aspect-ratio: 1.32;
+    aspect-ratio: 1;
     border-radius: 0.5rem;
     overflow: hidden;
     cursor: pointer;
@@ -423,6 +423,7 @@ sl-rating {
     max-width: 100%;
     overflow-x: auto;
     scroll-snap-type: x mandatory;
+    flex-wrap: wrap;
     & > li {
       width: 64px;
       aspect-ratio: 1;
@@ -475,7 +476,8 @@ sl-textarea {
     font-weight: 300;
     margin-bottom: getRem(8);
   }
-  &::part(input) {
+  &::part(input),
+  &::part(textarea) {
     font-family: 'Geologica', sans-serif;
     &::placeholder {
       font-size: getRem(14);
