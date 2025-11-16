@@ -3,6 +3,8 @@
   --color-black: #1a1a1a;
   --color-white: #ffffff;
 
+  --color-black-50: color-mix(in srgb, var(--color-black), transparent 50%);
+
   /* Brand / accents */
   --color-green-100: #4a8c08;
   --color-green-100-hover: color-mix(in srgb, var(--color-green-100), transparent 20%);
