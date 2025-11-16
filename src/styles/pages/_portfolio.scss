@@ -23,7 +23,8 @@
     padding: 0;
     margin: 0;
     &.gallery {
-      &-image {
+      grid-template-columns: repeat(4, 1fr);
+      .portfolio-page__list-image {
         &::before {
           content: '';
           background: var(--color-black-50) url('/img/icons/icon-zoom.svg') no-repeat center center / 45px 45px;
@@ -113,6 +114,34 @@
   &__actions {
     margin-top: getRem(56);
     text-align: center;
+  }
+  &__next {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: getRem(18);
+    margin-top: 80px;
+    span {
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      margin-right: getRem(12);
+    }
+    a {
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.2;
+      letter-spacing: normal;
+      color: var(--color-green-100);
+    }
+    img {
+      width: 54px;
+      height: auto;
+      margin-left: getRem(24);
+    }
   }
   &__interior-landscaping {
     margin-top: 80px;
