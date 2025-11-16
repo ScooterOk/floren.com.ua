@@ -26,6 +26,30 @@
     & > li {
       display: flex;
       flex-direction: column;
+      &.new {
+        position: relative;
+        &::after {
+          content: 'Новинка';
+          position: absolute;
+          top: getRem(12);
+          left: getRem(12);
+          background-color: var(--color-black);
+          color: var(--color-white);
+          font-size: 14px;
+          font-weight: 300;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: 1.5;
+          letter-spacing: normal;
+          text-align: left;
+          padding: 4px 12px;
+          display: inline-flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 1rem;
+          min-height: 30px;
+        }
+      }
       img {
         width: 100%;
         height: auto;
