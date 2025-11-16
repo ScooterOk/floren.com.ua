@@ -1,0 +1,65 @@
+@use '../functions' as *;
+
+.portfolio-page {
+  &__content {
+    h1 {
+      font-size: 1.75rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+  }
+  &__description {
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    margin-bottom: getRem(36);
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: getRem(24);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    & > li {
+      display: flex;
+      flex-direction: column;
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1;
+        display: block;
+        border-radius: getRem(16);
+        margin-bottom: getRem(12);
+      }
+      h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        margin-bottom: getRem(4);
+      }
+      time {
+        display: block;
+        font-size: 1rem;
+        font-weight: 300;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.5;
+        color: var(--color-gray-60);
+      }
+    }
+  }
+  &__actions {
+    margin-top: getRem(56);
+    text-align: center;
+  }
+  &__interior-landscaping {
+    margin-top: 80px;
+    padding-top: 20px;
+    border-top: 1px solid var(--color-gray-30);
+  }
+}

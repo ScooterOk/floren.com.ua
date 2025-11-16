@@ -91,6 +91,7 @@
   background-color: var(--color-gray-20);
   padding: 24px 88px;
   position: relative;
+  border-radius: 1rem;
   .swiper {
     .services-slide {
       display: flex;
@@ -127,6 +128,7 @@
   }
   .swiper-button {
     width: 40px;
+    height: auto;
     background-color: var(--color-white);
     border: 1px solid var(--color-gray-40);
     border-radius: 0.5rem;

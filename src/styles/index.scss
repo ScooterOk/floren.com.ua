@@ -14,6 +14,7 @@
 @use './pages/_catalog';
 @use './pages/_product';
 @use './pages/_cart';
+@use './pages/_portfolio';
 
 .last-works {
   padding-top: 80px;
@@ -28,8 +29,7 @@
 .main {
   &__last-works {
     margin-top: 80px;
-    background: var(--color-green-20) url('/img/bg-leaves-back.svg') no-repeat
-      center / cover;
+    background: var(--color-green-20) url('/img/bg-leaves-back.svg') no-repeat center / cover;
     .last-works {
       .homepage__last-works-leaf-1 {
         display: none;

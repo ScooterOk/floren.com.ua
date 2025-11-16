@@ -1,0 +1,135 @@
+{% extends "layouts/base.njk" %}
+
+{% from "data/catalog-page.njk" import catalog %}
+
+{% set title = "Сторінка продукту" %}
+
+{% block content %}
+
+  <main class="catalog-page">
+    <div class="container">
+      <div class="catalog-page__grid">
+
+        <!-- Sidebar navigation - категорії каталогу -->
+        <aside class="catalog-page__nav">
+          {% for item in catalog %}
+            <section class="catalog-page__nav_section">
+              <h3>{{ item.title }}</h3>
+              <ul>
+                {% for category in item.categories %}
+                  <li class="{% if category.active %}active{% endif %}">
+                    <a class="underline" href="/catalog/{{ category.id }}">{{ category.name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endfor %}
+        </aside>
+
+        <!-- Main content area -->
+        <div class="portfolio-page__content">
+          <!-- Breadcrumbs -->
+          <sl-breadcrumb>
+            <sl-breadcrumb-item href="#">Озеленення і Фітодизайн</sl-breadcrumb-item>
+            <sl-breadcrumb-item href="#">Портфоліо</sl-breadcrumb-item>
+          </sl-breadcrumb>
+          <h1>Портфоліо</h1>
+          <div class="portfolio-page__description">Озеленення офісного простору дуже цікаве заняття. Необхідно підібрати рослини залежно від умов приміщення. Врахувати побажання власників офісу, а також співробітників, біля яких будуть стояти квіти. Рослини повинні бути стійкими і витримувати різного роду напруги. Необхідно передбачити, як буде вести себе рослина з часом без професійного догляду.</div>
+          <ul class="portfolio-page__list">
+            <li>
+              <img src="/img/portfolio-6.png" alt="">
+              <h3>Озеленення квартири (Соборності)</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-1.png" alt="">
+              <h3>DV Bank</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-2.png" alt="">
+              <h3>Озеленення автосалону AWT Баварія</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-3.png" alt="">
+              <h3>Озеленення одного з офісів компанії Synexus</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-4.png" alt="">
+              <h3>Озеленення автосалону AWT Баварія</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-5.png" alt="">
+              <h3>DV Bank</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-6.png" alt="">
+              <h3>Озеленення автосалону AWT Баварія</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-1.png" alt="">
+              <h3>Озеленення одного з офісів компанії Synexus</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-2.png" alt="">
+              <h3>DV Bank</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-3.png" alt="">
+              <h3>Озеленення автосалону AWT Баварія</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-4.png" alt="">
+              <h3>Озеленення одного з офісів компанії Synexus</h3>
+              <time>09 липня 2025</time>
+            </li>
+            <li>
+              <img src="/img/portfolio-5.png" alt="">
+              <h3>DV Bank</h3>
+              <time>09 липня 2025</time>
+            </li>
+          </ul>
+
+          <div class="portfolio-page__actions" bis_skin_checked="1">
+            <button class="button button--primary button--pill">Показати ще 12 робіт</button>
+          </div>
+          <div class="portfolio-page__actions" bis_skin_checked="1">
+            <div class="pagination" bis_skin_checked="1">
+              <a href="" class="pagination__link disabled">
+                <img src="/img/icons/icon-arrow-left-long.svg.svg" alt="Попередня сторінка">
+              </a>
+              <a href="" class="pagination__link active">1</a>
+              <a href="" class="pagination__link">2</a>
+              <a href="" class="pagination__link">3</a>
+              <a href="" class="pagination__link">4</a>
+              <a href="" class="pagination__link">5</a>
+              <a href="" class="pagination__link">
+                <img src="/img/icons/icon-arrow-right-long.svg" alt="Наступна сторінка">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="portfolio-page__interior-landscaping">
+        {% include "partials/homepage/interior-landscaping.njk" %}
+      </div>
+
+    </div>
+    <!-- Секція "Останні роботи" -->
+    <div class="main__last-works">
+      {% include "partials/homepage/last-works.njk" %}
+    </div>
+  </main>
+
+  <!-- Модальне вікно перегляду фото -->
+  {% include "components/photo-viewer-modal.njk" %}
+{% endblock %}
