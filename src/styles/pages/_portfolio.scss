@@ -24,8 +24,6 @@
     margin: 0;
 
     & > li {
-      display: flex;
-      flex-direction: column;
       &.new {
         position: relative;
         &::after {
@@ -49,6 +47,10 @@
           border-radius: 1rem;
           min-height: 30px;
         }
+      }
+      & > a {
+        display: flex;
+        flex-direction: column;
       }
       img {
         width: 100%;
