@@ -10,8 +10,6 @@ export const initHeaderScroll = () => {
     function () {
       // or window.addEventListener("scroll"....
       var st = window.pageYOffset || document.documentElement.scrollTop; // Credits: "https://github.com/qeremy/so/blob/master/so.dom.js#L426"
-      console.log('st', st);
-
       if (st <= 64) {
         catalogRef?.classList.remove('header__catalog--visible');
       }
@@ -19,10 +17,8 @@ export const initHeaderScroll = () => {
       if (st > lastScrollTop) {
         // downscroll code
         catalogRef?.classList.remove('header__catalog--visible');
-        console.log('Scrolling down');
       } else if (st < lastScrollTop && st > 64) {
         // upscroll code
-        console.log('Scrolling up');
         catalogRef?.classList.add('header__catalog--visible');
       } // else was horizontal scroll
       lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
@@ -92,10 +88,7 @@ const getScrollbarWidth = () => {
  */
 export const lockScroll = () => {
   const scrollbarWidth = getScrollbarWidth();
-  document.documentElement.style.setProperty(
-    '--scrollbar-width',
-    `${scrollbarWidth}px`
-  );
+  document.documentElement.style.setProperty('--scrollbar-width', `${scrollbarWidth}px`);
   document.body.classList.add('scroll-blocked');
 };
 

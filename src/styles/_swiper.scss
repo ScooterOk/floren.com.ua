@@ -162,6 +162,7 @@
   }
   .swiper {
     .works-slide {
+      cursor: pointer;
       &__image {
         aspect-ratio: 1;
         margin-bottom: 0.5rem;

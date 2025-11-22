@@ -73,7 +73,7 @@
 
           <!-- Кнопка "Показати ще" -->
           <div class="catalog-page__content_more">
-            <button class="button button--primary button--pill">Показати ще 24 товара</button>
+            <button class="button button--primary button--pill" data-event='click' data-callback='showMoreGoods'>Показати ще</button>
           </div>
 
           <!-- Pagination -->
@@ -267,3 +267,12 @@
     </main>
 
   {% endblock %}
+
+  <template id="product-card-template">
+    <div class="card">
+      <img src="" alt="" class="card-img">
+      <h3 class="card-title"></h3>
+      <p class="card-price"></p>
+      <button class="buy-btn">Купити</button>
+    </div>
+  </template>

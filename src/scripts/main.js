@@ -14,7 +14,7 @@ import './_shoelace';
 import { initEvents } from './_events';
 import { initScroll } from './_scroll';
 import { initCatalog } from './_catalog';
-import { initHoverPhotoViewers, initSwipers } from './_swipers';
+import { initHoverPhotoViewers, initLastworkViewers, initSwipers } from './_swipers';
 import { initClickOutsideHandlers } from './_clickOutside';
 import { initExpandableText } from './_expandableText';
 import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
@@ -42,6 +42,7 @@ export function startApp() {
   initSwipers();
   initExpandableText();
   initHoverPhotoViewers();
+  initLastworkViewers();
   initIntlTelInput();
 }
 
