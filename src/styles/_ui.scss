@@ -466,6 +466,7 @@ sl-textarea {
   --sl-input-border-color-hover: var(--color-green-50);
   --sl-input-border-color-focus: var(--color-green-50);
   --sl-focus-ring-width: 0px;
+  --sl-input-required-content-color: #ff0000;
 
   // Стилізація для focused стану
   &::part(base) {

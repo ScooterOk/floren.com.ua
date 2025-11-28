@@ -19,6 +19,8 @@ import { initClickOutsideHandlers } from './_clickOutside';
 import { initExpandableText } from './_expandableText';
 import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
 import { initIntlTelInput } from './_shoelace';
+import { QuantityCounter } from './_quantityCounter';
+import { initCart } from './_cart';
 
 export { Autoplay, Navigation, Pagination, Thumbs, Swiper };
 
@@ -44,6 +46,9 @@ export function startApp() {
   initHoverPhotoViewers();
   initLastworkViewers();
   initIntlTelInput();
+  initCart();
+
+  customElements.define('quantity-counter', QuantityCounter);
 }
 
 export const generateRandomId = (length = 10) => {

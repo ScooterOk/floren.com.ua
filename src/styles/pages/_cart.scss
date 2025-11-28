@@ -99,6 +99,11 @@
         font-weight: 300;
         margin-bottom: 8px;
         color: var(--color-gray-100);
+        &[required]::after {
+          content: '*';
+          margin-inline-start: 2px;
+          color: red;
+        }
       }
       sl-input {
         &::part(form-control-label) {

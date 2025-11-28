@@ -59,7 +59,7 @@
   &__content {
     &_grid {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: getRem(48);
     }
   }
@@ -199,8 +199,14 @@
     }
     &_color {
       padding-left: getRem(12);
+
       sl-radio-group {
         display: flex;
+
+        &::part(button-group__base) {
+          flex-wrap: wrap;
+          gap: getRem(12);
+        }
         &::part(form-control-label) {
           font-size: getRem(14);
           font-weight: 600;
@@ -209,7 +215,7 @@
         }
         sl-radio-button {
           padding: 0;
-          margin-right: 12px;
+          flex-shrink: 0;
           --sl-spacing-medium: 0;
           &::part(button--checked) {
             box-shadow: 0 0 2px 2px var(--color-green-50);

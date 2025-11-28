@@ -83,7 +83,7 @@ function createProductCard(product) {
     `;
   }
   // 3. Звичайний вивід ціни
-  else {
+  else if (product.good_status === 'in_stock') {
     priceContent = `
       <div class="product-card__price">
         ${product.price}

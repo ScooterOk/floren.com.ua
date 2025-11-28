@@ -1,9 +1,9 @@
 <sl-dialog id="cart-modal" label="Кошик" class="cart-modal">
-  <div class="alert alert-success" role="alert">
-    Товар <a href="/" class="underline">Орхідея Фаленопсис Муса</a> Пінк доданий у ваш <a href="/basket" class="underline">кошик</a>
+  <div class="alert alert-success cart-modal__message" role="alert">
+    Товар <a href="/" class="underline" id="cart-modal-product-name">Орхідея Фаленопсис Муса</a> Пінк доданий у ваш <a href="/basket" class="underline">кошик</a>
   </div>
-  <ul class="cart-items-list">
-    <li class="cart-item">
+  <ul class="cart-items-list" id="cart-modal-items-list">
+    <li class="cart-item" data-id="11111">
       <div class="cart-item__image">
         <a href="">
           <img src="/img/sevices/landscaping-artificial-plants.png" alt="">
@@ -18,20 +18,12 @@
         </h3>
         <div class="cart-item__details_options">Ø 10, висота 45 см</div>
         <div class="cart-item__details_controls">
-          <div class="counter-input">
-            <button>
-              <img src="/img/icons/icon-minus.svg" alt="Видалити один товар"/>
-            </button>
-            <input type="number" value="1" min="1"/>
-            <button>
-              <img src="/img/icons/icon-plus.svg" alt="Додати один товар"/>
-            </button>
-          </div>
+          <quantity-counter value="5" min="1"></quantity-counter>
           <div class="cart-item__details_price">450 ₴</div>
         </div>
       </div>
     </li>
-    <li class="cart-item">
+    <li class="cart-item" data-id="222222">
       <div class="cart-item__image">
         <a href="">
           <img src="/img/sevices/plant-transplantation.png" alt="">
@@ -46,15 +38,7 @@
         </h3>
         <div class="cart-item__details_options">Ø 10, висота 45 см</div>
         <div class="cart-item__details_controls">
-          <div class="counter-input">
-            <button>
-              <img src="/img/icons/icon-minus.svg" alt="Видалити один товар"/>
-            </button>
-            <input type="number" value="1" min="1"/>
-            <button>
-              <img src="/img/icons/icon-plus.svg" alt="Додати один товар"/>
-            </button>
-          </div>
+          <quantity-counter value="5" min="1"></quantity-counter>
           <div class="cart-item__details_price">450 ₴</div>
         </div>
       </div>

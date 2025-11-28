@@ -19,10 +19,10 @@
                 <h2>1. Контактні дані</h2>
                 <div class="form-grid">
                   <div class="form-control">
-                    <sl-input label="ПІБ" placeholder="ПІБ"></sl-input>
+                    <sl-input label="ПІБ" required placeholder="ПІБ"></sl-input>
                   </div>
                   <div class="form-control">
-                    <label for="phone">Ваш телефон</label>
+                    <label for="phone" required>Ваш телефон</label>
                     <input id="phone" data-tel-input type="tel">
                   </div>
                 </div>
@@ -31,9 +31,9 @@
                 </div>
                 <div class="form-control form-control--checkbox">
                   <h3>Дані одержувача</h3>
-                  <sl-checkbox>Я одержувач</sl-checkbox>
+                  <sl-checkbox id="cart-recipient-checkbox">Я одержувач</sl-checkbox>
                 </div>
-                <div class="form-grid">
+                <div class="form-grid" id="cart-recipient-grid">
                   <div class="form-control">
                     <sl-input label="ПІБ" placeholder="ПІБ"></sl-input>
                   </div>

@@ -166,6 +166,7 @@
           font-weight: 500;
           padding: getRem(8) getRem(8) getRem(4) getRem(8);
           font-weight: 600;
+          margin-bottom: 0.5rem;
         }
         &__price {
           font-weight: 300;
@@ -173,6 +174,7 @@
           margin-top: auto;
           position: relative;
           white-space: nowrap;
+          font-size: getRem(14);
           del {
             color: var(--color-gray-60);
             margin-left: 4px;
@@ -248,8 +250,10 @@
           }
           .colors-list {
             display: flex;
+            flex-wrap: wrap;
             gap: getRem(8);
             & > span {
+              flex-shrink: 0;
               display: inline-block;
               width: getRem(20);
               height: getRem(20);

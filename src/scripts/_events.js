@@ -1,3 +1,4 @@
+import { addToCart } from './_cart';
 import { updateGoodsList } from './_catalog';
 import { fetchShowMoreGoods } from './fetchApi';
 
@@ -27,7 +28,6 @@ const clickHandlers = {
   openModal: (e) => {
     const modalId = e.currentTarget.dataset.modalId;
     const modal = document.getElementById(modalId);
-    console.log('modal', modal);
     if (modal) {
       modal.show();
     }
@@ -45,6 +45,7 @@ const clickHandlers = {
     }
     // data = productListData;
   },
+  addToCart,
 };
 
 export const initEvents = () => {
