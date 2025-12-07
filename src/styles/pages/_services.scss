@@ -1,0 +1,104 @@
+@use '../functions' as *;
+.services-page {
+  h1 {
+    font-size: getRem(28);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-align: left;
+    margin-top: getRem(32);
+    margin-bottom: getRem(24);
+  }
+  &__title {
+    display: flex;
+    align-items: center;
+    gap: getRem(16);
+    margin-bottom: getRem(24);
+    font-size: getRem(20);
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.2;
+    &_icon {
+      width: 78px;
+      height: 78px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: var(--color-green-20);
+      img {
+        width: 40px;
+        height: 40px;
+        object-fit: contain;
+      }
+    }
+  }
+  &__description {
+    font-size: 1rem;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+  }
+  &__service {
+    margin-top: 48px;
+  }
+  &__grid {
+    background-color: var(--color-white);
+    border-radius: 1rem;
+    padding: 1rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    box-shadow: 0 8px 40px 0 rgba(0, 38, 3, 0.08);
+    &_item {
+      padding: getRem(24);
+      min-height: 280px;
+      border-right: 1px solid var(--color-gray-30);
+      border-top: 1px solid var(--color-gray-30);
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-child(3),
+      &:nth-child(4) {
+        border-top-color: transparent;
+      }
+      &:nth-child(4n + 1) {
+        padding-left: 0;
+      }
+      &:nth-child(4n) {
+        border-right: none;
+        padding-right: 0;
+      }
+      &:last-child {
+        border-right: none;
+      }
+    }
+    img {
+      width: 148px;
+      height: auto;
+    }
+    h3 {
+      font-size: 20px;
+      font-weight: 600;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.25;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--color-violet);
+      margin-top: getRem(16);
+      margin-bottom: getRem(12);
+    }
+    p {
+      font-weight: 300;
+      font-stretch: normal;
+      font-style: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      text-align: left;
+      color: var(--color-gray-100);
+    }
+  }
+}
