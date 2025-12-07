@@ -15,7 +15,10 @@
   --color-violet: #9f2178;
   --color-violet-hover: color-mix(in srgb, var(--color-violet), transparent 25%);
   --color-yellow: #f6bb05;
+  --color-yealow-dark: #d97706;
   --color-red: #ff0000;
+
+  --color-red-light: color-mix(in srgb, var(--color-red), transparent 80%);
 
   --color-yellow-light: color-mix(in srgb, var(--color-yellow), transparent 80%);
 

@@ -19,6 +19,7 @@ import '@shoelace-style/shoelace/dist/components/tab-group/tab-group.js';
 import '@shoelace-style/shoelace/dist/components/tab/tab.js';
 import '@shoelace-style/shoelace/dist/components/tab-panel/tab-panel.js';
 import '@shoelace-style/shoelace/dist/components/dialog/dialog.js';
+import '@shoelace-style/shoelace/dist/components/alert/alert.js';
 
 import intlTelInput from 'intl-tel-input';
 
@@ -31,10 +32,7 @@ export const initIntlTelInput = () => {
       strictMode: true,
       separateDialCode: true,
       autoPlaceholder: 'aggressive',
-      customPlaceholder: function (
-        selectedCountryPlaceholder,
-        selectedCountryData
-      ) {
+      customPlaceholder: function (selectedCountryPlaceholder, selectedCountryData) {
         return selectedCountryPlaceholder.replace(/[0-9]/g, 'X');
       },
     });

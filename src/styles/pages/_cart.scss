@@ -29,7 +29,7 @@
     .form-grid {
       display: grid;
       gap: getRem(24);
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       align-items: flex-end;
     }
     & > section {
@@ -158,12 +158,22 @@
       display: flex;
       flex-direction: column;
       gap: 24px;
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
     }
     .information__payment {
       padding: 36px;
       display: flex;
       flex-direction: column;
       gap: 24px;
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+      }
     }
     .information__comment {
       padding: 36px;
@@ -215,6 +225,7 @@
           .summary__item_value {
             font-size: getRem(28);
             font-weight: 600;
+            white-space: nowrap;
           }
         }
       }

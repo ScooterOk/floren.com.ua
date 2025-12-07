@@ -1,7 +1,6 @@
 import { fetchEditCart } from './fetchApi';
 
 export const initCart = async () => {
-  // Ініціалізація обробників подій для елементів у модальному вікні кошика
   document.querySelectorAll('#cart-modal-items-list .cart-item').forEach((item) => {
     item.querySelector('quantity-counter').addEventListener('change', () => updateCartDisplay());
     item.querySelector('.cart-item__remove').addEventListener('click', () => {
@@ -9,16 +8,61 @@ export const initCart = async () => {
       updateCartDisplay();
     });
   });
-
-  // Сховати повідомлення при закритті модального вікна
   document.getElementById('cart-modal').addEventListener('sl-hide', (e) => {
     e.target.querySelector('.cart-modal__message').style.display = 'none';
   });
-
   document.getElementById('cart-recipient-checkbox')?.addEventListener('sl-change', (e) => {
     const isChecked = e.target.checked;
     document.getElementById('cart-recipient-grid').classList.toggle('hidden', isChecked);
   });
+  document.getElementById('delivery-methods')?.addEventListener('sl-change', (e) => changeDeliveryOptions(e));
+  document.getElementById('another-city-checkbox')?.addEventListener('sl-change', (e) => {
+    const cityInput = document.querySelector('#courier-form sl-input[name="city"]');
+    if (e.target.checked) {
+      cityInput.value = '';
+      cityInput.removeAttribute('readonly');
+      cityInput.focus();
+      document.querySelector('sl-alert[data-name="city-delivery"]').show();
+    } else {
+      cityInput.value = defaultOptions.cityKiev;
+      cityInput.setAttribute('readonly', 'true');
+      document.querySelector('sl-alert[data-name="city-delivery"]').hide();
+    }
+  });
+};
+
+export const addToCart = async (event) => {
+  const productId = event.currentTarget.dataset.id;
+  const name = event.currentTarget.dataset.name;
+  const href = event.currentTarget.dataset.href;
+
+  const cartList = [];
+  document.querySelectorAll('#cart-modal-items-list .cart-item').forEach((item) => {
+    const id = item.dataset.id;
+    const quantity = item.querySelector('quantity-counter').value;
+    if (quantity > 0) {
+      cartList.push({
+        [id]: quantity,
+      });
+    }
+  });
+  const existingItemIndex = cartList.findIndex((item) => item[productId]);
+  if (existingItemIndex !== -1) {
+    cartList[existingItemIndex][productId] = Number(cartList[existingItemIndex][productId]) + 1;
+  } else {
+    cartList.push({
+      [productId]: 1,
+    });
+  }
+  const data = await updateCartDisplay(cartList);
+  const modal = document.getElementById('cart-modal');
+  document.getElementById('cart-modal-product-name').textContent = name;
+  document.getElementById('cart-modal-product-name').href = href;
+  document.querySelector('.cart-modal__message').style.display = 'block';
+  if (modal) {
+    modal.show();
+  }
+  console.log('addToCart', data);
 };
 
 export async function updateCartDisplay(cartData) {
@@ -58,8 +102,13 @@ export async function updateCartDisplay(cartData) {
             </h3>
             <div class="cart-item__details_options">${item.formName}</div>
             <div class="cart-item__details_controls">
-              <quantity-counter value="${item.cnt}" min="1"></quantity-counter>                    
-              <div class="cart-item__details_price">${price} ₴</div>
+              <div class="cart-item__details_controls-grid">
+                <quantity-counter value="${item.cnt}" min="1"></quantity-counter>                    
+                <span>${price} ₴</span>
+              </div>              
+              <div class="cart-item__details_price">${Number(item.cnt * Number(item.price))
+                .toFixed(2)
+                .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₴</div>
             </div>
           </div>
         </li>`;
@@ -88,39 +137,70 @@ export async function updateCartDisplay(cartData) {
   }
   return data;
 }
-
-export const addToCart = async (event) => {
-  const productId = event.currentTarget.dataset.id;
-  const name = event.currentTarget.dataset.name;
-  const href = event.currentTarget.dataset.href;
-  console.log('addToCart', productId, name, href);
-  const cartList = [];
-  document.querySelectorAll('#cart-modal-items-list .cart-item').forEach((item) => {
-    const id = item.dataset.id;
-    const quantity = item.querySelector('quantity-counter').value;
-    if (quantity > 0) {
-      cartList.push({
-        [id]: quantity,
-      });
+function changeDeliveryOptions(e) {
+  {
+    const { smallOrder, smallOrderDeliveryPrice, courierDeliveryPrice, novaPostaCost } = defaultOptions;
+    refreshCart();
+    const totalToPay = {
+      deliveryCost: courierDeliveryPrice,
+      productPrice: Number(cartState.productPrice) || 0,
+      total: 0,
+    };
+    switch (e.target.value) {
+      case 'courier':
+        document.getElementById('courier-form').classList.remove('hidden');
+        if (!!cartState.bigGoodCourier) {
+          document.querySelector('sl-alert[data-name="delivery-biggoods"]').show();
+        }
+        const productPrice = Number(e.target.dataset.productPrice || 0);
+        !!e.target.dataset.isPlant;
+        if (productPrice < smallOrder) {
+          totalToPay.deliveryCost += smallOrderDeliveryPrice;
+          document.querySelector('sl-alert[data-name="small-order"]').show();
+        }
+        refreshTotal(totalToPay);
+        break;
+      case 'nova-poshta':
+        document.getElementById('nova-poshta-form').classList.remove('hidden');
+        if (!!cartState.bigGoodCourier) {
+          document.querySelector('sl-alert[data-name="delivery-biggoods"]').show();
+        }
+        document.querySelector('.summary__item_label[data-text="np-cost"]').classList.remove('hidden');
+        document.querySelector('.summary__item_label[data-text="delivery-cost"]').classList.add('hidden');
+        document.querySelector('#payment-cash-option [data-text="cash"]').classList.add('hidden');
+        document.querySelector('#payment-cash-option [data-text="nova-poshta-money"]').classList.remove('hidden');
+        if (cartState.isPlant) {
+          document.querySelector('sl-alert[data-name="not-nova-poshta"]').show();
+        }
+        totalToPay.deliveryCost = novaPostaCost;
+        refreshTotal(totalToPay);
+        break;
+      default:
+        document.getElementById('magazin-form').classList.remove('hidden');
+        totalToPay.deliveryCost = 0;
+        refreshTotal(totalToPay);
+        break;
     }
-  });
-  // Додаємо новий товар з кількістю 1
-  const existingItemIndex = cartList.findIndex((item) => item[productId]);
-  if (existingItemIndex !== -1) {
-    cartList[existingItemIndex][productId] = Number(cartList[existingItemIndex][productId]) + 1;
-  } else {
-    cartList.push({
-      [productId]: 1,
-    });
+    console.log('smallOrder', smallOrder);
+    console.log('smallOrderDeliveryPrice', smallOrderDeliveryPrice);
+    console.log('Delivery method changed to:', e.target.value, totalToPay);
   }
-  const data = await updateCartDisplay(cartList);
-
-  const modal = document.getElementById('cart-modal');
-  document.getElementById('cart-modal-product-name').textContent = name;
-  document.getElementById('cart-modal-product-name').href = href;
-  document.querySelector('.cart-modal__message').style.display = 'block';
-  if (modal) {
-    modal.show();
-  }
-  console.log('addToCart', data);
-};
+}
+function refreshCart() {
+  document.querySelectorAll('sl-alert[data-name]').forEach((alert) => alert.hide());
+  document.getElementById('magazin-form').classList.add('hidden');
+  document.getElementById('courier-form').classList.add('hidden');
+  document.getElementById('nova-poshta-form').classList.add('hidden');
+  document.querySelector('.summary__item_label[data-text="np-cost"]').classList.add('hidden');
+  document.querySelector('.summary__item_label[data-text="delivery-cost"]').classList.remove('hidden');
+  document.querySelector('#payment-cash-option [data-text="cash"]').classList.remove('hidden');
+  document.querySelector('#payment-cash-option [data-text="nova-poshta-money"]').classList.add('hidden');
+}
+function refreshTotal(totalToPay) {
+  document.querySelector('#delivery-cost').textContent = `${Number(totalToPay.deliveryCost)
+    .toFixed(2)
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₴`;
+  document.querySelector('#total-to-pay').textContent = `${Number(totalToPay.productPrice + totalToPay.deliveryCost)
+    .toFixed(2)
+    .replace(/\B(?=(\d{3})+(?!\d))/g, ' ')} ₴`;
+}
