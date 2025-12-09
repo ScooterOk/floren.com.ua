@@ -418,4 +418,47 @@
       }
     }
   }
+
+  &__imiages {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: getRem(24);
+    &_image {
+      aspect-ratio: 1;
+      overflow: hidden;
+      min-width: 0;
+      min-height: 0;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      &:hover {
+        img {
+          scale: 1.1;
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: scale 0.5s ease;
+      }
+    }
+  }
+
+  &__comments {
+    margin-top: 80px;
+    &_wrapper {
+      display: grid;
+      grid-template-columns: 1fr 33%;
+      gap: getRem(48);
+      align-items: start;
+      .catalog-page__content_comments {
+        padding: getRem(24);
+        display: block;
+        h2 {
+          font-size: getRem(24);
+          margin-bottom: getRem(24);
+        }
+      }
+    }
+  }
 }
