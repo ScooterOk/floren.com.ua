@@ -1,6 +1,56 @@
 @use './functions' as *;
 @use './mixins' as *;
 
+.text-center {
+  text-align: center;
+}
+
+.flex {
+  display: flex;
+}
+.grow {
+  flex: 1 0 0;
+}
+.shrink-0 {
+  flex-shrink: 0;
+}
+.mt-16 {
+  margin-top: getRem(16);
+}
+.mt-24 {
+  margin-top: getRem(24);
+}
+.mt-32 {
+  margin-top: getRem(32);
+}
+.mt-48 {
+  margin-top: getRem(48);
+}
+.mb-16 {
+  margin-bottom: getRem(16);
+}
+.mb-24 {
+  margin-bottom: getRem(24);
+}
+.mb-32 {
+  margin-bottom: getRem(32);
+}
+.mb-48 {
+  margin-bottom: getRem(48);
+}
+.gap-16 {
+  gap: getRem(16);
+}
+.gap-24 {
+  gap: getRem(24);
+}
+.gap-32 {
+  gap: getRem(32);
+}
+.gap-48 {
+  gap: getRem(48);
+}
+
 button.button,
 a.button {
   transition: background-color 0.2s ease;

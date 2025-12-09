@@ -61,6 +61,16 @@ const config = {
       prevEl: '.clients-swiper .swiper-button--prev',
     },
   },
+  'recomends-swiper': {
+    modules: [Navigation],
+    spaceBetween: 0,
+    slidesPerView: 5,
+    loop: true,
+    navigation: {
+      nextEl: '.recomends-swiper .swiper-button--next',
+      prevEl: '.recomends-swiper .swiper-button--prev',
+    },
+  },
   'popular-swiper': {
     modules: [Navigation],
     spaceBetween: 0,
@@ -311,6 +321,25 @@ export const initLastworkViewers = () => {
       }));
 
       activatePhotoViewer(images, activeIndex);
+    });
+  });
+};
+
+export const initPortfolioViewers = () => {
+  document.querySelectorAll('[data-portfolio-viewer]').forEach((viewer) => {
+    const thumbs = viewer.querySelectorAll('img');
+
+    thumbs.forEach((thumb) => {
+      thumb.addEventListener('click', (e) => {
+        const activeIndex = Array.from(thumbs).indexOf(thumb);
+        console.log('thumb', thumb);
+
+        const images = Array.from(thumbs).map((thumb) => ({
+          src: thumb?.src,
+          type: 'image',
+        }));
+        activatePhotoViewer(images, activeIndex);
+      });
     });
   });
 };

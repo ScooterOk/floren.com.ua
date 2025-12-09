@@ -945,6 +945,9 @@ body.secondary-hovered {
     display: grid;
     grid-template-columns: 240px 1fr;
     gap: 20px;
+    & > * {
+      min-width: 0;
+    }
   }
   &__nav {
     display: flex;
@@ -956,6 +959,7 @@ body.secondary-hovered {
         font-weight: 600;
         margin-bottom: 4px;
         padding: getRem(4) getRem(8) getRem(4) getRem(32);
+        border-radius: getRem(8);
         position: relative;
         &::before {
           content: '';
@@ -986,12 +990,12 @@ body.secondary-hovered {
             border-radius: 1px;
             background: var(--color-gray-60);
           }
-          &.active {
-            background: var(--color-gray-20) url('/img/icons/icon-check.svg') no-repeat getRem(8) getRem(8) / getRem(16) getRem(16);
-            &::before {
-              display: none;
-            }
-          }
+        }
+      }
+      .active {
+        background: var(--color-gray-20) url('/img/icons/icon-check.svg') no-repeat getRem(8) getRem(8) / getRem(16) getRem(16);
+        &::before {
+          display: none;
         }
       }
     }
