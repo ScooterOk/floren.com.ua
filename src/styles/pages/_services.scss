@@ -96,6 +96,12 @@
     font-stretch: normal;
     font-style: normal;
     line-height: 1.5;
+    p {
+      margin-bottom: 1em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
   &__service {
     margin-top: 48px;
@@ -197,6 +203,7 @@
     padding: 24px 24px 36px;
     border-radius: 16px;
     background-color: var(--color-gray-10);
+    align-self: flex-start;
     h3 {
       margin-bottom: getRem(16);
     }

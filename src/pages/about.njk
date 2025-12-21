@@ -1,0 +1,131 @@
+<!-- prettier-ignore -->
+{% extends "layouts/base.njk" %}
+{% set title = "Про компанію" %}
+{% block content %}
+
+<main class="double-column-page">
+  <div class="container">
+    <div class="double-column-page__grid">
+      <!-- Sidebar navigation - категорії каталогу -->
+      <aside class="double-column-page__nav">
+        <section class="double-column-page__nav_section">
+          <h3 class="active">
+            <a href="">О компанії</a>
+          </h3>
+        </section>
+        <section class="double-column-page__nav_section">
+          <h3>
+            <a href="">Оплата та Доставка</a>
+          </h3>
+        </section>
+        <section class="double-column-page__nav_section">
+          <h3>
+            <a href="">Контакти</a>
+          </h3>
+        </section>
+        <section class="double-column-page__nav_section">
+          <h3>
+            <a href="">Політика конфіденційності</a>
+          </h3>
+        </section>
+        <section class="double-column-page__nav_section">
+          <h3>
+            <a href="">Договір оферта</a>
+          </h3>
+        </section>
+        <section class="double-column-page__nav_section">
+          <h3>
+            <a href="">Правила повернення товару</a>
+          </h3>
+        </section>
+        <section class="double-column-page__nav_section">
+          <h3>
+            <a href="">Співпраця</a>
+          </h3>
+        </section>
+      </aside>
+      <div class="services-page__content">
+        <!-- Breadcrumbs -->
+        <sl-breadcrumb>
+          <sl-breadcrumb-item href="#">Озеленення і Фітодизайн</sl-breadcrumb-item>
+          <sl-breadcrumb-item href="#">Про компанію</sl-breadcrumb-item>
+        </sl-breadcrumb>
+
+        <h1>Про компанію</h1>
+        <section class="flex">
+          <div class="grow">
+            <p>
+              Компанія "Флорен" працює в галузі фітодизайну більш як 7 років. За час роботи ми отримали колосальний досвід у справі створення теплоти і
+              облаштування затишку у різних будівлях і приміщеннях - квартирах, офісах, ресторанах, салонах готелях.
+            </p>
+            <p></p>
+            <p>
+              Співробітники компанії мають спеціальну освіту і є фахівцями в галузі фітодизайну. Регулярно відвідують виставки і профільні заходи, що дає їм
+              змогу йти завжди в ногу з часом, надихатися ідеями і поповнювати свою професійність новими знаннями.
+            </p>
+            <p></p>
+            <p>
+              Товар, який ми пропонуємо вам, непростий. Мало знати модель і колір, тому ми готові проконсультувати вас в питанні підбору рослин чи товарів,
+              створення актуальної для вас композиції, а також надати допомогу в доставці, посадці чи догляді.
+            </p>
+            <p></p>
+            <p>
+              Ми раді кожному нашому клієнту, нам однаково - ви представник великої відомої компанії чи приватна особа. Ми індивідуально підійдемо до
+              обслуговування вашого замовлення, намагаємося на найвищому рівні задовольнити запит кожного нашого гостя. За час роботи, нашими клієнтами стали
+              багато відомих компаній, з якими у нас склалися теплі відносини.
+            </p>
+            <p></p>
+            <p>Ми цінуємо своїх клієнтів і готові надати для вас підтримку в будь-яку хвилину, щоб результат спільної роботи перевершив всі ваші очікування.</p>
+          </div>
+          <div class="services-page__calc">
+            <h3>Чекаємо від вас дзвінка</h3>
+            {#
+            <p>Також звертайтеся за телефоном:</p>
+            #}
+            <div class="homepage__advices_content--phones">
+              <div class="phones--hidden">(044) 344..<button data-event="click" data-callback="toggleAdvicesPhones">показати номери</button></div>
+              <div class="phones--visible">
+                <p>(044) 344-28-95</p>
+                <p>(050) 660-52-75</p>
+              </div>
+              <div class="phones--hours">По буднях з 9:00 до 19:30</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="mt-48">
+          <h2>Наша команда</h2>
+          <div class="flex flex-column gap-24 mt-24">
+            <div class="flex-1">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/AnnK7drpXo4?si=BQSK880V6MW2GWpM"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+            <div class="flex-1">
+              <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/Atax9N_l9r8?si=MR3T1lacqA1KcOck"
+                title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- Модальне вікно перегляду фото -->
+{% include "components/photo-viewer-modal.njk" %} {% endblock %}

@@ -57,6 +57,7 @@
     }
   }
   &__content {
+    min-width: 0;
     // Filters
     &_filters {
       display: flex;
