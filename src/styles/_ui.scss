@@ -700,6 +700,23 @@ sl-tag {
   &::part(remove-button) {
     color: var(--color-black);
   }
+  &::part(base) {
+    border-radius: 0;
+    min-height: 26px;
+    height: auto;
+    padding: getRem(4) 0;
+    background-color: transparent;
+    border: none;
+    color: inherit;
+    font-size: getRem(14);
+    font-weight: 300;
+    white-space: wrap;
+    line-height: 1.2;
+  }
+  &[variant='success'] {
+    color: var(--color-green-100);
+    background: var(--color-green-20);
+  }
 }
 
 sl-tag.cart-tag {

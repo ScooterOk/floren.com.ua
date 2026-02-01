@@ -1,0 +1,200 @@
+@use '../functions' as *;
+.blogs_list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: getRem(24);
+  overflow: hidden;
+  &__card {
+    min-width: 0px;
+    padding-bottom: getRem(24);
+    position: relative;
+    &::before {
+      content: '';
+      position: absolute;
+      display: block;
+      left: -16px;
+      right: -16px;
+      bottom: 0;
+      height: 1px;
+      background-color: var(--color-gray-30);
+    }
+    &--image {
+      margin-bottom: getRem(16);
+      img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1.4;
+        border-radius: getRem(8);
+        overflow: hidden;
+        object-fit: cover;
+      }
+    }
+    &--content {
+      margin-bottom: getRem(16);
+      h3 {
+        font-size: getRem(20);
+        font-weight: 600;
+        font-stretch: normal;
+        font-style: normal;
+        line-height: 1.33;
+        letter-spacing: normal;
+        text-align: left;
+        color: var(--color-black);
+        margin-bottom: getRem(8);
+      }
+      p {
+        font-size: getRem(16);
+        font-weight: 300;
+        line-height: 1.5;
+      }
+    }
+    &--views {
+      display: flex;
+      align-items: center;
+      gap: getRem(8);
+      color: var(--color-gray-100);
+      font-size: getRem(14);
+      font-weight: 300;
+      margin-bottom: getRem(16);
+      img {
+        width: getRem(16);
+        height: getRem(16å);
+      }
+    }
+    &--tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: getRem(8);
+      .tag {
+        font-size: getRem(14);
+        font-weight: 300;
+        line-height: 1.25;
+        color: var(--color-black);
+        min-height: 30px;
+        flex-grow: 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: getRem(4);
+        padding: getRem(6) getRem(12);
+        border-radius: getRem(20);
+        background-color: var(--color-green-20);
+      }
+    }
+  }
+}
+
+.blog-article {
+  font-size: 1rem;
+  font-weight: 300;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.5;
+  letter-spacing: normal;
+  color: var(--color-black);
+}
+
+.blog-article h1 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 2rem;
+}
+
+.blog-article h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: var(--color-green-100);
+}
+
+.blog-article h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  color: var(--color-green-100);
+}
+.blog-article h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.33;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-green-100);
+}
+
+.blog-article p {
+  margin-bottom: 1rem;
+}
+
+.blog-article ul {
+  list-style: disc;
+  padding-left: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-article ul li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-article ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.blog-article ol li {
+  margin-bottom: 0.5rem;
+}
+
+.blog-article a {
+  color: var(--color-green-100);
+  text-decoration: underline;
+  text-decoration-color: var(--color-gray-40);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.25rem;
+  transition: all 0.2s ease;
+}
+
+.blog-article a:hover {
+  text-decoration-color: transparent;
+}
+
+.blog-article img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  margin: 2rem 0;
+  display: block;
+}
+
+.blog-article blockquote {
+  border-left: 4px solid var(--color-green-100);
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  font-style: italic;
+  color: var(--color-gray-100);
+}
+
+.blog-article table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+}
+
+.blog-article table td,
+.blog-article table th {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--color-gray-30);
+  vertical-align: top;
+}
+
+.blog-article table th {
+  font-weight: 600;
+  text-align: left;
+}

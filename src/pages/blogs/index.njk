@@ -1,0 +1,93 @@
+{% extends "layouts/base.njk" %}
+
+{% set title = "Фітодизайн" %}
+
+{% block content %}
+
+  <main class="double-column-page">
+    <div class="container">
+      <div class="double-column-page__grid">
+        <!-- Sidebar navigation - категорії каталогу -->
+        <aside class="double-column-page__nav">
+          <section class="double-column-page__nav_section">
+            <h3 class="active">
+              <a href="">Фітодизайн</a>
+            </h3>
+            <ul>
+              <li>
+                <a class="underline" href="/">Фітодизайн квартири</a>
+              </li>
+              <li>
+                <a class="underline" href="/">Фітодизайн офісу</a>
+              </li>
+            </ul>
+          </section>
+          <section class="double-column-page__nav_section">
+            <h3>
+              <a href="">Вертикальне озеленення</a>
+            </h3>
+            <ul>
+              <li>
+                <a class="underline" href="/">Зелені стіни з рослинами</a>
+              </li>
+              <li>
+                <a class="underline" href="/">Озеленення за допомогою вертикальних конструкцій</a>
+              </li>
+              <li>
+                <a class="underline" href="/">Зелені стіни з моху</a>
+              </li>
+            </ul>
+          </section>
+          <section class="double-column-page__nav_section">
+            <h3>
+              <a href="">Озеленення літніх терас</a>
+            </h3>
+          </section>
+          <section class="double-column-page__nav_section">
+            <h3>
+              <a href="">Зонування простору</a>
+            </h3>
+          </section>
+          <section class="double-column-page__nav_section">
+            <h3>
+              <a href="">Озеленення штучними рослинами</a>
+            </h3>
+          </section>
+        </aside>
+        <div class="services-page__content">
+          <!-- Breadcrumbs -->
+          <sl-breadcrumb>
+            <sl-breadcrumb-item href="#">Озеленення і Фітодизайн</sl-breadcrumb-item>
+            <sl-breadcrumb-item href="#">Кімнатні рослини</sl-breadcrumb-item>
+          </sl-breadcrumb>
+
+          <h1>Блог</h1>
+          
+          <section class="blogs_list">
+            <article class="blogs_list__card">
+              <div class="blogs_list__card--image">
+                <img src="/img/no-image.jpg" alt="">
+              </div>
+              <div class="blogs_list__card--content">
+                <h3><a href="" class="underline">Рослини для вертикального озеленення</a></h3>
+                <p>Але чи правильний такий підхід?  Фікус Бенджаміна у надто темному місці   Почнемо з того, що наслідками такого підходу є викинуті на вітер гроші і виснажена (а часто вже мертва) рослина. Буває, якщо хоч одна з обраних рослин...</p>
+              </div>
+              <div class="blogs_list__card--views">
+                <img src="/img/icons/icon-eye.svg" alt="">
+                <span>1408</span>
+              </div>
+              <div class="blogs_list__card--tags">
+                <span class="tag">Рекомендації по підбору кімнатних рослин</span>
+                <span class="tag">Корисні властивості кімнатних рослин</span>
+              </div>
+                
+            </article>
+          </section>
+
+        </div>
+      </div>
+    </main>
+
+    <!-- Модальне вікно перегляду фото -->
+    {% include "components/photo-viewer-modal.njk" %}
+  {% endblock %}

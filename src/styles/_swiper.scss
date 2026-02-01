@@ -161,6 +161,9 @@
     margin-bottom: getRem(24);
   }
   .swiper {
+    .swiper-wrapper {
+      height: auto;
+    }
     .works-slide {
       cursor: pointer;
       &__image {

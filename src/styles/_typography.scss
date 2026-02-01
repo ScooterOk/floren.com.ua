@@ -9,7 +9,10 @@ body {
   font-weight: 400;
   font-style: normal;
   color: var(--color-black);
-  font-variation-settings: 'slnt' 0, 'CRSV' 0, 'SHRP' 0;
+  font-variation-settings:
+    'slnt' 0,
+    'CRSV' 0,
+    'SHRP' 0;
   font-size: 16px;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
@@ -20,4 +23,21 @@ h2 {
   font-size: getRem(28);
   font-weight: 600;
   line-height: 1.2;
+}
+
+.text-sm {
+  font-size: getRem(12);
+}
+.text-xs {
+  font-size: getRem(14);
+}
+
+.text-light {
+  font-weight: 300;
+}
+.text-semibold {
+  font-weight: 600;
+}
+.text-bold {
+  font-weight: 700;
 }

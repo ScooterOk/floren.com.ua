@@ -340,6 +340,7 @@
     background-color: #fff;
     display: flex;
     gap: getRem(64);
+    align-items: center;
     &_image {
       height: auto;
       width: 22%;
@@ -546,5 +547,180 @@
         }
       }
     }
+  }
+
+  &__prices {
+    margin-top: getRem(80);
+    h2 {
+      margin-bottom: getRem(24);
+    }
+
+    &_list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: getRem(24);
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    &_note {
+      margin-top: getRem(16);
+      font-size: getRem(14);
+      font-weight: 300;
+      color: var(--color-gray-100);
+      line-height: 1.5;
+    }
+  }
+}
+
+.prices {
+  &__item {
+    background-color: var(--color-white);
+    border-radius: getRem(16);
+    padding: getRem(32);
+    box-shadow: 0 8px 40px 0 rgba(0, 38, 3, 0.08);
+    display: flex;
+    flex-direction: column;
+    gap: getRem(24);
+    min-width: 0;
+    min-height: 0;
+    margin-bottom: 0;
+  }
+
+  &__headline {
+    font-size: getRem(20);
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: normal;
+    color: var(--color-black);
+    margin: 0;
+    text-align: center;
+  }
+
+  &__period {
+    display: block;
+    padding: getRem(8) getRem(16);
+    background-color: var(--color-green-20);
+    color: var(--color-green-100);
+    border-radius: getRem(20);
+    font-size: getRem(14);
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  &__details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: getRem(12);
+    flex-grow: 1;
+  }
+
+  &__text {
+    font-size: getRem(16);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-gray-100);
+    padding-left: getRem(28);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: getRem(6);
+      width: getRem(16);
+      height: getRem(16);
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3337 4L6.00033 11.3333L2.66699 8' stroke='%2365A30D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__price {
+    font-size: getRem(16);
+    text-align: center;
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--color-black);
+    margin: 0;
+
+    br + text {
+      font-size: getRem(14);
+      font-weight: 300;
+      color: var(--color-gray-100);
+    }
+  }
+  &__btn {
+    width: 100%;
+    padding: getRem(12) getRem(24);
+    font-size: getRem(16);
+    font-weight: 600;
+    line-height: 1.5;
+    border: none;
+    border-radius: getRem(24);
+    cursor: pointer;
+    transition: all 0.3s ease;
+
+    &.button_accent {
+      background-color: var(--color-green-100);
+      color: var(--color-white);
+
+      &:hover {
+        background-color: var(--color-green-120);
+      }
+    }
+  }
+  &__note {
+    margin-top: getRem(16);
+    font-size: getRem(14);
+    font-weight: 300;
+    color: var(--color-gray-100);
+    line-height: 1.5;
+  }
+}
+
+.tariffs {
+  &__details {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: getRem(12);
+    flex-grow: 1;
+  }
+
+  &__text {
+    font-size: getRem(16);
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--color-gray-100);
+    padding-left: getRem(28);
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: getRem(6);
+      width: getRem(16);
+      height: getRem(16);
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.3337 4L6.00033 11.3333L2.66699 8' stroke='%2365A30D' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  }
+
+  &__price {
+    font-size: getRem(24);
+    font-weight: 600;
+    line-height: 1.33;
+    color: var(--color-black);
+    margin: 0;
   }
 }
