@@ -1,0 +1,65 @@
+{% extends "layouts/base.njk" %}
+
+{% from "data/catalog-page.njk" import catalog %}
+{% from "data/catalog-page.njk" import productsList %}
+
+{% set title = "Результати пошуку" %}
+
+{% block content %}
+
+  <main class="double-column-page">
+    <div class="container">
+      <div class="double-column-page__grid">
+
+        <!-- Sidebar navigation - категорії каталогу -->
+        <aside class="double-column-page__nav">
+          {% for item in catalog %}
+            <section class="double-column-page__nav_section">
+              <h3>{{ item.title }}</h3>
+              <ul>
+                {% for category in item.categories %}
+                  <li>
+                    <a class="underline" href="/catalog/{{ category.id }}">{{ category.name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endfor %}
+        </aside>
+
+        <!-- Main content area -->
+        <div class="catalog-page__content">
+
+          <!-- Заголовок і опис категорії -->
+          <h1>Результати пошуку</h1>
+          <div class="catalog-page__content_description">
+            <p>Товари за вашим запитом «Шефлера» не знайдено.</p>
+            <p>Спробуйте змінити запит або повернутися на <a href="/" class="underline color-green">головну сторінку</a>.</p>
+          </div>
+
+          <div class="callback-button">
+            <h3>Залишились питання?</h3>
+            <div class="callback-button__phones">
+              <span class="binct-phone-number-2">+380 99 238-26-44</span>
+            </div>
+            <button class="button button--primary button--pill">Зворотній звʼязок</button>
+          </div>
+
+        </div>
+      </div>
+      <div class="main__last-works">
+        {% include "partials/homepage/last-works.njk" %}
+      </div>
+
+    </main>
+
+  {% endblock %}
+
+  <template id="product-card-template">
+    <div class="card">
+      <img src="" alt="" class="card-img">
+      <h3 class="card-title"></h3>
+      <p class="card-price"></p>
+      <button class="buy-btn">Купити</button>
+    </div>
+  </template>

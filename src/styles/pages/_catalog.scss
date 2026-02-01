@@ -94,6 +94,12 @@
     &_description {
       font-weight: 300;
       margin-bottom: getRem(36);
+      p {
+        margin-bottom: 1em;
+        &:last-of-type {
+          margin-bottom: 0;
+        }
+      }
     }
     &_products {
       display: grid;
@@ -247,19 +253,6 @@
               flex-direction: column;
               gap: getRem(2);
               font-size: getRem(13);
-            }
-          }
-          .colors-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: getRem(8);
-            & > span {
-              flex-shrink: 0;
-              display: inline-block;
-              width: getRem(20);
-              height: getRem(20);
-              border-radius: 50%;
-              border: 1px solid var(--color-gray-40);
             }
           }
         }

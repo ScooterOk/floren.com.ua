@@ -1,0 +1,250 @@
+{% extends "layouts/base.njk" %}
+
+{% from "data/catalog-page.njk" import catalog %}
+{% from "data/catalog-page.njk" import productsList %}
+
+{% set title = "Результати пошуку" %}
+
+{% block content %}
+
+  <main class="double-column-page">
+    <div class="container">
+      <div class="double-column-page__grid">
+
+        <!-- Sidebar navigation - категорії каталогу -->
+        <aside class="double-column-page__nav">
+          {% for item in catalog %}
+            <section class="double-column-page__nav_section">
+              <h3>{{ item.title }}</h3>
+              <ul>
+                {% for category in item.categories %}
+                  <li>
+                    <a class="underline" href="/catalog/{{ category.id }}">{{ category.name }}</a>
+                  </li>
+                {% endfor %}
+              </ul>
+            </section>
+          {% endfor %}
+        </aside>
+
+        <!-- Main content area -->
+        <div class="catalog-page__content">
+
+          <!-- Заголовок і опис категорії -->
+          <h1>Результати пошуку</h1>
+          <div class="catalog-page__content_description">
+            Знайдено за назвою <b>«Шефлера»</b>
+          </div>
+
+          <ul class="search-results__list">
+            <li class="search-results__item">
+              <div class="search-results__item_image">
+                <img src="/img/homepage/product-1.png" alt="">
+              </div>
+              <div class="search-results__item_info">
+                <h3 class="search-results__item_title">
+                  <a href="" class="underline">Шефлера деревоподібна / компакта на штамбі</a>
+                </h3>
+                <section class="search-results__item_options">
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+              </div>
+            </li>
+
+            <li class="search-results__item">
+              <div class="search-results__item_image">
+                <img src="/img/homepage/product-2.png" alt="">
+              </div>
+              <div class="search-results__item_info">
+                <h3 class="search-results__item_title">
+                  <a href="" class="underline">Шефлера Герда</a>
+                </h3>
+                <section class="search-results__item_options">
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+                <section class="search-results__item_options">
+                  <div class="colors-list">
+                    <span style="background-color: #c33494"></span>
+                    <span style="background-color: #ffcad4"></span>
+                    <span style="background-color: #f6bb05"></span>
+                    <span style="background-color: #ffffff"></span>
+                  </div>
+                </section>
+              </div>
+            </li>
+
+            <li class="search-results__item">
+              <div class="search-results__item_image">
+                <img src="/img/homepage/product-3.png" alt="">
+              </div>
+              <div class="search-results__item_info">
+                <h3 class="search-results__item_title">
+                  <a href="" class="underline">Шефлера деревоподібна / компакта на штамбі</a>
+                </h3>
+                <section class="search-results__item_options">
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+              </div>
+            </li>
+
+            <li class="search-results__item">
+              <div class="search-results__item_image">
+                <img src="/img/homepage/product-4.png" alt="">
+              </div>
+              <div class="search-results__item_info">
+                <h3 class="search-results__item_title">
+                  <a href="" class="underline">Шефлера Герда</a>
+                </h3>
+                <section class="search-results__item_options">
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+                <section class="search-results__item_options">
+                  <div class="colors-list">
+                    <span style="background-color: #c33494"></span>
+                    <span style="background-color: #ffcad4"></span>
+                    <span style="background-color: #f6bb05"></span>
+                    <span style="background-color: #ffffff"></span>
+                  </div>
+                </section>
+              </div>
+            </li>
+
+            <li class="search-results__item">
+              <div class="search-results__item_image">
+                <img src="/img/homepage/product-1.png" alt="">
+              </div>
+              <div class="search-results__item_info">
+                <h3 class="search-results__item_title">
+                  <a href="" class="underline">Шефлера деревоподібна / компакта на штамбі</a>
+                </h3>
+                <section class="search-results__item_options">
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+              </div>
+            </li>
+
+            <li class="search-results__item">
+              <div class="search-results__item_image">
+                <img src="/img/homepage/product-2.png" alt="">
+              </div>
+              <div class="search-results__item_info">
+                <h3 class="search-results__item_title">
+                  <a href="" class="underline">Шефлера Герда</a>
+                </h3>
+                <section class="search-results__item_options">
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+                <section class="search-results__item_options">
+                  <div class="colors-list">
+                    <span style="background-color: #c33494"></span>
+                    <span style="background-color: #ffcad4"></span>
+                    <span style="background-color: #f6bb05"></span>
+                    <span style="background-color: #ffffff"></span>
+                  </div>
+                </section>
+              </div>
+            </li>
+
+            <li class="search-results__item">
+              <div class="search-results__item_image">
+                <img src="/img/homepage/product-3.png" alt="">
+              </div>
+              <div class="search-results__item_info">
+                <h3 class="search-results__item_title">
+                  <a href="" class="underline">Шефлера деревоподібна / компакта на штамбі</a>
+                </h3>
+                <section class="search-results__item_options">
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+              </div>
+            </li>
+
+            <li class="search-results__item">
+              <div class="search-results__item_image">
+                <img src="/img/homepage/product-4.png" alt="">
+              </div>
+              <div class="search-results__item_info">
+                <h3 class="search-results__item_title">
+                  <a href="" class="underline">Шефлера Герда</a>
+                </h3>
+                <section class="search-results__item_options">
+                  <ul>
+                    <li>Ø 16 x 110 2 квітконоси шт</li>
+                    <li>Ø 16 x 110 3 квітконоси шт</li>
+                    <li>Ø 16 x 110 4 квітконоси шт</li>
+                    <li>Ø 16 x 110 5 квітконоси шт</li>
+                    <li>Ø 16 x 110 6 квітконоси шт</li>
+                  </ul>
+                </section>
+                <section class="search-results__item_options">
+                  <div class="colors-list">
+                    <span style="background-color: #c33494"></span>
+                    <span style="background-color: #ffcad4"></span>
+                    <span style="background-color: #f6bb05"></span>
+                    <span style="background-color: #ffffff"></span>
+                  </div>
+                </section>
+              </div>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+      <div class="main__last-works">
+        {% include "partials/homepage/last-works.njk" %}
+      </div>
+
+    </main>
+
+  {% endblock %}
+
+  <template id="product-card-template">
+    <div class="card">
+      <img src="" alt="" class="card-img">
+      <h3 class="card-title"></h3>
+      <p class="card-price"></p>
+      <button class="buy-btn">Купити</button>
+    </div>
+  </template>

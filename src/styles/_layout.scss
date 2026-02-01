@@ -1326,3 +1326,27 @@ body.secondary-hovered {
     max-width: 100%;
   }
 }
+
+.callback-button {
+  padding: 24px 24px 36px;
+  border-radius: 16px;
+  background-color: var(--color-gray-10);
+  max-width: 360px;
+  h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+    margin-bottom: getRem(16);
+  }
+  &__phones {
+    padding-left: 3rem;
+    background: url(/img/icons/icon-phone.svg) no-repeat left top 6px / 32px 32px;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    margin-bottom: getRem(24);
+  }
+}

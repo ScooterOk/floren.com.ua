@@ -1048,3 +1048,17 @@ sl-alert {
     }
   }
 }
+
+.colors-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: getRem(8);
+  & > span {
+    flex-shrink: 0;
+    display: inline-block;
+    width: getRem(20);
+    height: getRem(20);
+    border-radius: 50%;
+    border: 1px solid var(--color-gray-40);
+  }
+}
