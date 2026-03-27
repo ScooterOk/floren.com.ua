@@ -940,6 +940,50 @@ body.secondary-hovered {
   }
 }
 
+.calculate-modal {
+  --width: 576px;
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: getRem(20);
+    .form-control {
+      width: 100%;
+      &--double {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      label {
+        display: block;
+        font-size: getRem(14);
+        font-weight: 300;
+        margin-bottom: getRem(8);
+      }
+      a {
+        color: var(--color-green-100);
+        font-size: getRem(14);
+      }
+      .button--primary {
+        width: 100%;
+      }
+    }
+  }
+  &__greeting {
+    display: flex;
+    flex-direction: column;
+    gap: getRem(20);
+    align-items: center;
+    font-weight: 300;
+    img {
+      width: 200px;
+      height: auto;
+    }
+    .button {
+      width: 100%;
+    }
+  }
+}
+
 .double-column-page {
   &__grid {
     display: grid;

@@ -21,10 +21,12 @@ import { Autoplay, Navigation, Pagination, Thumbs } from 'swiper/modules';
 import { initIntlTelInput } from './_shoelace';
 import { QuantityCounter } from './_quantityCounter';
 import { initCart } from './_cart';
+import * as forms from './_forms';
 
 export { Autoplay, Navigation, Pagination, Thumbs, Swiper };
 
 window.youtubePlayers = [];
+window.submitForm = forms.submitForm;
 
 // export function onYouTubeIframeAPIReady() {
 //   console.log('YouTube API is ready!');
